@@ -14,7 +14,7 @@
 {
     [APP_DELEGATE setBorderToView:_img_icon withBorderWidth:0.0 radious:_img_icon.frame.size.height/2 color:[UIColor clearColor]];
     
-    [APP_DELEGATE setBorderToView:_btn_plus withBorderWidth:1.0 radious:4.0 color:ColorFromHEX(@"#2FA453")];
+    [APP_DELEGATE setBorderToView:_btn_plus withBorderWidth:1.0 radious:4.0 color:kColorLightGreen];
 
     [super awakeFromNib];
     // Initialization code

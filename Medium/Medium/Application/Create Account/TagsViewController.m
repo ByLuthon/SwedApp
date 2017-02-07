@@ -212,7 +212,7 @@
                 if ([[arrSelectedTags objectAtIndex:i] isEqualToString:btn.titleLabel.text])
                 {
                     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-                    btn.backgroundColor = ColorFromHEX(@"#2FA453");
+                    btn.backgroundColor = kColorLightGreen;
                 }
             }
         }

@@ -268,7 +268,8 @@
          }];
     }
 
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     return cell;
     
 }
@@ -288,6 +289,8 @@
         cell.lbl_title.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"title"]];
     }
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     return cell;
     
 }

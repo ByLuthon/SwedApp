@@ -1,18 +1,18 @@
 //
-//  EnableNotificationViewController.m
+//  SearchViewController.m
 //  Medium
 //
-//  Created by macmini on 03/02/17.
+//  Created by macmini on 06/02/17.
 //  Copyright © 2017 macmini. All rights reserved.
 //
 
-#import "EnableNotificationViewController.h"
+#import "SearchViewController.h"
 
-@interface EnableNotificationViewController ()
+@interface SearchViewController ()
 
 @end
 
-@implementation EnableNotificationViewController
+@implementation SearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,14 +34,4 @@
 }
 */
 
-- (IBAction)skip:(id)sender
-{
-    /*
-    HomeViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
-    [self.navigationController pushViewController:move animated:YES];
-     */
-    CustomTabbarViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomTabbarViewController"];
-    [self.navigationController pushViewController:move animated:YES];
-
-}
 @end

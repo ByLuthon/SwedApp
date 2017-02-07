@@ -45,8 +45,11 @@
 
 - (IBAction)facebook:(id)sender
 {
-    //HomeViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
-    //[self.navigationController pushViewController:move animated:YES];
+    /*
+    CustomTabbarViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomTabbarViewController"];
+    [self.navigationController pushViewController:move animated:YES];
+    */
+    
     
     CreateAccountViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"CreateAccountViewController"];
     [self.navigationController pushViewController:move animated:YES];

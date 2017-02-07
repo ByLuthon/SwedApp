@@ -15,11 +15,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="509"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="509"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="508"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcm-hl-qZc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="498"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -117,7 +117,8 @@
                                 </attributes>
                             </fragment>
                             <fragment>
-                                <string key="content">. </string>
+                                <string key="content">. 
+</string>
                                 <attributes>
                                     <font key="NSFont" metaFont="system" size="17"/>
                                 </attributes>
@@ -139,7 +140,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfE-qm-uHp">
-                        <rect key="frame" x="10" y="455" width="300" height="1"/>
+                        <rect key="frame" x="10" y="454" width="300" height="1"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -155,13 +156,13 @@
                         <state key="selected" image="ic_favorite_green_24dp.png"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfH-aI-itF">
-                        <rect key="frame" x="228" y="469" width="84" height="35"/>
+                        <rect key="frame" x="228" y="468" width="84" height="35"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <state key="normal" image="ic_bookmark_outline_grey600_24dp.png"/>
                         <state key="selected" image="ic_bookmark_green_24dp.png"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NP-49-z9z">
-                        <rect key="frame" x="0.0" y="500" width="320" height="8"/>
+                        <rect key="frame" x="0.0" y="499" width="320" height="8"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -172,6 +173,8 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="btn_bookmarks" destination="gfH-aI-itF" id="wZc-3d-ULj"/>
+                <outlet property="btn_like" destination="s0j-4q-ems" id="DY0-0l-1GE"/>
                 <outlet property="imguser" destination="Srg-TY-YKa" id="Ibx-5F-xTv"/>
             </connections>
             <point key="canvasLocation" x="33" y="166.5"/>

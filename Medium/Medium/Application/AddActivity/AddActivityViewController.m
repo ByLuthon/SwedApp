@@ -1,30 +1,29 @@
 //
-//  CreateAccountViewController.m
+//  AddActivityViewController.m
 //  Medium
 //
-//  Created by macmini on 02/02/17.
+//  Created by macmini on 06/02/17.
 //  Copyright © 2017 macmini. All rights reserved.
 //
 
-#import "CreateAccountViewController.h"
+#import "AddActivityViewController.h"
 
-@interface CreateAccountViewController ()
+@interface AddActivityViewController ()
 
 @end
 
-@implementation CreateAccountViewController
+@implementation AddActivityViewController
 
 - (void)viewDidLoad
 {
+    self.view.frame = CGRectMake(0, 0, WIDTH, HEIGHT);
+    
+    [txtview becomeFirstResponder];
+    
     [self setInitParam];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
--(void)setInitParam
-{
-    [APP_DELEGATE setBorderToView:btn_createAccount withBorderWidth:2.0 radious:4.0 color:kColorLightGreen];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,6 +31,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)setInitParam
+{
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -42,14 +46,8 @@
 }
 */
 
-- (IBAction)Back:(id)sender
+- (IBAction)close:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (IBAction)createAccount:(id)sender
-{
-    TagsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"TagsViewController"];
-    [self.navigationController pushViewController:move animated:YES];
+    [self dismissModalViewControllerAnimated:YES];
 }
 @end

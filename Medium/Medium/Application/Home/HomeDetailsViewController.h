@@ -16,7 +16,12 @@
     __weak IBOutlet UIScrollView *scrl;
     IBOutlet UIView *view_Scrl;
     __weak IBOutlet UIView *view_tags;
+    __weak IBOutlet UIButton *btn_like;
+    __weak IBOutlet UIButton *btn_likeCount;
 }
 - (IBAction)Back:(id)sender;
+- (IBAction)like:(id)sender;
+- (IBAction)bookmarks:(id)sender;
+- (IBAction)FollowUser:(id)sender;
 
 @end

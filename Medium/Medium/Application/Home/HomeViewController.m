@@ -112,6 +112,29 @@
     {
         static NSString *cellIdentifier = @"CollectionCell_Publications";
         CollectionCell_Publications *cell = (CollectionCell_Publications *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+        
+        
+        [cell.btn_follow setOnTouchUpInside:^(id sender, UIEvent *event)
+         {
+             if (cell.btn_follow.selected == FALSE)
+             {
+                 cell.btn_follow.selected = TRUE;
+                 
+                 cell.btn_follow.backgroundColor = [UIColor whiteColor];
+                 [cell.btn_follow setTitleColor:kColorLightGreen forState:UIControlStateNormal];
+                 [cell.btn_follow setTitle:@"Following" forState:UIControlStateNormal];
+             }
+             else
+             {
+                 cell.btn_follow.selected = FALSE;
+                 
+                 cell.btn_follow.backgroundColor = kColorLightGreen;
+                 [cell.btn_follow setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                 [cell.btn_follow setTitle:@"Follow" forState:UIControlStateNormal];
+             }
+         }];
+        
+        
         // Return the cell
         return cell;
     }
@@ -150,6 +173,34 @@
         cell.backgroundColor = [UIColor clearColor];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        
+        [cell.btn_like setOnTouchUpInside:^(id sender, UIEvent *event)
+         {
+             if (cell.btn_like.selected == TRUE)
+             {
+                 cell.btn_like.selected = FALSE;
+             }
+             else
+             {
+                 cell.btn_like.selected = TRUE;
+             }
+         }];
+        
+        
+        
+        [cell.btn_bookmarks setOnTouchUpInside:^(id sender, UIEvent *event)
+         {
+             if (cell.btn_bookmarks.selected == TRUE)
+             {
+                 cell.btn_bookmarks.selected = FALSE;
+             }
+             else
+             {
+                 cell.btn_bookmarks.selected = TRUE;
+             }
+         }];
+
     }
     return cell;
 }

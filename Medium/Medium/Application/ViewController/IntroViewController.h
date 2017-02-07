@@ -17,9 +17,11 @@
     
     __weak IBOutlet UIView *subview_message;
     __weak IBOutlet UILabel *lbl_message;
+    __weak IBOutlet UIButton *btn_wrongEmail;
 }
 - (IBAction)SignIn:(id)sender;
 - (IBAction)close:(id)sender;
+- (IBAction)wrongEmail:(id)sender;
 
 
 @end

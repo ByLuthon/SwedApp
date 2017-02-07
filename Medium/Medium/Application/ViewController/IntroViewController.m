@@ -34,7 +34,13 @@
     
     [txt_email becomeFirstResponder];
     
-    [APP_DELEGATE setBorderToView:btnSignin withBorderWidth:2.0 radious:4.0 color:ColorFromHEX(@"#2FA453")];
+    [APP_DELEGATE setBorderToView:btnSignin withBorderWidth:2.0 radious:4.0 color:kColorLightGreen];
+    
+    
+    NSMutableAttributedString *commentString = [[NSMutableAttributedString alloc] initWithString:btn_wrongEmail.titleLabel.text];
+    [commentString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [commentString length])];
+    [btn_wrongEmail setAttributedTitle:commentString forState:UIControlStateNormal];
+
 }
 /*
 #pragma mark - Navigation
@@ -72,5 +78,11 @@
 - (IBAction)close:(id)sender
 {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)wrongEmail:(id)sender
+{
+    txt_email.text = @"";
+    [APP_DELEGATE animateWithShow:NO withView:subview_message];
 }
 @end

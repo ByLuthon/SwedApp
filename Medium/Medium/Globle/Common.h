@@ -14,6 +14,11 @@
 #import "HomeDetailsViewController.h"
 #import "PublicationsViewController.h"
 #import "PersonalizeViewController.h"
+#import "CustomTabbarViewController.h"
+#import "BookmarksViewController.h"
+#import "AddActivityViewController.h"
+#import "ActivityViewController.h"
+#import "ProfileViewController.h"
 
 
 
@@ -21,6 +26,7 @@
 #import "Cell_follow.h"
 #import "Cell_socialFollow.h"
 #import "Cell_Home.h"
+#import "Cell_Activity.h"
 
 
 #pragma mark - Collection Cell
@@ -202,7 +208,7 @@ extern GDXSync *_gdxSync;
 
 //--------------------------------------------------------------------------------------------------
 // Color
-
+#define kColorLightGreen          ColorFromHEX(@"#2FA453")
 #define kColorWhite               [UIColor whiteColor]
 #define kColorBlack               [UIColor blackColor]
 #define kColorClear               [UIColor clearColor]

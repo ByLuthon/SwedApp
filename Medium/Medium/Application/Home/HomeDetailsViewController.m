@@ -145,4 +145,58 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (IBAction)like:(id)sender
+{
+    int likecount = [btn_likeCount.titleLabel.text intValue];
+    if (btn_like.selected == TRUE)
+    {
+        likecount = likecount - 1;
+        btn_like.selected = FALSE;
+    }
+    else
+    {
+        likecount = likecount + 1;
+        btn_like.selected = TRUE;
+    }
+    
+    [btn_likeCount setTitle:[NSString stringWithFormat:@" %d",likecount] forState:UIControlStateNormal];
+}
+
+- (IBAction)bookmarks:(id)sender
+{
+    UIButton *btn = (UIButton *)sender;
+    
+    if (btn.selected == TRUE)
+    {
+        btn.selected = FALSE;
+    }
+    else
+    {
+        btn.selected = TRUE;
+    }
+}
+
+- (IBAction)FollowUser:(id)sender
+{
+    UIButton *btn_follow = (UIButton *)sender;
+    
+    if (btn_follow.selected == FALSE)
+    {
+        btn_follow.selected = TRUE;
+        
+        btn_follow.backgroundColor = kColorLightGreen;
+        [btn_follow setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn_follow setTitle:@"Following" forState:UIControlStateNormal];
+    }
+    else
+    {
+        btn_follow.selected = FALSE;
+        
+        btn_follow.backgroundColor = [UIColor whiteColor];
+        [btn_follow setTitleColor:kColorLightGreen forState:UIControlStateNormal];
+        [btn_follow setTitle:@"Follow" forState:UIControlStateNormal];
+    }
+
+}
 @end
