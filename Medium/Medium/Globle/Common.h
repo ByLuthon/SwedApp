@@ -12,6 +12,7 @@
 #import "EnableNotificationViewController.h"
 #import "HomeViewController.h"
 #import "HomeDetailsViewController.h"
+#import "SearchViewController.h"
 #import "PublicationsViewController.h"
 #import "PersonalizeViewController.h"
 #import "CustomTabbarViewController.h"
@@ -19,6 +20,7 @@
 #import "AddActivityViewController.h"
 #import "ActivityViewController.h"
 #import "ProfileViewController.h"
+#import "ViewProfileViewController.h"
 
 
 
@@ -27,6 +29,13 @@
 #import "Cell_socialFollow.h"
 #import "Cell_Home.h"
 #import "Cell_Activity.h"
+#import "Cell_People.h"
+#import "Cell_Tags.h"
+#import "Cell_Publications.h"
+#import "Cell_FollowTags.h"
+#import "Cell_profile.h"
+#import "Cell_Responces.h"
+
 
 
 #pragma mark - Collection Cell
@@ -34,7 +43,9 @@
 #import "CollectionCell_Publications.h"
 
 
+
 #pragma mark - CHAT SCREEN
+
 
 
 #pragma mark - Importing Framework
@@ -243,6 +254,16 @@ extern GDXSync *_gdxSync;
 #pragma mark - Define Variable -
 extern GDXSync *_gdxSync;
 
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+// Search tag
+
+#define SEARCH_Suggested         1
+#define SEARCH_SearchHistory      2
+#define SEARCH_Stories           3
+#define SEARCH_People            4
+#define SEARCH_Publication      5
+#define SEARCH_Tags             6
 
 //--------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------

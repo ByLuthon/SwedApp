@@ -44,6 +44,15 @@
    // tbl.tableHeaderView = subview_profile;
    // [tbl reloadData];
 }
+
+
+- (IBAction)viewProfile:(id)sender
+{
+    ViewProfileViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewProfileViewController"];
+    [self.navigationController pushViewController:move animated:YES];
+}
+
+
 /*
 #pragma mark - Navigation
 
@@ -130,6 +139,8 @@
         {
             cell.textLabel.text = [arrSection2 objectAtIndex:indexPath.row];
         }
+        cell.textLabel.font = [UIFont systemFontOfSize:15];
+        
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
@@ -141,5 +152,4 @@
 {
     
 }
-
 @end

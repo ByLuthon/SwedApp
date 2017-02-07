@@ -338,6 +338,29 @@
 		9A6CB9861E44B649001CD7C3 /* fast-forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6CB9851E44B649001CD7C3 /* fast-forward@2x.png */; };
 		9A6CB9881E44B651001CD7C3 /* fast-forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6CB9871E44B651001CD7C3 /* fast-forward.png */; };
 		9A6CB98C1E44B8A8001CD7C3 /* PersonalizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6CB98B1E44B8A8001CD7C3 /* PersonalizeViewController.m */; };
+		9A7088F11E49AC7400324AF0 /* Cell_People.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7088EF1E49AC7400324AF0 /* Cell_People.m */; };
+		9A7088F21E49AC7400324AF0 /* Cell_People.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7088F01E49AC7400324AF0 /* Cell_People.xib */; };
+		9A7088F61E49AC9C00324AF0 /* Cell_Tags.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7088F41E49AC9C00324AF0 /* Cell_Tags.m */; };
+		9A7088F71E49AC9C00324AF0 /* Cell_Tags.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7088F51E49AC9C00324AF0 /* Cell_Tags.xib */; };
+		9A7088FD1E49BA3C00324AF0 /* 0.34592100-1450848819-indian-pm-narendra-modi-russia-remains-our-principal-partner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A7088F81E49BA3C00324AF0 /* 0.34592100-1450848819-indian-pm-narendra-modi-russia-remains-our-principal-partner.jpg */; };
+		9A7088FE1E49BA3C00324AF0 /* 111412-politics-barack-obama-press-conference.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A7088F91E49BA3C00324AF0 /* 111412-politics-barack-obama-press-conference.jpg */; };
+		9A7089001E49BA3C00324AF0 /* Trump1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A7088FB1E49BA3C00324AF0 /* Trump1.jpg */; };
+		9A7089011E49BA3C00324AF0 /* zHVoWqKV.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A7088FC1E49BA3C00324AF0 /* zHVoWqKV.jpg */; };
+		9A7089051E49BAD000324AF0 /* 96bb6c71-3ce5-485a-9be4-b335a8fbfa8b_560_420.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A7089021E49BAD000324AF0 /* 96bb6c71-3ce5-485a-9be4-b335a8fbfa8b_560_420.jpg */; };
+		9A7089061E49BAD000324AF0 /* article-0-16F4E343000005DC-374_634x459.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A7089031E49BAD000324AF0 /* article-0-16F4E343000005DC-374_634x459.jpg */; };
+		9A7089071E49BAD000324AF0 /* SONIC BOOOM nicAsOsama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A7089041E49BAD000324AF0 /* SONIC BOOOM nicAsOsama.jpg */; };
+		9A70890B1E49C4F300324AF0 /* tag_icon.png@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A70890A1E49C4F300324AF0 /* tag_icon.png@3x.png */; };
+		9A70890D1E49C4FA00324AF0 /* tag_icon.png@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A70890C1E49C4FA00324AF0 /* tag_icon.png@2x.png */; };
+		9A70890F1E49C50100324AF0 /* tag_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A70890E1E49C50100324AF0 /* tag_icon.png */; };
+		9A7089111E49C5D600324AF0 /* PUTIN_RUSO.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A7089101E49C5D600324AF0 /* PUTIN_RUSO.jpg */; };
+		9A7089161E49C81000324AF0 /* Cell_FollowTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7089141E49C81000324AF0 /* Cell_FollowTags.m */; };
+		9A7089171E49C81000324AF0 /* Cell_FollowTags.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7089151E49C81000324AF0 /* Cell_FollowTags.xib */; };
+		9A7089191E49C89700324AF0 /* iPhone-7-Concept.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A7089181E49C89700324AF0 /* iPhone-7-Concept.jpg */; };
+		9A70891F1E49E1AE00324AF0 /* ViewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70891E1E49E1AE00324AF0 /* ViewProfileViewController.m */; };
+		9A7089241E49F11A00324AF0 /* Cell_profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7089221E49F11A00324AF0 /* Cell_profile.m */; };
+		9A7089251E49F11A00324AF0 /* Cell_profile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7089231E49F11A00324AF0 /* Cell_profile.xib */; };
+		9A7089291E49F15200324AF0 /* Cell_Responces.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7089271E49F15200324AF0 /* Cell_Responces.m */; };
+		9A70892A1E49F15200324AF0 /* Cell_Responces.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7089281E49F15200324AF0 /* Cell_Responces.xib */; };
 		9AA96FAC1E488D5000EAF323 /* Cell_Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96FAA1E488D5000EAF323 /* Cell_Activity.m */; };
 		9AA96FAD1E488D5000EAF323 /* Cell_Activity.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA96FAB1E488D5000EAF323 /* Cell_Activity.xib */; };
 		9AA96FAF1E488F5600EAF323 /* profile-image-display.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AA96FAE1E488F5600EAF323 /* profile-image-display.png */; };
@@ -734,6 +757,35 @@
 		9A6CB9871E44B651001CD7C3 /* fast-forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fast-forward.png"; sourceTree = "<group>"; };
 		9A6CB98A1E44B8A8001CD7C3 /* PersonalizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalizeViewController.h; sourceTree = "<group>"; };
 		9A6CB98B1E44B8A8001CD7C3 /* PersonalizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalizeViewController.m; sourceTree = "<group>"; };
+		9A7088EE1E49AC7400324AF0 /* Cell_People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell_People.h; sourceTree = "<group>"; };
+		9A7088EF1E49AC7400324AF0 /* Cell_People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell_People.m; sourceTree = "<group>"; };
+		9A7088F01E49AC7400324AF0 /* Cell_People.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell_People.xib; sourceTree = "<group>"; };
+		9A7088F31E49AC9C00324AF0 /* Cell_Tags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell_Tags.h; sourceTree = "<group>"; };
+		9A7088F41E49AC9C00324AF0 /* Cell_Tags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell_Tags.m; sourceTree = "<group>"; };
+		9A7088F51E49AC9C00324AF0 /* Cell_Tags.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell_Tags.xib; sourceTree = "<group>"; };
+		9A7088F81E49BA3C00324AF0 /* 0.34592100-1450848819-indian-pm-narendra-modi-russia-remains-our-principal-partner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "0.34592100-1450848819-indian-pm-narendra-modi-russia-remains-our-principal-partner.jpg"; sourceTree = "<group>"; };
+		9A7088F91E49BA3C00324AF0 /* 111412-politics-barack-obama-press-conference.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "111412-politics-barack-obama-press-conference.jpg"; sourceTree = "<group>"; };
+		9A7088FB1E49BA3C00324AF0 /* Trump1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Trump1.jpg; sourceTree = "<group>"; };
+		9A7088FC1E49BA3C00324AF0 /* zHVoWqKV.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zHVoWqKV.jpg; sourceTree = "<group>"; };
+		9A7089021E49BAD000324AF0 /* 96bb6c71-3ce5-485a-9be4-b335a8fbfa8b_560_420.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "96bb6c71-3ce5-485a-9be4-b335a8fbfa8b_560_420.jpg"; sourceTree = "<group>"; };
+		9A7089031E49BAD000324AF0 /* article-0-16F4E343000005DC-374_634x459.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "article-0-16F4E343000005DC-374_634x459.jpg"; sourceTree = "<group>"; };
+		9A7089041E49BAD000324AF0 /* SONIC BOOOM nicAsOsama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SONIC BOOOM nicAsOsama.jpg"; sourceTree = "<group>"; };
+		9A70890A1E49C4F300324AF0 /* tag_icon.png@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag_icon.png@3x.png"; sourceTree = "<group>"; };
+		9A70890C1E49C4FA00324AF0 /* tag_icon.png@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag_icon.png@2x.png"; sourceTree = "<group>"; };
+		9A70890E1E49C50100324AF0 /* tag_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag_icon.png; sourceTree = "<group>"; };
+		9A7089101E49C5D600324AF0 /* PUTIN_RUSO.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PUTIN_RUSO.jpg; sourceTree = "<group>"; };
+		9A7089131E49C81000324AF0 /* Cell_FollowTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell_FollowTags.h; sourceTree = "<group>"; };
+		9A7089141E49C81000324AF0 /* Cell_FollowTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell_FollowTags.m; sourceTree = "<group>"; };
+		9A7089151E49C81000324AF0 /* Cell_FollowTags.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell_FollowTags.xib; sourceTree = "<group>"; };
+		9A7089181E49C89700324AF0 /* iPhone-7-Concept.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iPhone-7-Concept.jpg"; sourceTree = "<group>"; };
+		9A70891D1E49E1AE00324AF0 /* ViewProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewProfileViewController.h; sourceTree = "<group>"; };
+		9A70891E1E49E1AE00324AF0 /* ViewProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewProfileViewController.m; sourceTree = "<group>"; };
+		9A7089211E49F11A00324AF0 /* Cell_profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell_profile.h; sourceTree = "<group>"; };
+		9A7089221E49F11A00324AF0 /* Cell_profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell_profile.m; sourceTree = "<group>"; };
+		9A7089231E49F11A00324AF0 /* Cell_profile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell_profile.xib; sourceTree = "<group>"; };
+		9A7089261E49F15200324AF0 /* Cell_Responces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell_Responces.h; sourceTree = "<group>"; };
+		9A7089271E49F15200324AF0 /* Cell_Responces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell_Responces.m; sourceTree = "<group>"; };
+		9A7089281E49F15200324AF0 /* Cell_Responces.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell_Responces.xib; sourceTree = "<group>"; };
 		9AA96FA91E488D5000EAF323 /* Cell_Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell_Activity.h; sourceTree = "<group>"; };
 		9AA96FAA1E488D5000EAF323 /* Cell_Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell_Activity.m; sourceTree = "<group>"; };
 		9AA96FAB1E488D5000EAF323 /* Cell_Activity.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell_Activity.xib; sourceTree = "<group>"; };
@@ -861,8 +913,11 @@
 		9A0A596C1E488177001F594D /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				9A7089201E49F0F800324AF0 /* cell */,
 				9A0A59771E4881F8001F594D /* ProfileViewController.h */,
 				9A0A59781E4881F8001F594D /* ProfileViewController.m */,
+				9A70891D1E49E1AE00324AF0 /* ViewProfileViewController.h */,
+				9A70891E1E49E1AE00324AF0 /* ViewProfileViewController.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -922,6 +977,7 @@
 		9A2852851E43148E0080AEDE /* 1x */ = {
 			isa = PBXGroup;
 			children = (
+				9A70890E1E49C50100324AF0 /* tag_icon.png */,
 				9A1A1EAD1E485CB700AA8EA6 /* ic_profile_white.png */,
 				9A1A1EA71E485BA000AA8EA6 /* ic_profile_gray.png */,
 				9A1A1EA11E485AA800AA8EA6 /* ic_home_white.png */,
@@ -1026,6 +1082,7 @@
 		9A2852DC1E43148E0080AEDE /* 2x */ = {
 			isa = PBXGroup;
 			children = (
+				9A70890C1E49C4FA00324AF0 /* tag_icon.png@2x.png */,
 				9A1A1EAB1E485CB100AA8EA6 /* ic_profile_white@2x.png */,
 				9A1A1EA51E485B9A00AA8EA6 /* ic_profile_gray@2x.png */,
 				9A1A1E9F1E485A9D00AA8EA6 /* ic_home_white@2x.png */,
@@ -1132,6 +1189,7 @@
 		9A2853361E43148E0080AEDE /* 3x */ = {
 			isa = PBXGroup;
 			children = (
+				9A70890A1E49C4F300324AF0 /* tag_icon.png@3x.png */,
 				9A1A1EA91E485CAB00AA8EA6 /* ic_profile_white@3x.png */,
 				9A1A1EA31E485B9400AA8EA6 /* ic_profile_gray@3x.png */,
 				9A1A1E9D1E485A9600AA8EA6 /* ic_home_white@3x.png */,
@@ -1238,6 +1296,15 @@
 		9A2854981E4315630080AEDE /* extra */ = {
 			isa = PBXGroup;
 			children = (
+				9A7089181E49C89700324AF0 /* iPhone-7-Concept.jpg */,
+				9A7089101E49C5D600324AF0 /* PUTIN_RUSO.jpg */,
+				9A7089021E49BAD000324AF0 /* 96bb6c71-3ce5-485a-9be4-b335a8fbfa8b_560_420.jpg */,
+				9A7089031E49BAD000324AF0 /* article-0-16F4E343000005DC-374_634x459.jpg */,
+				9A7089041E49BAD000324AF0 /* SONIC BOOOM nicAsOsama.jpg */,
+				9A7088F81E49BA3C00324AF0 /* 0.34592100-1450848819-indian-pm-narendra-modi-russia-remains-our-principal-partner.jpg */,
+				9A7088F91E49BA3C00324AF0 /* 111412-politics-barack-obama-press-conference.jpg */,
+				9A7088FB1E49BA3C00324AF0 /* Trump1.jpg */,
+				9A7088FC1E49BA3C00324AF0 /* zHVoWqKV.jpg */,
 				9A6CB97F1E44AFD8001CD7C3 /* 42711793-abstract-colored-o-vector-icon-isolated-on-white-background-circle-colored-shape-globe-abstract-web-.jpg */,
 				9A6CB9801E44AFD8001CD7C3 /* 96794243.jpg */,
 				9AA96FAE1E488F5600EAF323 /* profile-image-display.png */,
@@ -1273,6 +1340,12 @@
 				9A6CB93E1E447C6C001CD7C3 /* Cell_Home.h */,
 				9A6CB93F1E447C6C001CD7C3 /* Cell_Home.m */,
 				9A6CB9401E447C6C001CD7C3 /* Cell_Home.xib */,
+				9A7088EE1E49AC7400324AF0 /* Cell_People.h */,
+				9A7088EF1E49AC7400324AF0 /* Cell_People.m */,
+				9A7088F01E49AC7400324AF0 /* Cell_People.xib */,
+				9A7088F31E49AC9C00324AF0 /* Cell_Tags.h */,
+				9A7088F41E49AC9C00324AF0 /* Cell_Tags.m */,
+				9A7088F51E49AC9C00324AF0 /* Cell_Tags.xib */,
 				9A6CB9431E448534001CD7C3 /* CollectionCell_Trending.h */,
 				9A6CB9441E448534001CD7C3 /* CollectionCell_Trending.m */,
 				9A6CB9451E448534001CD7C3 /* CollectionCell_Trending.xib */,
@@ -1317,10 +1390,34 @@
 		9A6CB9891E44B890001CD7C3 /* personolize */ = {
 			isa = PBXGroup;
 			children = (
+				9A7089121E49C7E700324AF0 /* cell */,
 				9A6CB98A1E44B8A8001CD7C3 /* PersonalizeViewController.h */,
 				9A6CB98B1E44B8A8001CD7C3 /* PersonalizeViewController.m */,
 			);
 			path = personolize;
+			sourceTree = "<group>";
+		};
+		9A7089121E49C7E700324AF0 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				9A7089131E49C81000324AF0 /* Cell_FollowTags.h */,
+				9A7089141E49C81000324AF0 /* Cell_FollowTags.m */,
+				9A7089151E49C81000324AF0 /* Cell_FollowTags.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		9A7089201E49F0F800324AF0 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				9A7089211E49F11A00324AF0 /* Cell_profile.h */,
+				9A7089221E49F11A00324AF0 /* Cell_profile.m */,
+				9A7089231E49F11A00324AF0 /* Cell_profile.xib */,
+				9A7089261E49F15200324AF0 /* Cell_Responces.h */,
+				9A7089271E49F15200324AF0 /* Cell_Responces.m */,
+				9A7089281E49F15200324AF0 /* Cell_Responces.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		9AA96FA81E488CCB00EAF323 /* cell */ = {
@@ -1686,6 +1783,7 @@
 				9A2854561E43148F0080AEDE /* abc_switch_track_mtrl_alpha.9@3x.png in Resources */,
 				9A2853E41E43148F0080AEDE /* white_fab_elevated.png in Resources */,
 				9A2854141E43148F0080AEDE /* ic_editor_link_24dp@2x.png in Resources */,
+				9A7089051E49BAD000324AF0 /* 96bb6c71-3ce5-485a-9be4-b335a8fbfa8b_560_420.jpg in Resources */,
 				9A2853BE1E43148F0080AEDE /* ic_editor_link_24dp.png in Resources */,
 				9A28547A1E43148F0080AEDE /* ic_email_20dp@3x.png in Resources */,
 				9A2853941E43148F0080AEDE /* abc_btn_switch_to_on_mtrl_00001.9.png in Resources */,
@@ -1710,6 +1808,7 @@
 				9A2853F41E43148F0080AEDE /* abc_ic_search_api_mtrl_alpha@2x.png in Resources */,
 				9A28539D1E43148F0080AEDE /* abc_ic_menu_share_mtrl_alpha.png in Resources */,
 				9A2853F51E43148F0080AEDE /* abc_ic_star_black_16dp@2x.png in Resources */,
+				9A7089061E49BAD000324AF0 /* article-0-16F4E343000005DC-374_634x459.jpg in Resources */,
 				9A28546B1E43148F0080AEDE /* ic_bubble_gray_14dp@3x.png in Resources */,
 				9A28541D1E43148F0080AEDE /* ic_editor_section_24dp@2x.png in Resources */,
 				9A6CB94E1E4489F2001CD7C3 /* downarrow@3x.png in Resources */,
@@ -1718,6 +1817,7 @@
 				9A2854901E43148F0080AEDE /* ic_twitter_24dp@3x.png in Resources */,
 				9A2854131E43148F0080AEDE /* ic_close_grey600_24dp@2x.png in Resources */,
 				9A2853DD1E43148F0080AEDE /* ic_sync_problem_grey600_48dp.png in Resources */,
+				9A7089011E49BA3C00324AF0 /* zHVoWqKV.jpg in Resources */,
 				9A2853DB1E43148F0080AEDE /* ic_share_black_24dp.png in Resources */,
 				9A2854691E43148F0080AEDE /* ic_bookmark_outline_black_24dp@3x.png in Resources */,
 				9A2853C61E43148F0080AEDE /* ic_editor_quote_2_24dp.png in Resources */,
@@ -1757,6 +1857,7 @@
 				9A2854111E43148F0080AEDE /* ic_bookmark_outline_grey600_24dp@2x.png in Resources */,
 				9A28540A1E43148F0080AEDE /* ic_arrow_back_black_24dp@2x.png in Resources */,
 				9A2854671E43148F0080AEDE /* ic_bell_white_dot_24dp@3x.png in Resources */,
+				9A7089071E49BAD000324AF0 /* SONIC BOOOM nicAsOsama.jpg in Resources */,
 				9A2854321E43148F0080AEDE /* ic_search_grey600_24dp@2x.png in Resources */,
 				9A6CB9541E448AC1001CD7C3 /* MG_4273.jpg in Resources */,
 				9A2854791E43148F0080AEDE /* ic_editor_title_2_24dp@3x.png in Resources */,
@@ -1785,14 +1886,17 @@
 				9A28539C1E43148F0080AEDE /* abc_ic_menu_selectall_mtrl_alpha.png in Resources */,
 				9A2853B71E43148F0080AEDE /* ic_bell_gray_24dp.png in Resources */,
 				9A2854101E43148F0080AEDE /* ic_bookmark_outline_black_24dp@2x.png in Resources */,
+				9A70890F1E49C50100324AF0 /* tag_icon.png in Resources */,
 				9A2853DA1E43148F0080AEDE /* ic_search_grey600_24dp.png in Resources */,
 				9A2853E11E43148F0080AEDE /* ic_write_italic_black_24dp.png in Resources */,
+				9A7088F71E49AC9C00324AF0 /* Cell_Tags.xib in Resources */,
 				9A28543B1E43148F0080AEDE /* illustration@2x.png in Resources */,
 				9A28541F1E43148F0080AEDE /* ic_editor_title_1_24dp@2x.png in Resources */,
 				9A2854251E43148F0080AEDE /* ic_favorite_green_24dp@2x.png in Resources */,
 				9A2853FD1E43148F0080AEDE /* abc_switch_track_mtrl_alpha.9@2x.png in Resources */,
 				9A2853D81E43148F0080AEDE /* ic_retry_white_24dp.png in Resources */,
 				9A2854421E43148F0080AEDE /* abc_btn_radio_to_on_mtrl_015@3x.png in Resources */,
+				9A7088FD1E49BA3C00324AF0 /* 0.34592100-1450848819-indian-pm-narendra-modi-russia-remains-our-principal-partner.jpg in Resources */,
 				9A2853D21E43148F0080AEDE /* ic_lock_24dp.png in Resources */,
 				9A2854701E43148F0080AEDE /* ic_editor_list_2_24dp@3x.png in Resources */,
 				9A6CB9271E444CEE001CD7C3 /* funny-profile-pictures.jpg in Resources */,
@@ -1826,12 +1930,15 @@
 				9A2853F21E43148F0080AEDE /* abc_ic_menu_selectall_mtrl_alpha@2x.png in Resources */,
 				9A6CB9841E44B642001CD7C3 /* fast-forward@3x.png in Resources */,
 				9A2853921E43148F0080AEDE /* abc_btn_radio_to_on_mtrl_000.png in Resources */,
+				9A70890B1E49C4F300324AF0 /* tag_icon.png@3x.png in Resources */,
 				9A2854041E43148F0080AEDE /* ic_alert_followed_24dp@2x.png in Resources */,
 				9A2854071E43148F0080AEDE /* ic_alert_pileon_24dp@2x.png in Resources */,
 				9A28545B1E43148F0080AEDE /* heart_filled_24dp@3x.png in Resources */,
 				9A28545F1E43148F0080AEDE /* ic_alert_mention_24dp@3x.png in Resources */,
+				9A7089251E49F11A00324AF0 /* Cell_profile.xib in Resources */,
 				9A28541B1E43148F0080AEDE /* ic_editor_quote_1_24dp@2x.png in Resources */,
 				9A2853BD1E43148F0080AEDE /* ic_close_grey600_24dp.png in Resources */,
+				9A7089111E49C5D600324AF0 /* PUTIN_RUSO.jpg in Resources */,
 				9A2854411E43148F0080AEDE /* abc_btn_radio_to_on_mtrl_000@3x.png in Resources */,
 				9A2854221E43148F0080AEDE /* ic_email_24dp@2x.png in Resources */,
 				9A6CB9561E448C64001CD7C3 /* phuquoc-nature_Copy.jpg.1400x800_q85_crop.jpg in Resources */,
@@ -1861,6 +1968,7 @@
 				9AB779EA1E4370CA006895DE /* backArrow@2x.png in Resources */,
 				9A2853C81E43148F0080AEDE /* ic_editor_title_0_24dp.png in Resources */,
 				9A2853A91E43148F0080AEDE /* follow_small_square.png in Resources */,
+				9A7089191E49C89700324AF0 /* iPhone-7-Concept.jpg in Resources */,
 				9A2854911E43148F0080AEDE /* ic_unlock_24dp@3x.png in Resources */,
 				9A28539F1E43148F0080AEDE /* abc_ic_star_black_16dp.png in Resources */,
 				9A28543D1E43148F0080AEDE /* white_fab_elevated@2x.png in Resources */,
@@ -1896,6 +2004,7 @@
 				9A2853BC1E43148F0080AEDE /* ic_bubble_gray_14dp.png in Resources */,
 				9A2853971E43148F0080AEDE /* abc_ic_clear_mtrl_alpha.png in Resources */,
 				9A2853E91E43148F0080AEDE /* abc_btn_radio_to_on_mtrl_015@2x.png in Resources */,
+				9A70892A1E49F15200324AF0 /* Cell_Responces.xib in Resources */,
 				9A2853AA1E43148F0080AEDE /* following_small_square.png in Resources */,
 				9A2853E61E43148F0080AEDE /* abc_btn_check_to_on_mtrl_000@2x.png in Resources */,
 				9A2854951E43148F0080AEDE /* onboarding_medium_logo@3x.png in Resources */,
@@ -1908,6 +2017,7 @@
 				9A2854851E43148F0080AEDE /* ic_more_white_24dp@3x.png in Resources */,
 				9A2854921E43148F0080AEDE /* ic_write_bold_black_24dp@3x.png in Resources */,
 				9A28548E1E43148F0080AEDE /* ic_sync_problem_grey600_48dp@3x.png in Resources */,
+				9A70890D1E49C4FA00324AF0 /* tag_icon.png@2x.png in Resources */,
 				9A2853C91E43148F0080AEDE /* ic_editor_title_1_24dp.png in Resources */,
 				9A2853BF1E43148F0080AEDE /* ic_editor_list_0_24dp.png in Resources */,
 				9A28544D1E43148F0080AEDE /* abc_ic_search_api_mtrl_alpha@3x.png in Resources */,
@@ -1955,6 +2065,7 @@
 				9A28546D1E43148F0080AEDE /* ic_editor_link_24dp@3x.png in Resources */,
 				9A2853DE1E43148F0080AEDE /* ic_twitter_24dp.png in Resources */,
 				9A2854461E43148F0080AEDE /* abc_ic_clear_mtrl_alpha@3x.png in Resources */,
+				9A7088F21E49AC7400324AF0 /* Cell_People.xib in Resources */,
 				9A2854941E43148F0080AEDE /* illustration@3x.png in Resources */,
 				9A6CB9231E444BD0001CD7C3 /* appicon@2x.png in Resources */,
 				9AF9C1B81E4309B2004819E5 /* ISEmojiList.plist in Resources */,
@@ -1962,9 +2073,11 @@
 				9AB779FD1E437D32006895DE /* Cell_follow.xib in Resources */,
 				9AF9C1D21E4309E0004819E5 /* TokenView.xib in Resources */,
 				9A2853931E43148F0080AEDE /* abc_btn_radio_to_on_mtrl_015.png in Resources */,
+				9A7088FE1E49BA3C00324AF0 /* 111412-politics-barack-obama-press-conference.jpg in Resources */,
 				9A2854551E43148F0080AEDE /* abc_spinner_mtrl_am_alpha.9@3x.png in Resources */,
 				9A2853FF1E43148F0080AEDE /* follow_small_square@2x.png in Resources */,
 				9A6CB96B1E449FEC001CD7C3 /* google-amp-fast-speed-travel-ss-1920.jpg in Resources */,
+				9A7089171E49C81000324AF0 /* Cell_FollowTags.xib in Resources */,
 				9A28541C1E43148F0080AEDE /* ic_editor_quote_2_24dp@2x.png in Resources */,
 				9A28543A1E43148F0080AEDE /* ic_write_italic_black_24dp@2x.png in Resources */,
 				9A2854521E43148F0080AEDE /* abc_ic_voice_search_api_mtrl_alpha@3x.png in Resources */,
@@ -1977,6 +2090,7 @@
 				9A2854331E43148F0080AEDE /* ic_share_black_24dp@2x.png in Resources */,
 				9AB779EB1E4370CA006895DE /* backArrow@3x.png in Resources */,
 				9A28547E1E43148F0080AEDE /* ic_favorite_green_24dp@3x.png in Resources */,
+				9A7089001E49BA3C00324AF0 /* Trump1.jpg in Resources */,
 				9A2854711E43148F0080AEDE /* ic_editor_mention_24dp@3x.png in Resources */,
 				9A6CB9701E44A2A4001CD7C3 /* profileIcon@3x.png in Resources */,
 				9A2854371E43148F0080AEDE /* ic_twitter_24dp@2x.png in Resources */,
@@ -2054,22 +2168,28 @@
 				9AF9C1B31E43099F004819E5 /* GDXSync.m in Sources */,
 				9AF9C1881E4308CA004819E5 /* ViewController.m in Sources */,
 				9AF9C1C71E4309C8004819E5 /* iToast.m in Sources */,
+				9A7088F11E49AC7400324AF0 /* Cell_People.m in Sources */,
 				9AB779FC1E437D32006895DE /* Cell_follow.m in Sources */,
 				9A0A59691E48805D001F594D /* CustomTabbarViewController.m in Sources */,
 				9AF9C1D31E4309E0004819E5 /* ZFTokenField.m in Sources */,
 				9AB779EE1E43737E006895DE /* CreateAccountViewController.m in Sources */,
 				9AF9C1D91E430A06004819E5 /* GMDCircleLoader.m in Sources */,
+				9A7089291E49F15200324AF0 /* Cell_Responces.m in Sources */,
 				9A6CB9781E44AE70001CD7C3 /* PublicationsViewController.m in Sources */,
+				9A7089241E49F11A00324AF0 /* Cell_profile.m in Sources */,
 				9A0A59731E4881D3001F594D /* BookmarksViewController.m in Sources */,
 				9AF9C1A61E43096C004819E5 /* UzysGroupViewCell.m in Sources */,
 				9AA96FB31E48C10E00EAF323 /* SearchViewController.m in Sources */,
+				9A7088F61E49AC9C00324AF0 /* Cell_Tags.m in Sources */,
 				9A6CB9591E449617001CD7C3 /* HomeDetailsViewController.m in Sources */,
+				9A7089161E49C81000324AF0 /* Cell_FollowTags.m in Sources */,
 				9AF9C1A51E43096C004819E5 /* UzysGroupPickerView.m in Sources */,
 				9AF9C1A71E43096C004819E5 /* UzysWrapperPickerController.m in Sources */,
 				9AF9C19F1E43096C004819E5 /* UIImage+UzysExtension.m in Sources */,
 				9AF9C1851E4308B3004819E5 /* AppDelegate.m in Sources */,
 				9AF9C1D51E4309E0004819E5 /* WebService.m in Sources */,
 				9AF9C1A01E43096C004819E5 /* UzysAppearanceConfig.m in Sources */,
+				9A70891F1E49E1AE00324AF0 /* ViewProfileViewController.m in Sources */,
 				9AF9C1C21E4309BC004819E5 /* JVFloatLabeledTextView.m in Sources */,
 				9A0A59791E4881F8001F594D /* ProfileViewController.m in Sources */,
 				9AF9C1D41E4309E0004819E5 /* UIButton+EventBlocks.m in Sources */,

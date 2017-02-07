@@ -56,7 +56,10 @@
 }
 */
 
-- (IBAction)search:(id)sender {
+- (IBAction)search:(id)sender
+{
+    SearchViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+    [self.navigationController pushViewController:move animated:YES];
 }
 
 - (IBAction)Publications:(id)sender
@@ -188,7 +191,6 @@
          }];
         
         
-        
         [cell.btn_bookmarks setOnTouchUpInside:^(id sender, UIEvent *event)
          {
              if (cell.btn_bookmarks.selected == TRUE)
@@ -200,7 +202,6 @@
                  cell.btn_bookmarks.selected = TRUE;
              }
          }];
-
     }
     return cell;
 }

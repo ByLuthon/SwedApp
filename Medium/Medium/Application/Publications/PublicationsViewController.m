@@ -33,7 +33,6 @@
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     
     
-    
     NSMutableArray *arr1 = [[NSMutableArray alloc] init];
     
     NSMutableDictionary *di = [[NSMutableDictionary alloc] init];
@@ -288,41 +287,49 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self createPeople_SuggestionCell:tableView indexPath:indexPath chatMessage:[[[arrList objectAtIndex:indexPath.section] objectForKey:@"array"] objectAtIndex:indexPath.row]];
+
+    return [self publicationCell:tableView indexPath:indexPath Message:[arrList objectAtIndex:indexPath.row]];
 }
 
--(Cell_follow *)createPeople_SuggestionCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath chatMessage:(NSMutableDictionary *)dic
+
+-(Cell_Publications *)publicationCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath Message:(NSMutableDictionary *)dic
 {
-    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell_follow"];
-    Cell_follow  *cell = (Cell_follow *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    NSString *CellIdentifier = [NSString stringWithFormat:@"cell %ld",(long)indexPath.row];
     
+    Cell_Publications *cell = (Cell_Publications *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    cell = nil;
     if (cell == nil)
     {
-        [tableView registerNib:[UINib nibWithNibName:@"Cell_follow" bundle:nil] forCellReuseIdentifier:CellIdentifier];
-        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    }
-    
-    {
-        cell.img_icon.image = [UIImage imageNamed:[dic objectForKey:@"image"]];
-        cell.lbl_title.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"title"]];
-        cell.lbl_category.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"category"]];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"Cell_Publications" owner:nil options:nil];
+        cell = [topLevelObjects objectAtIndex:0];
+        cell.backgroundColor = [UIColor clearColor];
         
-        [cell.btn_plus setOnTouchUpInside:^(id sender, UIEvent *event)
-         {
-             if (cell.btn_plus.selected == TRUE)
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        {
+            cell.img_title.image = [UIImage imageNamed:[[[dic objectForKey:@"array"] objectAtIndex:indexPath.row] objectForKey:@"image"]];
+            
+            cell.lbl_title.text = [NSString stringWithFormat:@"%@",[[[dic objectForKey:@"array"] objectAtIndex:indexPath.row] objectForKey:@"title"]];
+            
+            cell.lbl_Category.text = [NSString stringWithFormat:@"%@",[[[dic objectForKey:@"array"] objectAtIndex:indexPath.row] objectForKey:@"category"]];
+            
+            [cell.btn_folloow setOnTouchUpInside:^(id sender, UIEvent *event)
              {
-                 cell.btn_plus.selected = FALSE;
-             }
-             else
-             {
-                 cell.btn_plus.selected = TRUE;
-             }
-         }];
+                 if (cell.btn_folloow.selected == TRUE)
+                 {
+                     cell.btn_folloow.selected = FALSE;
+                 }
+                 else
+                 {
+                     cell.btn_folloow.selected = TRUE;
+                 }
+             }];
+            
+        }
+        
     }
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
-    
 }
 
 

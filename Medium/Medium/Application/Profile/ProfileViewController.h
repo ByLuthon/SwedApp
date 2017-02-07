@@ -17,4 +17,5 @@
     __weak IBOutlet UITableView *tbl;
     IBOutlet UIView *subview_profile;
 }
+- (IBAction)viewProfile:(id)sender;
 @end
