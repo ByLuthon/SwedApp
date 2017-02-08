@@ -12,6 +12,7 @@
 #import "EnableNotificationViewController.h"
 #import "HomeViewController.h"
 #import "HomeDetailsViewController.h"
+#import "TrendingViewController.h"
 #import "SearchViewController.h"
 #import "PublicationsViewController.h"
 #import "PersonalizeViewController.h"
@@ -21,6 +22,11 @@
 #import "ActivityViewController.h"
 #import "ProfileViewController.h"
 #import "ViewProfileViewController.h"
+#import "DraftsViewController.h"
+#import "StatsViewController.h"
+#import "HistoryViewController.h"
+#import "SettingsViewController.h"
+#import "PushNotificaionViewController.h"
 
 
 
@@ -35,6 +41,7 @@
 #import "Cell_FollowTags.h"
 #import "Cell_profile.h"
 #import "Cell_Responces.h"
+#import "Cell_statsResponces.h"
 
 
 
@@ -55,7 +62,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <SDWebImage/UIImageView+WebCache.h>
-
+#import <SafariServices/SafariServices.h>
 
 
 #pragma mark - Importing Other Class and SDK (third party)
@@ -77,7 +84,9 @@
 #import "IQUIView+IQKeyboardToolbar.h"
 #import "FTPopOverMenu.h"
 #import "UzysAssetsPickerController.h"
-
+#import "TWRChart.h"
+#import "MXParallaxHeader.h"
+#import "DTParallaxTableView.h"
 
 
 #pragma mark -

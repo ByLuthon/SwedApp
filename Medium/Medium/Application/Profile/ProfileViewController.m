@@ -150,6 +150,60 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    
+    if (indexPath.section == 1)
+    {
+        if ([[arrSection1 objectAtIndex:indexPath.row] isEqualToString:@"Drafts"])
+        {
+            DraftsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"DraftsViewController"];
+            [self.navigationController pushViewController:move animated:YES];
+        }
+        else if ([[arrSection1 objectAtIndex:indexPath.row] isEqualToString:@"Stats"])
+        {
+            StatsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"StatsViewController"];
+            [self.navigationController pushViewController:move animated:YES];
+        }
+        else if ([[arrSection1 objectAtIndex:indexPath.row] isEqualToString:@"Bookmarks"])
+        {
+            BookmarksViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"BookmarksViewController"];
+            move.isshowBack = TRUE;
+            [self.navigationController pushViewController:move animated:YES];
+        }
+        else if ([[arrSection1 objectAtIndex:indexPath.row] isEqualToString:@"Reading history"])
+        {
+            HistoryViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"HistoryViewController"];
+            [self.navigationController pushViewController:move animated:YES];
+        }
+        else if ([[arrSection1 objectAtIndex:indexPath.row] isEqualToString:@"Follow your intrests"])
+        {
+            PersonalizeViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonalizeViewController"];
+            [self.navigationController pushViewController:move animated:YES];
+        }
+    }
+    else if (indexPath.section == 2)
+    {
+        if ([[arrSection2 objectAtIndex:indexPath.row] isEqualToString:@"Settings"])
+        {
+            SettingsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
+            [self.navigationController pushViewController:move animated:YES];
+        }
+        else
+        {
+            NSString *iTunesLink = @"https://medium-external.ada.support/chat/";
+            //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesLink]];
+            
+            SFSafariViewController *svc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:iTunesLink]];
+            svc.delegate = self;
+            [self presentViewController:svc animated:YES completion:nil];
+
+        }
+    }
+
 }
+#pragma mark - SafariController Delegate
+
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller
+{
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
 @end

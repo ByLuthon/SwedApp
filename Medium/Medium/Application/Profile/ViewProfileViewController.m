@@ -82,7 +82,6 @@
     [btn_profile setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [btn_Recommeds setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [btn_responces setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    
 }
 -(void)setLineFrameUnderMenu:(UIButton *)btn
 {
@@ -94,7 +93,7 @@
 #pragma mark - ScrollView Delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"Y:%f",scrollView.contentOffset.y);
+    //NSLog(@"Y:%f",scrollView.contentOffset.y);
     
     if (scrollView == scrl)
     {

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Common.h"
 
-@interface ProfileViewController : UIViewController
+@interface ProfileViewController : UIViewController 
 {
     NSMutableArray *arrSection1;
     NSMutableArray *arrSection2;

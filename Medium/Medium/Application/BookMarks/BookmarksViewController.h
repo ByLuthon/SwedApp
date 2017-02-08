@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface BookmarksViewController : UIViewController
+{
+    
+    __weak IBOutlet UIButton *btn_back;
+}
+@property (readwrite) BOOL isshowBack;
+- (IBAction)Back:(id)sender;
 
 @end

@@ -13,9 +13,12 @@
 @end
 
 @implementation BookmarksViewController
+@synthesize isshowBack;
 
 - (void)viewDidLoad
 {
+    [self setInitParam];
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -25,7 +28,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)setInitParam
+{
+    if (isshowBack)
+    {
+        btn_back.hidden = FALSE;
+    }
+    else
+    {
+        btn_back.hidden = TRUE;
+    }
+}
 /*
 #pragma mark - Navigation
 
@@ -36,4 +49,8 @@
 }
 */
 
+- (IBAction)Back:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

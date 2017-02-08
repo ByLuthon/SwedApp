@@ -81,6 +81,7 @@
         currentObje.view.frame = CGRectMake(WIDTH*1, 0, WIDTH, scrl.frame.size.height);
         [self addChildViewController:currentObje];
         [scrl addSubview:currentObje.view];
+        currentObje.isshowBack = FALSE;
         [currentObje didMoveToParentViewController:self];
     }
     
@@ -95,7 +96,6 @@
 {
     AddActivityViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"AddActivityViewController"];
     [self presentViewController:move animated:YES completion:nil];
-
 }
 
 #pragma mark - ACTIVITY (NOTIFICATION)

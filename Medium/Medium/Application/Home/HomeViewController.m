@@ -145,7 +145,15 @@
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (collectionView == collection_tranding)
+    {
+        TrendingViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"TrendingViewController"];
+        [self.navigationController pushViewController:move animated:YES];
+    }
+    else
+    {
+        
+    }
 }
 
 #pragma mark - Tableview Delegate
