@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad
 {
-    [self setInitParam];
+    [self setInitParam];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -53,4 +53,71 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+#pragma mark - Tableview Delegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return 509;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *CellIdentifier = [NSString stringWithFormat:@"cell %ld",(long)indexPath.row];
+    
+    Cell_Home *cell = (Cell_Home *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    cell = nil;
+    if (cell == nil)
+    {
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"Cell_Home" owner:nil options:nil];
+        cell = [topLevelObjects objectAtIndex:0];
+        cell.backgroundColor = [UIColor clearColor];
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        
+        [cell.btn_like setOnTouchUpInside:^(id sender, UIEvent *event)
+         {
+             if (cell.btn_like.selected == TRUE)
+             {
+                 cell.btn_like.selected = FALSE;
+             }
+             else
+             {
+                 cell.btn_like.selected = TRUE;
+             }
+         }];
+        
+        
+        cell.btn_bookmarks.selected = TRUE;
+
+        /*
+        [cell.btn_bookmarks setOnTouchUpInside:^(id sender, UIEvent *event)
+         {
+             if (cell.btn_bookmarks.selected == TRUE)
+             {
+                 cell.btn_bookmarks.selected = FALSE;
+             }
+             else
+             {
+                 cell.btn_bookmarks.selected = TRUE;
+             }
+         }];
+         */
+    }
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    HomeDetailsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeDetailsViewController"];
+    [self.navigationController pushViewController:move animated:YES];
+}
+
 @end

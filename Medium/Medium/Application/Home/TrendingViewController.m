@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad
 {
+    lbl_navigationTitle.hidden = TRUE;
     [self setInitParam];
     
     [super viewDidLoad];
@@ -24,33 +25,17 @@
 
 -(void)setInitParam
 {
-    /*
+    
     CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.frame = CGRectMake(0, 0, subview_header.frame.size.width, subview_header.frame.size.height);
+    gradient.frame = CGRectMake(0, 0, WIDTH, subview_header.frame.size.height);
     gradient.colors = @[(id)[[UIColor clearColor] CGColor],
-                        (id)[[UIColor clearColor] CGColor],
                         (id)[[UIColor lightGrayColor] CGColor],
                         (id)[[UIColor lightGrayColor] CGColor]];
     [subview_header.layer insertSublayer:gradient atIndex:0];
 
     
-    // Parallax Header
-    tbl.parallaxHeader.view = subview_header; // You can set the parallax header view from the floating view.
-    tbl.parallaxHeader.height = 200;
-    tbl.parallaxHeader.mode = MXParallaxHeaderModeFill;
-    tbl.parallaxHeader.minimumHeight = 60;
-     */
-    
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.frame = CGRectMake(0, 0, subview_header.frame.size.width, subview_header.frame.size.height);
-    gradient.colors = @[(id)[[UIColor clearColor] CGColor],
-                        (id)[[UIColor clearColor] CGColor],
-                        (id)[[UIColor lightGrayColor] CGColor]];
-    [subview_header.layer insertSublayer:gradient atIndex:0];
-
-    
     /* Init table header view by using image or image from url*/
-    DTParallaxHeaderView *headerView = [[DTParallaxHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 200) withImage:[UIImage imageNamed:@"business.jpg"] withTabBar:nil];
+    DTParallaxHeaderView *headerView = [[DTParallaxHeaderView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200) withImage:[UIImage imageNamed:@"business.jpg"] withTabBar:nil];
     
     //    DTHeaderView *headerView = [[DTHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 200) withImageUrl:@"http://s3.favim.com/orig/47/colorful-fun-girl-night-ocean-Favim.com-437603.jpg" withTabBar:tabbar];
     
@@ -87,6 +72,16 @@
 {
     return 1;
 }
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    
+    return subview_header;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 60;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     return 509;
@@ -143,6 +138,26 @@
 {
     HomeDetailsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeDetailsViewController"];
     [self.navigationController pushViewController:move animated:YES];
+}
+
+#pragma mark - ScrollView Delegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //NSLog(@"Y:%f",scrollView.contentOffset.y);
+    
+    if (scrollView.contentOffset.y > 140)
+    {
+        if (!isshow)
+        {
+            isshow = TRUE;
+            [APP_DELEGATE animateWithShow:YES withView:lbl_navigationTitle];
+        }
+    }
+    else
+    {
+        isshow = FALSE;
+        [APP_DELEGATE animateWithShow:NO withView:lbl_navigationTitle];
+    }
 }
 
 @end

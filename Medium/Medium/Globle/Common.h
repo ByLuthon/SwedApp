@@ -27,6 +27,7 @@
 #import "HistoryViewController.h"
 #import "SettingsViewController.h"
 #import "PushNotificaionViewController.h"
+#import "ZSSDemoViewController.h"
 
 
 
@@ -85,7 +86,6 @@
 #import "FTPopOverMenu.h"
 #import "UzysAssetsPickerController.h"
 #import "TWRChart.h"
-#import "MXParallaxHeader.h"
 #import "DTParallaxTableView.h"
 
 

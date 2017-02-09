@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Common.h"
 
 @interface BookmarksViewController : UIViewController
 {
     
+    __weak IBOutlet UITableView *tbl;
     __weak IBOutlet UIButton *btn_back;
 }
 @property (readwrite) BOOL isshowBack;

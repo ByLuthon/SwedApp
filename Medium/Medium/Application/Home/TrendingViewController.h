@@ -13,8 +13,9 @@
 
 @interface TrendingViewController : UIViewController 
 {
-
+    BOOL isshow;
     IBOutlet UIView *subview_header;
+    __weak IBOutlet UILabel *lbl_navigationTitle;
 }
 
 - (IBAction)Back:(id)sender;
