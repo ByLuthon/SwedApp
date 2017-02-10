@@ -28,6 +28,9 @@
 #import "SettingsViewController.h"
 #import "PushNotificaionViewController.h"
 #import "ZSSDemoViewController.h"
+#import "AddTagsViewController.h"
+#import "TagsListViewController.h"
+
 
 
 
@@ -87,6 +90,8 @@
 #import "UzysAssetsPickerController.h"
 #import "TWRChart.h"
 #import "DTParallaxTableView.h"
+#import "VENTokenField.h"
+
 
 
 #pragma mark -

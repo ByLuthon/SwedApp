@@ -323,6 +323,8 @@
 		9A3B4C111E4B386600DDC483 /* ParallaxImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A3B4C101E4B386600DDC483 /* ParallaxImage.jpg */; };
 		9A3B4C221E4B4ADC00DDC483 /* DTParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3B4C1E1E4B4ADC00DDC483 /* DTParallaxHeaderView.m */; };
 		9A3B4C231E4B4ADC00DDC483 /* DTParallaxTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3B4C201E4B4ADC00DDC483 /* DTParallaxTableView.m */; };
+		9A462CE41E4DB7420040B491 /* AddTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A462CE31E4DB7420040B491 /* AddTagsViewController.m */; };
+		9A462CE71E4DBF120040B491 /* TagsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A462CE61E4DBF120040B491 /* TagsListViewController.m */; };
 		9A6CB9211E444BCA001CD7C3 /* appicon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6CB9201E444BCA001CD7C3 /* appicon@3x.png */; };
 		9A6CB9231E444BD0001CD7C3 /* appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6CB9221E444BD0001CD7C3 /* appicon@2x.png */; };
 		9A6CB9251E444BD7001CD7C3 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6CB9241E444BD7001CD7C3 /* appicon.png */; };
@@ -875,6 +877,10 @@
 		9A3B4C1F1E4B4ADC00DDC483 /* DTParallaxTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTParallaxTableView.h; sourceTree = "<group>"; };
 		9A3B4C201E4B4ADC00DDC483 /* DTParallaxTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTParallaxTableView.m; sourceTree = "<group>"; };
 		9A3B4C211E4B4ADC00DDC483 /* DTTableViewConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTableViewConstants.h; sourceTree = "<group>"; };
+		9A462CE21E4DB7420040B491 /* AddTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTagsViewController.h; sourceTree = "<group>"; };
+		9A462CE31E4DB7420040B491 /* AddTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTagsViewController.m; sourceTree = "<group>"; };
+		9A462CE51E4DBF120040B491 /* TagsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsListViewController.h; sourceTree = "<group>"; };
+		9A462CE61E4DBF120040B491 /* TagsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagsListViewController.m; sourceTree = "<group>"; };
 		9A6CB9201E444BCA001CD7C3 /* appicon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon@3x.png"; sourceTree = "<group>"; };
 		9A6CB9221E444BD0001CD7C3 /* appicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon@2x.png"; sourceTree = "<group>"; };
 		9A6CB9241E444BD7001CD7C3 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
@@ -1223,6 +1229,10 @@
 			children = (
 				9A0A596E1E4881BE001F594D /* AddActivityViewController.h */,
 				9A0A596F1E4881BE001F594D /* AddActivityViewController.m */,
+				9A462CE21E4DB7420040B491 /* AddTagsViewController.h */,
+				9A462CE31E4DB7420040B491 /* AddTagsViewController.m */,
+				9A462CE51E4DBF120040B491 /* TagsListViewController.h */,
+				9A462CE61E4DBF120040B491 /* TagsListViewController.m */,
 			);
 			path = AddActivity;
 			sourceTree = "<group>";
@@ -2797,6 +2807,7 @@
 				9A6CB92D1E444FE5001CD7C3 /* Cell_socialFollow.m in Sources */,
 				9AC2FE5F1E4C7CB6006C4F40 /* ZSSDemoPickerViewController.m in Sources */,
 				9A6CB9691E449EC4001CD7C3 /* CustomButton.m in Sources */,
+				9A462CE41E4DB7420040B491 /* AddTagsViewController.m in Sources */,
 				9AF9C1B31E43099F004819E5 /* GDXSync.m in Sources */,
 				9AF9C1881E4308CA004819E5 /* ViewController.m in Sources */,
 				9AC2FE4C1E4C7C67006C4F40 /* HRBrightnessCursor.m in Sources */,
@@ -2820,6 +2831,7 @@
 				9AC2FE581E4C7C67006C4F40 /* ZSSTextView.m in Sources */,
 				9AF9C1A61E43096C004819E5 /* UzysGroupViewCell.m in Sources */,
 				9AA96FB31E48C10E00EAF323 /* SearchViewController.m in Sources */,
+				9A462CE71E4DBF120040B491 /* TagsListViewController.m in Sources */,
 				9A3B4BF01E4AFABC00DDC483 /* UIColor+HexString.m in Sources */,
 				9A7088F61E49AC9C00324AF0 /* Cell_Tags.m in Sources */,
 				9A6CB9591E449617001CD7C3 /* HomeDetailsViewController.m in Sources */,

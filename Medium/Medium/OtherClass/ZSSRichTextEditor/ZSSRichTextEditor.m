@@ -12,6 +12,7 @@
 #import "ZSSBarButtonItem.h"
 #import "HRColorUtil.h"
 #import "ZSSTextView.h"
+#import "AddTagsViewController.h"
 
 @import JavaScriptCore;
 
@@ -43,7 +44,8 @@ static Class hackishFixClass = Nil;
     return browserView;
 }
 
-- (id)methodReturningNil {
+- (id)methodReturningNil
+{
     return nil;
 }
 
@@ -264,7 +266,7 @@ static CGFloat kDefaultScale = 0.5;
     [btnNext setTitleColor:[UIColor colorWithRed:47.0/255.0 green:178.0/255.0 blue:83.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     [btnNext setTitle:@"Next" forState:UIControlStateNormal];
     btnNext.titleLabel.font = [UIFont boldSystemFontOfSize:16];
-    [btnNext addTarget:self action:@selector(CloseView:) forControlEvents:UIControlEventTouchUpInside];
+    [btnNext addTarget:self action:@selector(Next:) forControlEvents:UIControlEventTouchUpInside];
     [view_navigation addSubview:btnNext];
 
     
@@ -273,7 +275,7 @@ static CGFloat kDefaultScale = 0.5;
     [btnDrafts setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [btnDrafts setTitle:@"Drafts" forState:UIControlStateNormal];
     btnDrafts.titleLabel.font = [UIFont boldSystemFontOfSize:16];
-    [btnDrafts addTarget:self action:@selector(CloseView:) forControlEvents:UIControlEventTouchUpInside];
+    [btnDrafts addTarget:self action:@selector(Drafts:) forControlEvents:UIControlEventTouchUpInside];
     [view_navigation addSubview:btnDrafts];
 
     
@@ -393,7 +395,7 @@ static CGFloat kDefaultScale = 0.5;
     self.editorView.hidesInputAccessoryView = YES;
     self.editorView.keyboardDisplayRequiresUserAction = NO;
     self.editorView.scalesPageToFit = YES;
-    self.editorView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    self.editorView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.editorView.dataDetectorTypes = UIDataDetectorTypeNone;
     self.editorView.scrollView.bounces = NO;
     self.editorView.backgroundColor = [UIColor whiteColor];
@@ -634,6 +636,24 @@ static CGFloat kDefaultScale = 0.5;
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+-(IBAction)Next:(id)sender
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    AddTagsViewController *move = [storyboard   instantiateViewControllerWithIdentifier:@"AddTagsViewController"] ;
+    move.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    move.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self presentViewController:move animated:YES completion:nil];
+
+    //AddTagsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"AddTagsViewController"];
+    //[self presentViewController:move animated:YES completion:nil];
+}
+
+-(IBAction)Drafts:(id)sender
+{
+    
+}
+
+
 
 #pragma mark - Resources Section
 
@@ -1327,7 +1347,8 @@ static CGFloat kDefaultScale = 0.5;
     [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
 }
 
-- (void)setHR {
+- (void)setHR
+{
     NSString *trigger = @"zss_editor.setHorizontalRule();";
     [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
 }
@@ -1466,8 +1487,8 @@ static CGFloat kDefaultScale = 0.5;
     
 }
 
-- (void)setSelectedColor:(UIColor*)color tag:(int)tag {
-    
+- (void)setSelectedColor:(UIColor*)color tag:(int)tag
+{
     NSString *hex = [NSString stringWithFormat:@"#%06x",HexColorFromUIColor(color)];
     NSString *trigger;
     if (tag == 1) {

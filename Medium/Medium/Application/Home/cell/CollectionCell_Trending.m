@@ -19,8 +19,8 @@
     gradient.frame = CGRectMake(0, 0, _subview.frame.size.width, _subview.frame.size.height);
     gradient.colors = @[(id)[[UIColor clearColor] CGColor],
                         (id)[[UIColor clearColor] CGColor],
-                        (id)[[UIColor lightGrayColor] CGColor],
-                        (id)[[UIColor darkGrayColor] CGColor]];
+                        (id)[[UIColor clearColor] CGColor],
+                        (id)[[UIColor lightGrayColor] CGColor]];
     [_img_list.layer insertSublayer:gradient atIndex:0];
 
     [super awakeFromNib];
