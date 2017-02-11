@@ -38,13 +38,13 @@
     
     // HTML Content to set in the editor
     NSString *html = @"<div class='test'></div><!-- This is an HTML comment -->"
-    "<p>This is a test of the <strong>ZSSRichTextEditor</strong> by <a title=\"Zed Said\" href=\"http://www.zedsaid.com\">Zed Said Studio</a></p>";
+    "<p>This is a Rlogical company by <a title=\"Zed Said\" href=\"http://www.rlogical.com/\">RLogical</a></p>";
     
     // Set the base URL if you would like to use relative links, such as to images.
     self.baseURL = [NSURL URLWithString:@"http://www.zedsaid.com"];
     self.shouldShowKeyboard = YES;
     // Set the HTML contents of the editor
-    [self setPlaceholder:@"This is a placeholder that will show when there is no content(html)"];
+    [self setPlaceholder:@""];
     
     [self setHTML:html];
     

@@ -238,7 +238,8 @@ zss_editor.removeFormating = function() {
     zss_editor.enabledEditingItems();
 }
 
-zss_editor.setHorizontalRule = function() {
+zss_editor.setHorizontalRule = function()
+{
     document.execCommand('insertHorizontalRule', false, null);
     zss_editor.enabledEditingItems();
 }

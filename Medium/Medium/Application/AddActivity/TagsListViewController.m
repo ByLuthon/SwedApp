@@ -29,9 +29,7 @@
 
 -(void)setInitParam
 {
-    
     {
-        
         arrSuggestedSearch = [[NSMutableArray alloc] init];
         [arrSuggestedSearch addObject:@"2016 Election"];
         [arrSuggestedSearch addObject:@"Authors"];
@@ -123,7 +121,6 @@
         [arrSuggestedSearch addObject:@"Writing"];
         [arrSuggestedSearch addObject:@"Writing Prompts"];
         [arrSuggestedSearch addObject:@"Writing Tips"];
-        
     }
 
     
@@ -140,21 +137,7 @@
     [self.tokenField setNeedsLayout];
     [self.tokenField becomeFirstResponder];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
--(void)viewWillLayoutSubviews
-{
-    [super viewWillLayoutSubviews];
-    // Your layout logic here
-}
 - (IBAction)Done:(id)sender
 {
     NSMutableDictionary *dicData = [[NSMutableDictionary alloc]init];

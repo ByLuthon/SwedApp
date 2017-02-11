@@ -12,6 +12,8 @@
 
 @interface TagsListViewController : UIViewController <VENTokenFieldDelegate, VENTokenFieldDataSource>
 {
+    int selectIndex;
+    
     NSMutableArray *arrSuggestedSearch;
     
     __weak IBOutlet UITableView *tbl;

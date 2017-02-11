@@ -380,7 +380,7 @@ static CGFloat kDefaultScale = 0.5;
     self.sourceView.hidden = YES;
     self.sourceView.autocapitalizationType = UITextAutocapitalizationTypeNone;
     self.sourceView.autocorrectionType = UITextAutocorrectionTypeNo;
-    self.sourceView.font = [UIFont fontWithName:@"Courier" size:13.0];
+    self.sourceView.font = [UIFont fontWithName:@"Helvetica" size:15.0];
     self.sourceView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.sourceView.autoresizesSubviews = YES;
     self.sourceView.delegate = self;
@@ -397,7 +397,7 @@ static CGFloat kDefaultScale = 0.5;
     self.editorView.scalesPageToFit = YES;
     self.editorView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.editorView.dataDetectorTypes = UIDataDetectorTypeNone;
-    self.editorView.scrollView.bounces = NO;
+    self.editorView.scrollView.bounces = YES;
     self.editorView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.editorView];
     
@@ -534,8 +534,7 @@ static CGFloat kDefaultScale = 0.5;
     
     if (setTitleImage == 0)
     {
-        NSString *trigger = @"zss_editor.setParagraph();";
-        [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
+        [self paragraph];
     }
     else if (setTitleImage == 1)
     {
@@ -638,6 +637,9 @@ static CGFloat kDefaultScale = 0.5;
 }
 -(IBAction)Next:(id)sender
 {
+    NSLog(@"%@", [self getHTML]);
+
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     AddTagsViewController *move = [storyboard   instantiateViewControllerWithIdentifier:@"AddTagsViewController"] ;
     move.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
@@ -1256,7 +1258,8 @@ static CGFloat kDefaultScale = 0.5;
     
 }
 
-- (NSString *)getText {
+- (NSString *)getText
+{
     
     return [self.editorView stringByEvaluatingJavaScriptFromString:@"zss_editor.getText();"];
     
@@ -1351,6 +1354,7 @@ static CGFloat kDefaultScale = 0.5;
 {
     NSString *trigger = @"zss_editor.setHorizontalRule();";
     [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
+    
 }
 
 - (void)setIndent {
@@ -1454,7 +1458,6 @@ static CGFloat kDefaultScale = 0.5;
     }
     
     NSString *trigger = [NSString stringWithFormat:@"zss_editor.setFontFamily(\"%@\");", fontFamilyString];
-
     [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
     
 }
@@ -1827,11 +1830,16 @@ static CGFloat kDefaultScale = 0.5;
 - (void)insertImageBase64String:(NSString *)imageBase64String alt:(NSString *)alt {
     NSString *trigger = [NSString stringWithFormat:@"zss_editor.insertImageBase64String(\"%@\", \"%@\");", imageBase64String, alt];
     [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
+    
+    [self paragraph];
 }
 
 - (void)updateImageBase64String:(NSString *)imageBase64String alt:(NSString *)alt {
     NSString *trigger = [NSString stringWithFormat:@"zss_editor.updateImageBase64String(\"%@\", \"%@\");", imageBase64String, alt];
     [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
+    
+    [self paragraph];
+
 }
 
 
@@ -1881,7 +1889,8 @@ static CGFloat kDefaultScale = 0.5;
 
 #pragma mark - UITextView Delegate
 
-- (void)textViewDidChange:(UITextView *)textView {
+- (void)textViewDidChange:(UITextView *)textView
+{
     CGRect line = [textView caretRectForPosition:textView.selectedTextRange.start];
     CGFloat overflow = line.origin.y + line.size.height - ( textView.contentOffset.y + textView.bounds.size.height - textView.contentInset.bottom - textView.contentInset.top );
     if ( overflow > 0 ) {
@@ -2168,7 +2177,7 @@ static CGFloat kDefaultScale = 0.5;
     //Dismiss the Image Picker
     //[self.navigationController dismissViewControllerAnimated:YES completion:nil];
     
-    [self dismissViewControllerAnimated:YES completion:NO];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

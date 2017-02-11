@@ -138,21 +138,6 @@
             tbl_Recommends.scrollEnabled = FALSE;
             tbl_Responces.scrollEnabled = FALSE;
         }
-        
-        /*
-        if (scrollView.contentOffset.y > 0)
-        {
-            tbl_profile.scrollEnabled = FALSE;
-            tbl_Recommends.scrollEnabled = FALSE;
-            tbl_Responces.scrollEnabled = FALSE;
-        }
-        else
-        {
-            tbl_profile.scrollEnabled = TRUE;
-            tbl_Recommends.scrollEnabled = TRUE;
-            tbl_Responces.scrollEnabled = TRUE;
-        }
-         */
     }
 }
 
