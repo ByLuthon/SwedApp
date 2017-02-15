@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '560694A16E196494AE6A2BF88FD6E8B0'
+               BlueprintIdentifier = '5EF3F584ACDCDE9129F34BF60A62EE46'
                BlueprintName = 'VENTokenField'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libVENTokenField.a'>

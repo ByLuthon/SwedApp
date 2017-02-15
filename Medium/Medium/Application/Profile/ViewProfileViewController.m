@@ -215,6 +215,17 @@
     
 }
 
+- (IBAction)Edit:(id)sender
+{
+    EditProfileViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"EditProfileViewController"];
+    [self presentViewController:move animated:YES completion:nil];
+    //[self.navigationController pushViewController:move animated:YES];
+}
+
+- (IBAction)share:(id)sender
+{
+ }
+
 
 #pragma mark - switchSegments
 -(void)switchSegments:(UIButton *)btn

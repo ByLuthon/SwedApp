@@ -13,10 +13,11 @@
 @end
 
 @implementation TrendingViewController
+@synthesize dataDict;
 
 - (void)viewDidLoad
 {
-    lbl_navigationTitle.hidden = TRUE;
+    _view_navigationTitle.hidden = TRUE;
     [self setInitParam];
     
     [super viewDidLoad];
@@ -25,17 +26,19 @@
 
 -(void)setInitParam
 {
-    
+    /*
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = CGRectMake(0, 0, WIDTH, subview_header.frame.size.height);
     gradient.colors = @[(id)[[UIColor clearColor] CGColor],
                         (id)[[UIColor lightGrayColor] CGColor],
-                        (id)[[UIColor lightGrayColor] CGColor]];
+                        (id)[[UIColor clearColor] CGColor]];
     [subview_header.layer insertSublayer:gradient atIndex:0];
+     */
+    lbl_headerTitle.text = [dataDict objectForKey:@"title"];
+    lbl_navigationTitle.text = lbl_headerTitle.text;
 
-    
     /* Init table header view by using image or image from url*/
-    DTParallaxHeaderView *headerView = [[DTParallaxHeaderView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200) withImage:[UIImage imageNamed:@"business.jpg"] withTabBar:nil];
+    DTParallaxHeaderView *headerView = [[DTParallaxHeaderView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200) withImage:[UIImage imageNamed:[dataDict objectForKey:@"image"]] withTabBar:nil];
     
     //    DTHeaderView *headerView = [[DTHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 200) withImageUrl:@"http://s3.favim.com/orig/47/colorful-fun-girl-night-ocean-Favim.com-437603.jpg" withTabBar:tabbar];
     
@@ -84,7 +87,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return 509;
+    return 355;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -95,12 +98,12 @@
 {
     NSString *CellIdentifier = [NSString stringWithFormat:@"cell %ld",(long)indexPath.row];
     
-    Cell_Home *cell = (Cell_Home *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    Cell_TrendingDetails *cell = (Cell_TrendingDetails *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     cell = nil;
     if (cell == nil)
     {
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"Cell_Home" owner:nil options:nil];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"Cell_TrendingDetails" owner:nil options:nil];
         cell = [topLevelObjects objectAtIndex:0];
         cell.backgroundColor = [UIColor clearColor];
         
@@ -150,13 +153,13 @@
         if (!isshow)
         {
             isshow = TRUE;
-            [APP_DELEGATE animateWithShow:YES withView:lbl_navigationTitle];
+            [APP_DELEGATE animateWithShow:YES withView:_view_navigationTitle];
         }
     }
     else
     {
         isshow = FALSE;
-        [APP_DELEGATE animateWithShow:NO withView:lbl_navigationTitle];
+        [APP_DELEGATE animateWithShow:NO withView:_view_navigationTitle];
     }
 }
 

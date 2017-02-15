@@ -282,8 +282,12 @@
 
 - (IBAction)signInWithEmail:(id)sender
 {
+    Login_SignupViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"Login_SignupViewController"];
+    [self.navigationController pushViewController:move animated:YES];
+    /*
     IntroViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroViewController"];
     [self.navigationController pushViewController:move animated:YES];
+     */
 }
 
 

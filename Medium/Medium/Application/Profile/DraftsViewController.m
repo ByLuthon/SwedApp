@@ -127,8 +127,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
+    /*
     AddActivityViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"AddActivityViewController"];
     [self presentViewController:move animated:YES completion:nil];
+     */
+    ZSSDemoViewController *move = [[ZSSDemoViewController alloc] init];
+    [self presentViewController:move animated:YES completion:nil];
+
 }
 
 @end

@@ -22,6 +22,7 @@
 #import "ActivityViewController.h"
 #import "ProfileViewController.h"
 #import "ViewProfileViewController.h"
+#import "EditProfileViewController.h"
 #import "DraftsViewController.h"
 #import "StatsViewController.h"
 #import "HistoryViewController.h"
@@ -30,6 +31,7 @@
 #import "ZSSDemoViewController.h"
 #import "AddTagsViewController.h"
 #import "TagsListViewController.h"
+#import "Login_SignupViewController.h"
 
 
 
@@ -46,6 +48,7 @@
 #import "Cell_profile.h"
 #import "Cell_Responces.h"
 #import "Cell_statsResponces.h"
+#import "Cell_TrendingDetails.h"
 
 
 
@@ -91,6 +94,8 @@
 #import "TWRChart.h"
 #import "DTParallaxTableView.h"
 #import "VENTokenField.h"
+#import "UIImage+Resize.h"
+#import <RSKImageCropper/RSKImageCropper.h>
 
 
 

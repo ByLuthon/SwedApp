@@ -29,5 +29,7 @@
 }
 - (IBAction)Back:(id)sender;
 - (IBAction)SegmentTapped:(id)sender;
+- (IBAction)Edit:(id)sender;
+- (IBAction)share:(id)sender;
 
 @end

@@ -13,6 +13,9 @@
 {
     __weak IBOutlet UITableView *tbl;
     
+    NSMutableArray *arrTrending;
+    NSMutableArray *arrPublication;
+    
     IBOutlet UIView *view_header;
 
     __weak IBOutlet UICollectionView *collection_tranding;

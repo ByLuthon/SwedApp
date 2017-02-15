@@ -17,11 +17,102 @@
 - (void)viewDidLoad
 {
     
-    //Tranding
-    [collection_tranding registerClass:[CollectionCell_Trending class] forCellWithReuseIdentifier:@"CollectionCell_Trending"];
+    {
+        arrTrending = [[NSMutableArray alloc] init];
+        
+        {
+            NSMutableDictionary *dic1 = [[NSMutableDictionary alloc] init];
+            [dic1 setObject:@"TopStory.jpg" forKey:@"image"];
+            [dic1 setObject:@"Top Stories" forKey:@"title"];
+            [arrTrending addObject:dic1];
+        }
+        {
+            NSMutableDictionary *dic1 = [[NSMutableDictionary alloc] init];
+            [dic1 setObject:@"EditorsPic.jpeg" forKey:@"image"];
+            [dic1 setObject:@"Editor's Pics" forKey:@"title"];
+            [arrTrending addObject:dic1];
+        }
+        {
+            NSMutableDictionary *dic1 = [[NSMutableDictionary alloc] init];
+            [dic1 setObject:@"Politics.jpeg" forKey:@"image"];
+            [dic1 setObject:@"Politics" forKey:@"title"];
+            [arrTrending addObject:dic1];
+        }
+        {
+            NSMutableDictionary *dic1 = [[NSMutableDictionary alloc] init];
+            [dic1 setObject:@"Technology.jpeg" forKey:@"image"];
+            [dic1 setObject:@"Technology" forKey:@"title"];
+            [arrTrending addObject:dic1];
+        }
+        {
+            NSMutableDictionary *dic1 = [[NSMutableDictionary alloc] init];
+            [dic1 setObject:@"Humans.jpeg" forKey:@"image"];
+            [dic1 setObject:@"Humans" forKey:@"title"];
+            [arrTrending addObject:dic1];
+        }
+        {
+            NSMutableDictionary *dic1 = [[NSMutableDictionary alloc] init];
+            [dic1 setObject:@"culure.jpeg" forKey:@"image"];
+            [dic1 setObject:@"Cultures" forKey:@"title"];
+            [arrTrending addObject:dic1];
+        }
+        {
+            NSMutableDictionary *dic1 = [[NSMutableDictionary alloc] init];
+            [dic1 setObject:@"business.jpg" forKey:@"image"];
+            [dic1 setObject:@"Business" forKey:@"title"];
+            [arrTrending addObject:dic1];
+        }
+        {
+            NSMutableDictionary *dic1 = [[NSMutableDictionary alloc] init];
+            [dic1 setObject:@"entertainment.jpeg" forKey:@"image"];
+            [dic1 setObject:@"Entertainment" forKey:@"title"];
+            [arrTrending addObject:dic1];
+        }
+        {
+            NSMutableDictionary *dic1 = [[NSMutableDictionary alloc] init];
+            [dic1 setObject:@"TopStory.jpg" forKey:@"image"];
+            [dic1 setObject:@"Top Stories" forKey:@"title"];
+            [arrTrending addObject:dic1];
+        }
+        
+        
+        //Tranding
+        [collection_tranding registerClass:[CollectionCell_Trending class] forCellWithReuseIdentifier:@"CollectionCell_Trending"];
+    }
     
-    //Publication
-    [collection_publication registerClass:[CollectionCell_Publications class] forCellWithReuseIdentifier:@"CollectionCell_Publications"];
+    
+    
+    {
+        arrPublication = [[NSMutableArray alloc] init];
+        
+        {
+            NSMutableDictionary *dic1 = [[NSMutableDictionary alloc] init];
+            [dic1 setObject:@"ios_comunication.jpg" forKey:@"image"];
+            [dic1 setObject:@"iOS Communication" forKey:@"title"];
+            [arrPublication addObject:dic1];
+        }
+        {
+            NSMutableDictionary *dic1 = [[NSMutableDictionary alloc] init];
+            [dic1 setObject:@"rockN.jpeg" forKey:@"image"];
+            [dic1 setObject:@"Rock" forKey:@"title"];
+            [arrPublication addObject:dic1];
+        }
+        {
+            NSMutableDictionary *dic1 = [[NSMutableDictionary alloc] init];
+            [dic1 setObject:@"app-development-lifecycle.jpg" forKey:@"image"];
+            [dic1 setObject:@"App Development" forKey:@"title"];
+            [arrPublication addObject:dic1];
+        }
+        {
+            NSMutableDictionary *dic1 = [[NSMutableDictionary alloc] init];
+            [dic1 setObject:@"stackoverflow.png" forKey:@"image"];
+            [dic1 setObject:@"Stackoverflow" forKey:@"title"];
+            [arrPublication addObject:dic1];
+        }
+        //Publication
+        [collection_publication registerClass:[CollectionCell_Publications class] forCellWithReuseIdentifier:@"CollectionCell_Publications"];
+
+    }
 
     [self setInitParam];
     
@@ -32,12 +123,11 @@
 
 -(void)setInitParam
 {
-
-    
     [collection_tranding reloadData];
     [collection_publication reloadData];
     
     tbl.tableHeaderView = view_header;
+    tbl.tableHeaderView.backgroundColor = [UIColor clearColor];
     
 }
 
@@ -80,11 +170,11 @@
 {
     if (collectionView == collection_tranding)
     {
-        return 10;
+        return [arrTrending count];
     }
     else
     {
-        return 5;
+        return [arrPublication count] + 1;
     }
 }
 
@@ -109,6 +199,12 @@
         static NSString *cellIdentifier = @"CollectionCell_Trending";
         CollectionCell_Trending *cell = (CollectionCell_Trending *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
         // Return the cell
+        
+        
+        
+        cell.img_list.image = [UIImage imageNamed:[[arrTrending objectAtIndex:indexPath.row] objectForKey:@"image"]];
+        cell.lbl_title.text = [[arrTrending objectAtIndex:indexPath.row] objectForKey:@"title"];
+        
         return cell;
     }
     else
@@ -117,25 +213,39 @@
         CollectionCell_Publications *cell = (CollectionCell_Publications *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
         
         
-        [cell.btn_follow setOnTouchUpInside:^(id sender, UIEvent *event)
-         {
-             if (cell.btn_follow.selected == FALSE)
+        if (indexPath.row == arrPublication.count)
+        {
+            cell.subview_find.hidden = FALSE;
+        }
+        else
+        {
+            cell.subview_find.hidden = TRUE;
+
+            cell.img_box.image = [UIImage imageNamed:[[arrPublication objectAtIndex:indexPath.row] objectForKey:@"image"]];
+            cell.lbl_title.text = [[arrPublication objectAtIndex:indexPath.row] objectForKey:@"title"];
+            
+            
+            [cell.btn_follow setOnTouchUpInside:^(id sender, UIEvent *event)
              {
-                 cell.btn_follow.selected = TRUE;
-                 
-                 cell.btn_follow.backgroundColor = [UIColor whiteColor];
-                 [cell.btn_follow setTitleColor:kColorLightGreen forState:UIControlStateNormal];
-                 [cell.btn_follow setTitle:@"Following" forState:UIControlStateNormal];
-             }
-             else
-             {
-                 cell.btn_follow.selected = FALSE;
-                 
-                 cell.btn_follow.backgroundColor = kColorLightGreen;
-                 [cell.btn_follow setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-                 [cell.btn_follow setTitle:@"Follow" forState:UIControlStateNormal];
-             }
-         }];
+                 if (cell.btn_follow.selected == FALSE)
+                 {
+                     cell.btn_follow.selected = TRUE;
+                     
+                     cell.btn_follow.backgroundColor = [UIColor whiteColor];
+                     [cell.btn_follow setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
+                     [cell.btn_follow setTitle:@"Following" forState:UIControlStateNormal];
+                 }
+                 else
+                 {
+                     cell.btn_follow.selected = FALSE;
+                     
+                     cell.btn_follow.backgroundColor = kColorLightGreen;
+                     [cell.btn_follow setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                     [cell.btn_follow setTitle:@"Follow" forState:UIControlStateNormal];
+                 }
+             }];
+        }
+        
         
         
         // Return the cell
@@ -148,6 +258,7 @@
     if (collectionView == collection_tranding)
     {
         TrendingViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"TrendingViewController"];
+        move.dataDict = [arrTrending objectAtIndex:indexPath.row];
         [self.navigationController pushViewController:move animated:YES];
     }
     else

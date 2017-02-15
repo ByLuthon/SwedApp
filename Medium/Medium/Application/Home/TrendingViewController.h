@@ -16,9 +16,15 @@
     BOOL isshow;
     IBOutlet UIView *subview_header;
     __weak IBOutlet UILabel *lbl_navigationTitle;
+    
+    __weak IBOutlet UILabel *lbl_headerTitle;
+    __weak IBOutlet UILabel *lbl_HeaderSubtitle;
 }
 
 - (IBAction)Back:(id)sender;
+
+@property (nonatomic, retain) NSMutableDictionary *dataDict;
+@property (weak, nonatomic) IBOutlet UIView *view_navigationTitle;
 
 @property (weak, nonatomic) IBOutlet DTParallaxTableView *tbl;
 

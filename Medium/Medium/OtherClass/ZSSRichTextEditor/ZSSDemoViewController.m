@@ -38,7 +38,7 @@
     
     // HTML Content to set in the editor
     NSString *html = @"<div class='test'></div><!-- This is an HTML comment -->"
-    "<p>This is a Rlogical company by <a title=\"Zed Said\" href=\"http://www.rlogical.com/\">RLogical</a></p>";
+    "<p>This is a our company <a title=\"Zed Said\" href=\"http://www.rlogical.com/\">RLogical Techsoft</a></p>";
     
     // Set the base URL if you would like to use relative links, such as to images.
     self.baseURL = [NSURL URLWithString:@"http://www.zedsaid.com"];
@@ -47,12 +47,13 @@
     [self setPlaceholder:@""];
     
     [self setHTML:html];
+    //[self setHTML:@""];
     
 }
 
 
-- (void)showInsertURLAlternatePicker {
-    
+- (void)showInsertURLAlternatePicker
+{
     [self dismissAlertView];
     
     ZSSDemoPickerViewController *picker = [[ZSSDemoPickerViewController alloc] init];
@@ -60,12 +61,11 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:picker];
     nav.navigationBar.translucent = NO;
     [self presentViewController:nav animated:YES completion:nil];
-    
 }
 
 
-- (void)showInsertImageAlternatePicker {
-    
+- (void)showInsertImageAlternatePicker
+{
     [self dismissAlertView];
     
     ZSSDemoPickerViewController *picker = [[ZSSDemoPickerViewController alloc] init];
@@ -74,33 +74,28 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:picker];
     nav.navigationBar.translucent = NO;
     [self presentViewController:nav animated:YES completion:nil];
-    
 }
 
 
-- (void)exportHTML {
-    
+- (void)exportHTML
+{
     NSLog(@"%@", [self getHTML]);
-    
 }
 
-- (void)editorDidChangeWithText:(NSString *)text andHTML:(NSString *)html {
-    
+- (void)editorDidChangeWithText:(NSString *)text andHTML:(NSString *)html
+{
     NSLog(@"Text Has Changed: %@", text);
-    
     NSLog(@"HTML Has Changed: %@", html);
 }
 
-- (void)hashtagRecognizedWithWord:(NSString *)word {
-    
+- (void)hashtagRecognizedWithWord:(NSString *)word
+{
     NSLog(@"Hashtag has been recognized: %@", word);
-    
 }
 
-- (void)mentionRecognizedWithWord:(NSString *)word {
-    
+- (void)mentionRecognizedWithWord:(NSString *)word
+{
     NSLog(@"Mention has been recognized: %@", word);
-    
 }
 
 - (void)didReceiveMemoryWarning
