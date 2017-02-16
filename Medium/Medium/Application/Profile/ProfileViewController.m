@@ -75,9 +75,10 @@
     }
     else
     {
-        return 22;
+        return CGFLOAT_MIN;
     }
 }
+
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == 0)
@@ -87,8 +88,7 @@
     else
     {
         UIView *headerVw = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 22)] ;
-        //headerVw.backgroundColor=[UIColor colorWithRed:236.0/255.0 green:236.0/255.0 blue:236.0/255.0 alpha:1.0];  // set color of header
-        headerVw.backgroundColor = self.view.backgroundColor;;
+        headerVw.backgroundColor = [UIColor clearColor];
         
         return headerVw;
     }

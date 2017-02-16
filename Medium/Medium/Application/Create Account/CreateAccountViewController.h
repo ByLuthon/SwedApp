@@ -17,6 +17,9 @@
     __weak IBOutlet UITextField *txt_username;
     __weak IBOutlet UIButton *btn_createAccount;
 }
+
+@property (nonatomic, retain) NSString *strEmail;
+
 - (IBAction)Back:(id)sender;
 - (IBAction)createAccount:(id)sender;
 

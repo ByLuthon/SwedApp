@@ -368,6 +368,10 @@
 		9A6CB9861E44B649001CD7C3 /* fast-forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6CB9851E44B649001CD7C3 /* fast-forward@2x.png */; };
 		9A6CB9881E44B651001CD7C3 /* fast-forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6CB9871E44B651001CD7C3 /* fast-forward.png */; };
 		9A6CB98C1E44B8A8001CD7C3 /* PersonalizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6CB98B1E44B8A8001CD7C3 /* PersonalizeViewController.m */; };
+		9A6FBAE31E55AD9400AF5232 /* FollowingFollowersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6FBAE21E55AD9400AF5232 /* FollowingFollowersViewController.m */; };
+		9A6FBAE71E55AEC300AF5232 /* Cell_FollowFollowing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6FBAE51E55AEC300AF5232 /* Cell_FollowFollowing.m */; };
+		9A6FBAE81E55AEC300AF5232 /* Cell_FollowFollowing.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6FBAE61E55AEC300AF5232 /* Cell_FollowFollowing.xib */; };
+		9A6FBAEB1E55D8EC00AF5232 /* ActivityDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6FBAEA1E55D8EC00AF5232 /* ActivityDetailsViewController.m */; };
 		9A7088F11E49AC7400324AF0 /* Cell_People.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7088EF1E49AC7400324AF0 /* Cell_People.m */; };
 		9A7088F21E49AC7400324AF0 /* Cell_People.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7088F01E49AC7400324AF0 /* Cell_People.xib */; };
 		9A7088F61E49AC9C00324AF0 /* Cell_Tags.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7088F41E49AC9C00324AF0 /* Cell_Tags.m */; };
@@ -952,6 +956,13 @@
 		9A6CB9871E44B651001CD7C3 /* fast-forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fast-forward.png"; sourceTree = "<group>"; };
 		9A6CB98A1E44B8A8001CD7C3 /* PersonalizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalizeViewController.h; sourceTree = "<group>"; };
 		9A6CB98B1E44B8A8001CD7C3 /* PersonalizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalizeViewController.m; sourceTree = "<group>"; };
+		9A6FBAE11E55AD9400AF5232 /* FollowingFollowersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingFollowersViewController.h; sourceTree = "<group>"; };
+		9A6FBAE21E55AD9400AF5232 /* FollowingFollowersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowingFollowersViewController.m; sourceTree = "<group>"; };
+		9A6FBAE41E55AEC300AF5232 /* Cell_FollowFollowing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell_FollowFollowing.h; sourceTree = "<group>"; };
+		9A6FBAE51E55AEC300AF5232 /* Cell_FollowFollowing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell_FollowFollowing.m; sourceTree = "<group>"; };
+		9A6FBAE61E55AEC300AF5232 /* Cell_FollowFollowing.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell_FollowFollowing.xib; sourceTree = "<group>"; };
+		9A6FBAE91E55D8EC00AF5232 /* ActivityDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailsViewController.h; sourceTree = "<group>"; };
+		9A6FBAEA1E55D8EC00AF5232 /* ActivityDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailsViewController.m; sourceTree = "<group>"; };
 		9A7088EE1E49AC7400324AF0 /* Cell_People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell_People.h; sourceTree = "<group>"; };
 		9A7088EF1E49AC7400324AF0 /* Cell_People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell_People.m; sourceTree = "<group>"; };
 		9A7088F01E49AC7400324AF0 /* Cell_People.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell_People.xib; sourceTree = "<group>"; };
@@ -1242,6 +1253,8 @@
 				9AA96FA81E488CCB00EAF323 /* cell */,
 				9A0A59741E4881E5001F594D /* ActivityViewController.h */,
 				9A0A59751E4881E5001F594D /* ActivityViewController.m */,
+				9A6FBAE91E55D8EC00AF5232 /* ActivityDetailsViewController.h */,
+				9A6FBAEA1E55D8EC00AF5232 /* ActivityDetailsViewController.m */,
 			);
 			path = "Activity(Notification)";
 			sourceTree = "<group>";
@@ -1262,6 +1275,8 @@
 				9A3B4B9B1E4AE3FA00DDC483 /* StatsViewController.m */,
 				9A3B4B9D1E4AE41100DDC483 /* HistoryViewController.h */,
 				9A3B4B9E1E4AE41100DDC483 /* HistoryViewController.m */,
+				9A6FBAE11E55AD9400AF5232 /* FollowingFollowersViewController.h */,
+				9A6FBAE21E55AD9400AF5232 /* FollowingFollowersViewController.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1840,6 +1855,9 @@
 				9A3B4BF11E4B093F00DDC483 /* Cell_statsResponces.h */,
 				9A3B4BF21E4B093F00DDC483 /* Cell_statsResponces.m */,
 				9A3B4BF31E4B093F00DDC483 /* Cell_statsResponces.xib */,
+				9A6FBAE41E55AEC300AF5232 /* Cell_FollowFollowing.h */,
+				9A6FBAE51E55AEC300AF5232 /* Cell_FollowFollowing.m */,
+				9A6FBAE61E55AEC300AF5232 /* Cell_FollowFollowing.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -2581,6 +2599,7 @@
 				9A28544B1E43148F0080AEDE /* abc_ic_menu_selectall_mtrl_alpha@3x.png in Resources */,
 				9AC2FEEC1E4C7E71006C4F40 /* ZSSsuperscript.png in Resources */,
 				9AC2FEF61E4C7E71006C4F40 /* ZSSunlink.png in Resources */,
+				9A6FBAE81E55AEC300AF5232 /* Cell_FollowFollowing.xib in Resources */,
 				9AC2FEDB1E4C7E70006C4F40 /* ZSSorderedlist@2x.png in Resources */,
 				9AC2FEBB1E4C7E70006C4F40 /* ZSSforcejustify@2x.png in Resources */,
 				9A2853F71E43148F0080AEDE /* abc_ic_star_half_black_16dp@2x.png in Resources */,
@@ -2871,10 +2890,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A3B4BF41E4B093F00DDC483 /* Cell_statsResponces.m in Sources */,
+				9A6FBAE71E55AEC300AF5232 /* Cell_FollowFollowing.m in Sources */,
 				9AB779F11E437676006895DE /* TagsViewController.m in Sources */,
 				9A6CB96E1E44A0C4001CD7C3 /* CustomImageview.m in Sources */,
 				9A6CB97D1E44AED7001CD7C3 /* Cell_Publications.m in Sources */,
 				9AF9C1A41E43096C004819E5 /* UzysAssetsViewCell.m in Sources */,
+				9A6FBAEB1E55D8EC00AF5232 /* ActivityDetailsViewController.m in Sources */,
 				9A6CB9461E448534001CD7C3 /* CollectionCell_Trending.m in Sources */,
 				9AC2FE521E4C7C67006C4F40 /* CYRLayoutManager.m in Sources */,
 				9A6CB9411E447C6C001CD7C3 /* Cell_Home.m in Sources */,
@@ -2888,6 +2909,7 @@
 				9AB779DD1E436542006895DE /* MainViewController.m in Sources */,
 				9A6CB92D1E444FE5001CD7C3 /* Cell_socialFollow.m in Sources */,
 				9AD2683E1E54650000F5A32D /* UIImage+Resize.m in Sources */,
+				9A6FBAE31E55AD9400AF5232 /* FollowingFollowersViewController.m in Sources */,
 				9AC2FE5F1E4C7CB6006C4F40 /* ZSSDemoPickerViewController.m in Sources */,
 				9A6CB9691E449EC4001CD7C3 /* CustomButton.m in Sources */,
 				9A462CE41E4DB7420040B491 /* AddTagsViewController.m in Sources */,

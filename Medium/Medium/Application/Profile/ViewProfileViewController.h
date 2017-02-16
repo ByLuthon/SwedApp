@@ -31,5 +31,7 @@
 - (IBAction)SegmentTapped:(id)sender;
 - (IBAction)Edit:(id)sender;
 - (IBAction)share:(id)sender;
+- (IBAction)Following:(id)sender;
+- (IBAction)Followers:(id)sender;
 
 @end

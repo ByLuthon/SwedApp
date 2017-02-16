@@ -13,20 +13,9 @@
 - (void)awakeFromNib
 {
     //Publications
-    [APP_DELEGATE setBorderToView:_subview withBorderWidth:0.0 radious:4.0 color:[UIColor clearColor]];
+   // [APP_DELEGATE setBorderToView:_subview withBorderWidth:0.0 radious:4.0 color:[UIColor clearColor]];
     [APP_DELEGATE setBorderToView:_btn_follow withBorderWidth:2.0 radious:4.0 color:[UIColor whiteColor]];
 
-    /*
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.frame = CGRectMake(0, 0, _subview.frame.size.width, _subview.frame.size.height);
-    gradient.colors = @[(id)[[UIColor clearColor] CGColor],
-                        (id)[[UIColor clearColor] CGColor],
-                        (id)[[UIColor clearColor] CGColor],
-                        (id)[[UIColor lightGrayColor] CGColor],
-                        (id)[[UIColor clearColor] CGColor],
-                        (id)[[UIColor clearColor] CGColor]];
-    [_img_box.layer insertSublayer:gradient atIndex:0];
-     */
     [super awakeFromNib];
     // Initialization code
 }

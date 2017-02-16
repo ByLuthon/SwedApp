@@ -233,6 +233,11 @@ zss_editor.setBlockquote = function() {
     zss_editor.enabledEditingItems();
 }
 
+zss_editor.setpullquote = function() {
+    document.execCommand('formatBlock', false, '<aside>');
+    zss_editor.enabledEditingItems();
+}
+
 zss_editor.removeFormating = function() {
     document.execCommand('removeFormat', false, null);
     zss_editor.enabledEditingItems();

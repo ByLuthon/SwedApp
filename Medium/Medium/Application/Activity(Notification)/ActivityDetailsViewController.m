@@ -1,43 +1,41 @@
 //
-//  CreateAccountViewController.m
+//  ActivityDetailsViewController.m
 //  Medium
 //
-//  Created by macmini on 02/02/17.
+//  Created by macmini on 16/02/17.
 //  Copyright © 2017 macmini. All rights reserved.
 //
 
-#import "CreateAccountViewController.h"
+#import "ActivityDetailsViewController.h"
 
-@interface CreateAccountViewController ()
+@interface ActivityDetailsViewController ()
 
 @end
 
-@implementation CreateAccountViewController
-@synthesize strEmail;
+@implementation ActivityDetailsViewController
 
 - (void)viewDidLoad
 {
     [self setInitParam];
-    
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
--(void)setInitParam
-{
-    if (![strEmail isEqualToString:@""])
-    {
-        txt_email.text = strEmail;
-    }
-    
-    [APP_DELEGATE setBorderToView:btn_createAccount withBorderWidth:2.0 radious:4.0 color:kColorLightGreen];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)setInitParam
+{
+    [APP_DELEGATE setBorderToView:view_box withBorderWidth:0.5 radious:4.0 color:[UIColor grayColor]];
 
+    view_Scrl.frame = CGRectMake(0, 0, WIDTH, view_Scrl.frame.size.height);
+    
+    [scrl addSubview:view_Scrl];
+    scrl.contentSize = CGSizeMake(WIDTH, view_Scrl.frame.size.height);
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -48,14 +46,22 @@
 }
 */
 
-- (IBAction)Back:(id)sender
+- (IBAction)back:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)createAccount:(id)sender
+- (IBAction)bookmarks:(id)sender
 {
-    TagsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"TagsViewController"];
-    [self.navigationController pushViewController:move animated:YES];
+    UIButton *btn = (UIButton *)sender;
+    
+    if (btn.selected == TRUE)
+    {
+        btn.selected = FALSE;
+    }
+    else
+    {
+        btn.selected = TRUE;
+    }
 }
 @end

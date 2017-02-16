@@ -156,11 +156,6 @@
     
 }
 
-- (IBAction)SignIn:(id)sender {
-}
-
-- (IBAction)SignUp:(id)sender {
-}
 
 
 #pragma mark - switchSegments
@@ -193,6 +188,54 @@
             
         default:
             break;
+    }
+}
+
+#pragma mark - Sign In
+- (IBAction)SignIn:(id)sender
+{
+    if (![txt_login.text isEqualToString:@""])
+    {
+        if ([_globalGDXData isValidEmail:txt_login.text])
+        {
+            //caled services
+            CustomTabbarViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomTabbarViewController"];
+            [self.navigationController pushViewController:move animated:YES];
+        }
+        else
+        {
+            [[iToast makeText:@"Please enter valid email address."] show];
+            [txt_login becomeFirstResponder];
+        }
+    }
+    else
+    {
+        [[iToast makeText:@"Please enter email address."] show];
+        [txt_login becomeFirstResponder];
+    }
+}
+
+#pragma mark - SignUp
+- (IBAction)SignUp:(id)sender
+{
+    if (![txt_signup.text isEqualToString:@""])
+    {
+        if ([_globalGDXData isValidEmail:txt_signup.text])
+        {
+            CreateAccountViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"CreateAccountViewController"];
+            move.strEmail = txt_signup.text;
+            [self.navigationController pushViewController:move animated:YES];
+        }
+        else
+        {
+            [[iToast makeText:@"Please enter valid email address."] show];
+            [txt_signup becomeFirstResponder];
+        }
+    }
+    else
+    {
+        [[iToast makeText:@"Please enter email address."] show];
+        [txt_signup becomeFirstResponder];
     }
 }
 

@@ -226,6 +226,20 @@
 {
  }
 
+- (IBAction)Following:(id)sender
+{
+    FollowingFollowersViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FollowingFollowersViewController"];
+    move.isFollowing = TRUE;
+    [self.navigationController pushViewController:move animated:YES];
+}
+
+- (IBAction)Followers:(id)sender
+{
+    FollowingFollowersViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FollowingFollowersViewController"];
+    move.isFollowing = FALSE;
+    [self.navigationController pushViewController:move animated:YES];
+}
+
 
 #pragma mark - switchSegments
 -(void)switchSegments:(UIButton *)btn

@@ -580,7 +580,6 @@ static CGFloat kDefaultScale = 0.5;
 {
     UIButton *btn =(UIButton *)sender;
     
-    
     if (setListImage == 2)
     {
         setListImage = 0;
@@ -1371,6 +1370,12 @@ static CGFloat kDefaultScale = 0.5;
     NSString *trigger = @"zss_editor.setBlockquote('blockquote');";
     [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
 }
+
+- (void)P_QUOTE {
+    NSString *trigger = @"zss_editor.setpullquote('aside');";
+    [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
+}
+
 
 - (void)heading1 {
     NSString *trigger = @"zss_editor.setHeading('h1');";

@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Cell_Activity.h"
+#import "Common.h"
 
 @interface ActivityViewController : UIViewController
 {
-    
     __weak IBOutlet UITableView *tbl;
 }
 

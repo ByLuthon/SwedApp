@@ -200,6 +200,18 @@
         CollectionCell_Trending *cell = (CollectionCell_Trending *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
         // Return the cell
         
+        cell.contentView.layer.cornerRadius = 4.0f;
+        cell.contentView.layer.borderWidth = 1.0f;
+        cell.contentView.layer.borderColor = [UIColor clearColor].CGColor;
+        cell.contentView.layer.masksToBounds = YES;
+        
+        cell.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+        cell.layer.shadowOffset = CGSizeMake(1.0, 2.0f);
+        cell.layer.shadowRadius = 2.0f;
+        cell.layer.shadowOpacity = 1.0f;
+        cell.layer.masksToBounds = NO;
+        cell.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:cell.contentView.layer.cornerRadius].CGPath;
+
         
         
         cell.img_list.image = [UIImage imageNamed:[[arrTrending objectAtIndex:indexPath.row] objectForKey:@"image"]];
@@ -212,7 +224,18 @@
         static NSString *cellIdentifier = @"CollectionCell_Publications";
         CollectionCell_Publications *cell = (CollectionCell_Publications *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
         
+        cell.contentView.layer.cornerRadius = 4.0f;
+        cell.contentView.layer.borderWidth = 1.0f;
+        cell.contentView.layer.borderColor = [UIColor clearColor].CGColor;
+        cell.contentView.layer.masksToBounds = YES;
         
+        cell.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+        cell.layer.shadowOffset = CGSizeMake(1.0, 2.0f);
+        cell.layer.shadowRadius = 2.0f;
+        cell.layer.shadowOpacity = 1.0f;
+        cell.layer.masksToBounds = NO;
+        cell.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:cell.contentView.layer.cornerRadius].CGPath;
+
         if (indexPath.row == arrPublication.count)
         {
             cell.subview_find.hidden = FALSE;
@@ -232,14 +255,14 @@
                      cell.btn_follow.selected = TRUE;
                      
                      cell.btn_follow.backgroundColor = [UIColor whiteColor];
-                     [cell.btn_follow setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
+                     [cell.btn_follow setTitleColor:kColorLightGreen forState:UIControlStateNormal];
                      [cell.btn_follow setTitle:@"Following" forState:UIControlStateNormal];
                  }
                  else
                  {
                      cell.btn_follow.selected = FALSE;
                      
-                     cell.btn_follow.backgroundColor = kColorLightGreen;
+                     cell.btn_follow.backgroundColor = [UIColor clearColor];
                      [cell.btn_follow setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                      [cell.btn_follow setTitle:@"Follow" forState:UIControlStateNormal];
                  }

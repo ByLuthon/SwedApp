@@ -57,7 +57,8 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-
+    ActivityDetailsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"ActivityDetailsViewController"];
+    [self.navigationController pushViewController:move animated:YES];
 }
 
 /*

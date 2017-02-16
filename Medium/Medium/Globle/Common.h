@@ -20,6 +20,7 @@
 #import "BookmarksViewController.h"
 #import "AddActivityViewController.h"
 #import "ActivityViewController.h"
+#import "ActivityDetailsViewController.h"
 #import "ProfileViewController.h"
 #import "ViewProfileViewController.h"
 #import "EditProfileViewController.h"
@@ -32,6 +33,7 @@
 #import "AddTagsViewController.h"
 #import "TagsListViewController.h"
 #import "Login_SignupViewController.h"
+#import "FollowingFollowersViewController.h"
 
 
 
@@ -49,6 +51,7 @@
 #import "Cell_Responces.h"
 #import "Cell_statsResponces.h"
 #import "Cell_TrendingDetails.h"
+#import "Cell_FollowFollowing.h"
 
 
 

@@ -1,21 +1,16 @@
 //
-//  Cell_Home.m
+//  Cell_FollowFollowing.m
 //  Medium
 //
-//  Created by macmini on 03/02/17.
+//  Created by macmini on 16/02/17.
 //  Copyright © 2017 macmini. All rights reserved.
 //
 
-#import "Cell_Home.h"
+#import "Cell_FollowFollowing.h"
 
-@implementation Cell_Home
+@implementation Cell_FollowFollowing
 
-- (void)awakeFromNib
-{
-    [APP_DELEGATE setBorderToView:_imguser withBorderWidth:0.0 radious:_imguser.frame.size.height/2 color:[UIColor clearColor]];
-    
-
-    
+- (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }

@@ -13,7 +13,8 @@
 - (void)awakeFromNib
 {
     //Tranding
-    [APP_DELEGATE setBorderToView:_subview withBorderWidth:0.0 radious:4.0 color:[UIColor clearColor]];
+    //[APP_DELEGATE setBorderToView:_subview withBorderWidth:0.0 radious:4.0 color:[UIColor clearColor]];
+    
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = CGRectMake(0, 0, _subview.frame.size.width, _subview.frame.size.height);
