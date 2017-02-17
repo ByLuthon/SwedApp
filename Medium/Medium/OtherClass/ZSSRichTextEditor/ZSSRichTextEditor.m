@@ -505,7 +505,6 @@ static CGFloat kDefaultScale = 0.5;
     [btnLink setImage:[UIImage imageNamed:@"ic_editor_mention_24dp.png"] forState:UIControlStateNormal];
     [btnLink addTarget:self action:@selector(AddLinkView:) forControlEvents:UIControlEventTouchUpInside];
     [self.toolbarHolder addSubview:btnLink];
-
     
     UIButton *btnimage =  [UIButton buttonWithType:UIButtonTypeCustom];
     [btnimage setFrame:CGRectMake(devided*5, 0, devided, 44)];
@@ -514,12 +513,10 @@ static CGFloat kDefaultScale = 0.5;
     [self.toolbarHolder addSubview:btnimage];
 
     [self.toolbarHolder insertSubview:backgroundToolbar atIndex:0];
-
 }
 -(IBAction)ChangeText:(id)sender
 {
     UIButton *btn =(UIButton *)sender;
-    
     
     if (setTitleImage == 2)
     {
@@ -531,7 +528,6 @@ static CGFloat kDefaultScale = 0.5;
     }
     [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"ic_editor_title_%d_24dp.png",setTitleImage]] forState:UIControlStateNormal];
 
-    
     if (setTitleImage == 0)
     {
         [self paragraph];
@@ -547,6 +543,7 @@ static CGFloat kDefaultScale = 0.5;
         [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
     }
 }
+
 -(IBAction)ChangeQuote:(id)sender
 {
     UIButton *btn =(UIButton *)sender;
@@ -569,13 +566,14 @@ static CGFloat kDefaultScale = 0.5;
     }
     else if (setQuoteImage == 1)
     {
-        [self B_QUOTE];
+        [self P_QUOTE];
     }
     else
     {
         [self B_QUOTE];
     }
 }
+
 -(IBAction)ChangeListType:(id)sender
 {
     UIButton *btn =(UIButton *)sender;
@@ -589,7 +587,6 @@ static CGFloat kDefaultScale = 0.5;
         setListImage++;
     }
     [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"ic_editor_list_%d_24dp.png",setListImage]] forState:UIControlStateNormal];
-    
     
     if (setListImage == 0)
     {
@@ -621,10 +618,12 @@ static CGFloat kDefaultScale = 0.5;
     [self setDefaultButton];
     [self setHR];
 }
+
 -(IBAction)AddLinkView:(id)sender
 {
     [self insertLink];
 }
+
 -(IBAction)AddImageView:(id)sender
 {
     [self insertImageFromDevice];
@@ -634,13 +633,13 @@ static CGFloat kDefaultScale = 0.5;
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 -(IBAction)Next:(id)sender
 {
     NSLog(@"%@", [self getHTML]);
 
-    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    AddTagsViewController *move = [storyboard   instantiateViewControllerWithIdentifier:@"AddTagsViewController"] ;
+    AddTagsViewController *move = [storyboard instantiateViewControllerWithIdentifier:@"AddTagsViewController"] ;
     move.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     move.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     [self presentViewController:move animated:YES completion:nil];
@@ -1372,7 +1371,7 @@ static CGFloat kDefaultScale = 0.5;
 }
 
 - (void)P_QUOTE {
-    NSString *trigger = @"zss_editor.setpullquote('aside');";
+    NSString *trigger = @"zss_editor.setpullquote('q');";
     [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
 }
 

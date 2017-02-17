@@ -24,6 +24,7 @@
 #import "ProfileViewController.h"
 #import "ViewProfileViewController.h"
 #import "EditProfileViewController.h"
+#import "FriendsProfileViewController.h"
 #import "DraftsViewController.h"
 #import "StatsViewController.h"
 #import "HistoryViewController.h"
@@ -99,6 +100,7 @@
 #import "VENTokenField.h"
 #import "UIImage+Resize.h"
 #import <RSKImageCropper/RSKImageCropper.h>
+#import "HHHorizontalPagingView.h"
 
 
 

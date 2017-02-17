@@ -126,8 +126,6 @@
         [dic setObject:@"Looking for something intresting." forKey:@"desc"];
         [arrUser addObject: dic];
     }
-
-
 }
 /*
 #pragma mark - Navigation
@@ -206,7 +204,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    
+    FriendsProfileViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsProfileViewController"];
+    [self.navigationController pushViewController:move animated:YES];
 }
 
 @end

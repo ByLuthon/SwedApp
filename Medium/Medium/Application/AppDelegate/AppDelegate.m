@@ -13,6 +13,7 @@
 @end
 
 @implementation AppDelegate
+@synthesize lblLoaderBG;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -64,7 +65,6 @@
 #pragma mark - Show-Hide Loader Loader
 -(void)showLoader:(NSString *)str
 {
-    /*
     [self hideLoader];
     [GMDCircleLoader hideFromView:self.window animated:YES];
     
@@ -75,7 +75,6 @@
     [self.window addSubview:lblLoaderBG];
     self.window.userInteractionEnabled = NO;
     [GMDCircleLoader setOnView:self.window withTitle:@"" animated:YES];
-     */
 }
 -(void)hideLoader
 {
