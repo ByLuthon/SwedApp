@@ -12,6 +12,9 @@
 @interface MainViewController : UIViewController
 {
     
+    __weak IBOutlet UIButton *btn_twitter;
+    __weak IBOutlet UIButton *btn_fb;
+    __weak IBOutlet UIButton *btn_google;
 }
 - (IBAction)twitter:(id)sender;
 - (IBAction)facebook:(id)sender;

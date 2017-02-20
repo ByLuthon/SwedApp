@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIView *subview_question;
 @property (weak, nonatomic) IBOutlet UIButton *btn_like;
 @property (weak, nonatomic) IBOutlet UIButton *btn_bookmarks;
+@property (weak, nonatomic) IBOutlet UIButton *btn_user;
 
 @end

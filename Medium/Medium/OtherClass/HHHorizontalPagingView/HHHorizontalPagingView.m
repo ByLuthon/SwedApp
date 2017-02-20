@@ -7,6 +7,8 @@
 //
 
 #import "HHHorizontalPagingView.h"
+#import "FriendsProfileViewController.h"
+
 
 @interface HHHorizontalPagingView () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -91,13 +93,70 @@ static NSInteger kPagingButtonTag                 = 1000;
         self.segmentView.userInteractionEnabled     = YES;
         self.horizontalCollectionView.scrollEnabled = YES;
     }else {
-        self.segmentView.userInteractionEnabled     = NO;
-        self.horizontalCollectionView.scrollEnabled = NO;
+        self.segmentView.userInteractionEnabled     = YES;
+        self.horizontalCollectionView.scrollEnabled = YES;
     }
 }
 
 - (void)configureHeaderView {
-    if(self.headerView) {
+    if(self.headerView)
+    {
+        NSLog(@"%@",self.headerView.subviews);
+        FriendsProfileViewController *move;
+
+        for (UIView *view in self.headerView.subviews)
+        {
+            if ([view isKindOfClass:[UIButton class]])
+            {
+                NSLog(@"%ld",(long)view.tag);
+                
+                //[(UIButton *)view addTarget:move action:@selector(Following:) forControlEvents:UIControlEventTouchUpInside];
+
+                UIButton *headerButton = (UIButton *)view;
+                headerButton.tag = view.tag;
+                [headerButton addTarget:move action:@selector(Following:) forControlEvents:UIControlEventTouchUpInside];
+                [_headerView addSubview:headerButton];
+            }
+            else
+            {
+                for (UIView *view1 in view.subviews)
+                {
+                    if ([view1 isKindOfClass:[UIButton class]])
+                    {
+                        NSLog(@"%ld",(long)view1.tag);
+                        
+                        //[(UIButton *)view1 addTarget:move action:@selector(Following:) forControlEvents:UIControlEventTouchUpInside];
+                        
+                        UIButton *headerButton = (UIButton *)view1;
+                        headerButton.tag = view1.tag;
+                        [headerButton addTarget:move action:@selector(Following:) forControlEvents:UIControlEventTouchUpInside];
+                        [_headerView addSubview:headerButton];
+                    }
+                    else
+                    {
+                        for (UIView *view2 in view1.subviews)
+                        {
+                            if ([view2 isKindOfClass:[UIButton class]])
+                            {
+                                NSLog(@"%ld",(long)view2.tag);
+                                
+                                //[(UIButton *)view2 addTarget:move action:@selector(Following:) forControlEvents:UIControlEventTouchUpInside];
+
+                                UIButton *headerButton = (UIButton *)view2;
+                                headerButton.tag = view2.tag;
+                                [headerButton addTarget:move action:@selector(Following:) forControlEvents:UIControlEventTouchUpInside];
+                                [_headerView addSubview:headerButton];
+                            }
+                            else
+                            {
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         self.headerView.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:self.headerView];
         
@@ -110,6 +169,12 @@ static NSInteger kPagingButtonTag                 = 1000;
         [self.headerView addConstraint:self.headerSizeHeightConstraint];
     }
 }
+
+- (void)headerButtonEvent:(UIButton *)headerbtn
+{
+    NSLog(@"Clich here");
+}
+
 
 - (void)configureSegmentView {
     
@@ -202,7 +267,8 @@ static NSInteger kPagingButtonTag                 = 1000;
 
 - (void)segmentButtonEvent:(UIButton *)segmentButton
 {
-    for(UIButton *b in self.segmentButtons) {
+    for(UIButton *b in self.segmentButtons)
+    {
         [b setSelected:NO];
         
     }
@@ -221,9 +287,38 @@ static NSInteger kPagingButtonTag                 = 1000;
     if(self.pagingViewSwitchBlock) {
         self.pagingViewSwitchBlock(clickIndex);
     }
+    
+
+    
+    CGRect visibleRect = (CGRect){_segmentView.contentOffset, _segmentView.bounds.size};
+    
+    if (CGRectContainsRect(visibleRect, segmentButton.frame))
+    {
+        // it's visible
+        //NSLog(@"it's visible");
+    }
+    else
+    {
+        //NSLog(@":) Hidden");
+        
+        if (visibleRect.origin.x > segmentButton.frame.origin.x)
+        {
+            [_segmentView setContentOffset:CGPointMake(segmentButton.frame.origin.x, _segmentView.contentOffset.y) animated:YES];
+        }
+        else if ((visibleRect.size.width + visibleRect.origin.x) < segmentButton.frame.origin.x)
+        {
+            [_segmentView setContentOffset:CGPointMake((segmentButton.frame.origin.x + segmentButton.frame.size.width) - self.frame.size.width, _segmentView.contentOffset.y) animated:YES];
+        }
+        else
+        {
+            [_segmentView setContentOffset:CGPointMake((segmentButton.frame.origin.x + segmentButton.frame.size.width) - self.frame.size.width, _segmentView.contentOffset.y) animated:YES];
+        }
+    }
+
 }
 
-- (void)adjustContentViewOffset {
+- (void)adjustContentViewOffset
+{
     self.isSwitching = YES;
     CGFloat headerViewDisplayHeight = self.headerViewHeight + self.headerView.frame.origin.y;
     [self.currentScrollView layoutIfNeeded];
@@ -352,8 +447,8 @@ static NSInteger kPagingButtonTag                 = 1000;
         CGFloat headerViewHeight    = self.headerViewHeight;
         CGFloat headerDisplayHeight = self.headerViewHeight+self.headerOriginYConstraint.constant;
         
-        if(deltaY >= 0) {    //向上滚动
-            
+        if(deltaY >= 0)
+        {    //向上滚动
             if(headerDisplayHeight - deltaY <= self.segmentTopSpace) {
                 self.headerOriginYConstraint.constant = -headerViewHeight+self.segmentTopSpace;
             }else {
@@ -367,7 +462,9 @@ static NSInteger kPagingButtonTag                 = 1000;
                 self.magnifyTopConstraint.constant = -self.headerOriginYConstraint.constant;
             }
             
-        }else {            //向下滚动
+        }
+        else
+        {            //向下滚动
             
             if (headerDisplayHeight+self.segmentBarHeight < -newOffsetY) {
                 self.headerOriginYConstraint.constant = -self.headerViewHeight-self.segmentBarHeight-self.currentScrollView.contentOffset.y;
@@ -400,17 +497,48 @@ static NSInteger kPagingButtonTag                 = 1000;
 }
 
 #pragma mark - UIScrollViewDelegate
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
     NSInteger currentPage = scrollView.contentOffset.x/[[UIScreen mainScreen] bounds].size.width;
     
     for(UIButton *b in self.segmentButtons) {
-        if(b.tag - kPagingButtonTag == currentPage) {
+        if(b.tag - kPagingButtonTag == currentPage)
+        {
             [b setSelected:YES];
+
+            CGRect visibleRect = (CGRect){_segmentView.contentOffset, _segmentView.bounds.size};
+
+            if (CGRectContainsRect(visibleRect, b.frame))
+            {
+                // it's visible
+                //NSLog(@"it's visible");
+            }
+            else
+            {
+                //NSLog(@":) Hidden");
+                
+                if (visibleRect.origin.x > b.frame.origin.x)
+                {
+                    [_segmentView setContentOffset:CGPointMake(b.frame.origin.x, _segmentView.contentOffset.y) animated:YES];
+                }
+                else if ((visibleRect.size.width + visibleRect.origin.x) < b.frame.origin.x)
+                {
+                    [_segmentView setContentOffset:CGPointMake((b.frame.origin.x + b.frame.size.width) - self.frame.size.width, _segmentView.contentOffset.y) animated:YES];
+                }
+                else
+                {
+                    [_segmentView setContentOffset:CGPointMake((b.frame.origin.x + b.frame.size.width) - self.frame.size.width, _segmentView.contentOffset.y) animated:YES];
+                }
+            }
+
+        
         }else {
             [b setSelected:NO];
         }
     }
     self.currentScrollView = self.contentViews[currentPage];
+    
+    
     
     if(self.pagingViewSwitchBlock) {
         self.pagingViewSwitchBlock(currentPage);

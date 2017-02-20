@@ -50,6 +50,10 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yc1-P2-L4p">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -109,6 +113,7 @@
             <connections>
                 <outlet property="btn_bookmarks" destination="oyX-cg-uJ3" id="U19-sQ-ofN"/>
                 <outlet property="btn_like" destination="Rpd-R2-wXe" id="VZz-oK-YrE"/>
+                <outlet property="btn_user" destination="Yc1-P2-L4p" id="udh-qB-k7a"/>
             </connections>
             <point key="canvasLocation" x="33" y="180.5"/>
         </tableViewCell>

@@ -16,8 +16,8 @@
 
 - (void)viewDidLoad
 {
-    [APP_DELEGATE animateWithShow:YES withView:subview_disable];
-    
+    //[APP_DELEGATE animateWithShow:YES withView:subview_disable];
+    subview_disable.hidden = FALSE;
     [self setInitParam];
     
     [super viewDidLoad];
@@ -351,11 +351,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     NSMutableArray *arr = [[arrNotification objectAtIndex:indexPath.section] objectForKey:@"array"];
-
+    
     for (int i = 0; i < [arr count]; i++)
     {
         NSMutableDictionary *mutableDict = [arr objectAtIndex:i];
-
+        
         if (indexPath.row == i)
         {
             [mutableDict setObject:@"1" forKey:@"isSelect"];
@@ -368,7 +368,7 @@
     }
     NSMutableDictionary *dic = [arrNotification objectAtIndex:indexPath.section];
     [dic setObject:arr forKey:@"array"];
-
+    
     [arrNotification replaceObjectAtIndex:indexPath.section withObject:dic];
     dic = nil;
     [tbl reloadData];

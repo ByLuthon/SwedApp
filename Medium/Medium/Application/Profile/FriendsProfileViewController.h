@@ -18,11 +18,11 @@
 
 
 - (IBAction)Back:(id)sender;
-- (IBAction)share:(id)sender;
 
 - (IBAction)Following:(id)sender;
 - (IBAction)Followers:(id)sender;
-- (IBAction)tap:(id)sender;
-- (IBAction)clickHere:(id)sender;
+- (IBAction)setting:(id)sender;
+- (IBAction)follow:(id)sender;
+- (IBAction)share:(id)sender;
 
 @end

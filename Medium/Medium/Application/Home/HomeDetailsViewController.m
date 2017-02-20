@@ -141,6 +141,12 @@
 }
 */
 
+- (IBAction)userTapped:(id)sender
+{
+    FriendsProfileViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsProfileViewController"];
+    [self.navigationController pushViewController:move animated:YES];
+}
+
 - (IBAction)Back:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];

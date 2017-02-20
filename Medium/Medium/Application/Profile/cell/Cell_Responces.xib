@@ -44,6 +44,10 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bz-mn-oXf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -135,6 +139,7 @@
             <connections>
                 <outlet property="btn_bookmarks" destination="Puf-Fe-F6M" id="24I-Au-L7U"/>
                 <outlet property="btn_like" destination="wPT-ap-NBs" id="oIo-Oj-es4"/>
+                <outlet property="btn_user" destination="2bz-mn-oXf" id="rHn-tG-EVs"/>
                 <outlet property="subview_profile" destination="ble-Cn-TnT" id="Ily-IM-PW5"/>
                 <outlet property="subview_question" destination="3bs-YI-BnE" id="AU4-6o-3oQ"/>
             </connections>

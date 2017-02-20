@@ -18,6 +18,8 @@
 {
     self.navigationController.navigationBarHidden = TRUE;
     
+    [self setInitParam];
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -27,6 +29,38 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)setInitParam
+{
+    /*
+    {
+        CALayer *layer = btn_twitter.layer;
+        layer.shadowOffset = CGSizeMake(1, 1);
+        layer.shadowColor = [UIColor lightGrayColor].CGColor;
+        layer.shadowRadius = btn_twitter.layer.frame.size.height/4;
+        layer.shadowOpacity = 1;
+        layer.shadowPath = [UIBezierPath bezierPathWithRect:layer.bounds].CGPath;
+    }
+    
+    {
+        CALayer *layer = btn_fb.layer;
+        layer.shadowOffset = CGSizeMake(2.0, 2.0);
+        layer.shadowColor = [UIColor grayColor].CGColor;
+        layer.shadowRadius = btn_fb.layer.frame.size.height/4;
+        layer.shadowOpacity = 1;
+        layer.shadowPath = [UIBezierPath bezierPathWithRect:layer.bounds].CGPath;
+    }
+    
+    {
+        CALayer *layer = btn_google.layer;
+        layer.shadowOffset = CGSizeMake(1, 1);
+        layer.shadowColor = [UIColor lightGrayColor].CGColor;
+        layer.shadowRadius = btn_google.layer.frame.size.height/4;
+        layer.shadowOpacity = 1;
+        layer.shadowPath = [UIBezierPath bezierPathWithRect:layer.bounds].CGPath;
+    }
+     */
+}
 /*
 #pragma mark - Navigation
 

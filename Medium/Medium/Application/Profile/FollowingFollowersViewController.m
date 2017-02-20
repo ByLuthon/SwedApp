@@ -17,13 +17,14 @@
 
 - (void)viewDidLoad
 {
-    
     [self setInitParam];
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -38,8 +39,6 @@
     {
         _lbl_navigationTitle.text = @"Followers";
     }
-    
-    
     arrUser = [[NSMutableArray alloc] init];
     
     {
@@ -119,7 +118,6 @@
         [arrUser addObject: dic];
     }
 
-    
     {
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
         [dic setObject:@"Netcyrax" forKey:@"name"];

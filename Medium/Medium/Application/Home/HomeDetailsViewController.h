@@ -19,6 +19,7 @@
     __weak IBOutlet UIButton *btn_like;
     __weak IBOutlet UIButton *btn_likeCount;
 }
+- (IBAction)userTapped:(id)sender;
 - (IBAction)Back:(id)sender;
 - (IBAction)like:(id)sender;
 - (IBAction)bookmarks:(id)sender;

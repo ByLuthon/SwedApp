@@ -11,6 +11,7 @@
 
 @interface BookmarksViewController : UIViewController
 {
+    NSMutableArray *arrBokkmarks;
     
     __weak IBOutlet UITableView *tbl;
     __weak IBOutlet UIButton *btn_back;

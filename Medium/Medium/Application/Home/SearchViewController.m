@@ -667,6 +667,13 @@
                  cell.btn_bookmarks.selected = TRUE;
              }
          }];
+        
+        [cell.btn_img_profile setOnTouchUpInside:^(UIEvent *event, id sender)
+         {
+             FriendsProfileViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsProfileViewController"];
+             [self.navigationController pushViewController:move animated:YES];
+         }];
+
     }
     return cell;
 }

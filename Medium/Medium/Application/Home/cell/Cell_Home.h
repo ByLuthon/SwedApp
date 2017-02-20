@@ -16,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imguser;
 @property (weak, nonatomic) IBOutlet UIButton *btn_like;
 @property (weak, nonatomic) IBOutlet UIButton *btn_bookmarks;
+@property (weak, nonatomic) IBOutlet UIButton *btn_img_profile;
+
 
 @end

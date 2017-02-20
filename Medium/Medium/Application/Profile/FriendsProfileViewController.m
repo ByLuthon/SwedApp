@@ -46,9 +46,21 @@
     pagingView.frame = CGRectMake(0, 60, WIDTH, HEIGHT-60);
     
 
+    
     [self.view addSubview:pagingView];
     [self.view bringSubviewToFront:view_navgation];
 
+    /*
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button addTarget:self action:@selector(aMethod:)
+     forControlEvents:UIControlEventTouchUpInside];
+    [button setBackgroundColor:[UIColor redColor]];
+    [button setTitle:@" " forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, subview_header.frame.size.width, subview_header.frame.size.height);
+    [pagingView addSubview:button];
+     */
+    
+    
     /*
     UIButton *Followingbutton = (UIButton *)[[pagingView.subviews objectAtIndex:2] viewWithTag:10];
     [Followingbutton setOnTouchUpInside:^(UIEvent *event, id sender)
@@ -70,6 +82,11 @@
     */
 }
 
+-(IBAction)aMethod:(id)sender
+{
+    NSLog(@"Click:");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -79,8 +96,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)share:(id)sender {
-}
 
 
 - (IBAction)tap:(id)sender
@@ -92,6 +107,29 @@
 {
     
 }
+- (IBAction)setting:(id)sender
+{
+    
+}
+
+- (IBAction)follow:(id)sender
+{
+
+}
+
+- (IBAction)share:(id)sender
+{
+    
+}
+- (IBAction)Following:(id)sender
+{
+    
+}
+- (IBAction)Followers:(id)sender
+{
+    
+}
+
 
 /*
 #pragma mark - Navigation
@@ -157,6 +195,13 @@
                  cell.btn_bookmarks.selected = TRUE;
              }
          }];
+        
+        [cell.btn_img_profile setOnTouchUpInside:^(UIEvent *event, id sender)
+         {
+             FriendsProfileViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsProfileViewController"];
+             [self.navigationController pushViewController:move animated:YES];
+         }];
+
     }
     return cell;
 }

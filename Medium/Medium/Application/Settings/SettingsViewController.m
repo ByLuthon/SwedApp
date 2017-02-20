@@ -275,6 +275,26 @@
         }
         if ([[[[[arrSettingsList objectAtIndex:indexPath.section] objectForKey:@"array"] objectAtIndex:indexPath.row] objectForKey:@"title"] isEqualToString:@"Signout"])
         {
+            NSString *message = @"Are you sure you want to sign out?";
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                            message:message
+                                                           delegate:self
+                                                  cancelButtonTitle:@"No"
+                                                  otherButtonTitles:@"Yes", nil];
+            alert.tag = 20;
+            [alert show];
+        }
+    }
+}
+
+#pragma mark - Alertview delegate
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 20)
+    {
+        if (buttonIndex == 1)
+        {
             for (UIViewController *controller in self.navigationController.viewControllers) {
                 
                 //Do not forget to import AnOldViewController.h
@@ -288,5 +308,6 @@
         }
     }
 }
+
 
 @end

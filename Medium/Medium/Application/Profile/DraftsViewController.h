@@ -12,6 +12,7 @@
 @interface DraftsViewController : UIViewController
 {
     NSMutableArray *arrDrafts;
+    NSIndexPath *selectIndexpath;
     
     __weak IBOutlet UITableView *tbl;
 }

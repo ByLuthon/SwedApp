@@ -30,6 +30,8 @@
 }
 -(void)setInitParam
 {
+    arrBokkmarks = [[NSMutableArray alloc] initWithObjects:@"",@"",@"",@"",@"",@"",@"",@"",@"",@"", nil];
+    
     if (isshowBack)
     {
         btn_back.hidden = FALSE;
@@ -39,6 +41,19 @@
         btn_back.hidden = TRUE;
     }
 }
+
+-(void)showAlert
+{
+    if ([arrBokkmarks count] > 0)
+    {
+        tbl.hidden = FALSE;
+    }
+    else
+    {
+        tbl.hidden = TRUE;
+    }
+}
+
 /*
 #pragma mark - Navigation
 
@@ -64,7 +79,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return [arrBokkmarks count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -98,19 +113,22 @@
         
         cell.btn_bookmarks.selected = TRUE;
 
-        /*
+        [cell.btn_img_profile setOnTouchUpInside:^(UIEvent *event, id sender)
+         {
+             FriendsProfileViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsProfileViewController"];
+             [self.navigationController pushViewController:move animated:YES];
+         }];
+
         [cell.btn_bookmarks setOnTouchUpInside:^(id sender, UIEvent *event)
          {
-             if (cell.btn_bookmarks.selected == TRUE)
-             {
-                 cell.btn_bookmarks.selected = FALSE;
-             }
-             else
-             {
-                 cell.btn_bookmarks.selected = TRUE;
-             }
+             NSLog(@"%ld",(long)indexPath.row);
+             
+             [arrBokkmarks removeObjectAtIndex:indexPath.row];
+             [tbl deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationRight];
+             [tbl reloadData];
+             
+             [self showAlert];
          }];
-         */
     }
     return cell;
 }
