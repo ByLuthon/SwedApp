@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +24,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="42711793-abstract-colored-o-vector-icon-isolated-on-white-background-circle-colored-shape-globe-abstract-web-.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VJz-Vf-u7B" customClass="CustomImageview">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MG_4273.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VJz-Vf-u7B" customClass="CustomImageview">
                         <rect key="frame" x="10" y="10" width="40" height="40"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <userDefinedRuntimeAttributes>
@@ -75,7 +74,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="42711793-abstract-colored-o-vector-icon-isolated-on-white-background-circle-colored-shape-globe-abstract-web-.jpg" width="450" height="365"/>
+        <image name="MG_4273.jpg" width="320" height="320"/>
         <image name="follow_small_square.png" width="43" height="43"/>
         <image name="following_small_square.png" width="43" height="43"/>
     </resources>

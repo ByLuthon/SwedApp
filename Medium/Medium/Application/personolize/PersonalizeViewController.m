@@ -428,7 +428,25 @@
     
 }
 
-- (IBAction)headerTapped:(id)sender {
+- (IBAction)headerTapped:(id)sender
+{
+    if (TableMethod == SEARCH_Tags)
+    {
+        FollowTagsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FollowTagsViewController"];
+        [self.navigationController pushViewController:move animated:YES];
+    }
+    else if (TableMethod == SEARCH_People)
+    {
+        FollowingFollowersViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FollowingFollowersViewController"];
+        move.isFollowing = TRUE;
+        [self.navigationController pushViewController:move animated:YES];
+    }
+    else if (TableMethod == SEARCH_Publication)
+    {
+        PublicationsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"PublicationsViewController"];
+        move.isPublicationList = TRUE;
+        [self.navigationController pushViewController:move animated:YES];
+    }
 }
 #pragma mark - Tableview Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -787,16 +805,16 @@
     }
     return cell;
 }
--(Cell_FollowTags *)TagsCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath Message:(NSMutableDictionary *)dic
+-(Cell_TagsList *)TagsCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath Message:(NSMutableDictionary *)dic
 {
     NSString *CellIdentifier = [NSString stringWithFormat:@"cell %ld",(long)indexPath.row];
     
-    Cell_FollowTags *cell = (Cell_FollowTags *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    Cell_TagsList *cell = (Cell_TagsList *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     cell = nil;
     if (cell == nil)
     {
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"Cell_FollowTags" owner:nil options:nil];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"Cell_TagsList" owner:nil options:nil];
         cell = [topLevelObjects objectAtIndex:0];
         cell.backgroundColor = [UIColor whiteColor];
         
@@ -806,14 +824,33 @@
         {
             cell.lbl_title.text = [[dic objectForKey:@"array"] objectAtIndex:indexPath.row];
         }
+        cell.btn_select.hidden = TRUE;
         
+
     }
     return cell;
+
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    
+    if (TableMethod == SEARCH_Tags)
+    {
+        TagsDetailsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"TagsDetailsViewController"];
+        move.strTitle = [[[arrTags objectAtIndex:indexPath.section] objectForKey:@"array"] objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:move animated:YES];
+    }
+    else if (TableMethod == SEARCH_People)
+    {
+        FriendsProfileViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsProfileViewController"];
+        [self.navigationController pushViewController:move animated:YES];
+    }
+    else if (TableMethod == SEARCH_Publication)
+    {
+        PublicationDetailsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"PublicationDetailsViewController"];
+        [self.navigationController pushViewController:move animated:YES];
+    }
 }
 
 

@@ -1,14 +1,14 @@
 //
-//  Cell_FollowTags.m
+//  Cell_TagsList.m
 //  Medium
 //
-//  Created by macmini on 07/02/17.
+//  Created by macmini on 21/02/17.
 //  Copyright © 2017 macmini. All rights reserved.
 //
 
-#import "Cell_FollowTags.h"
+#import "Cell_TagsList.h"
 
-@implementation Cell_FollowTags
+@implementation Cell_TagsList
 
 - (void)awakeFromNib {
     [super awakeFromNib];

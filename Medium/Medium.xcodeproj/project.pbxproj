@@ -387,14 +387,21 @@
 		9A70890D1E49C4FA00324AF0 /* tag_icon.png@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A70890C1E49C4FA00324AF0 /* tag_icon.png@2x.png */; };
 		9A70890F1E49C50100324AF0 /* tag_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A70890E1E49C50100324AF0 /* tag_icon.png */; };
 		9A7089111E49C5D600324AF0 /* PUTIN_RUSO.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A7089101E49C5D600324AF0 /* PUTIN_RUSO.jpg */; };
-		9A7089161E49C81000324AF0 /* Cell_FollowTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7089141E49C81000324AF0 /* Cell_FollowTags.m */; };
-		9A7089171E49C81000324AF0 /* Cell_FollowTags.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7089151E49C81000324AF0 /* Cell_FollowTags.xib */; };
 		9A7089191E49C89700324AF0 /* iPhone-7-Concept.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A7089181E49C89700324AF0 /* iPhone-7-Concept.jpg */; };
 		9A70891F1E49E1AE00324AF0 /* ViewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70891E1E49E1AE00324AF0 /* ViewProfileViewController.m */; };
 		9A7089241E49F11A00324AF0 /* Cell_profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7089221E49F11A00324AF0 /* Cell_profile.m */; };
 		9A7089251E49F11A00324AF0 /* Cell_profile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7089231E49F11A00324AF0 /* Cell_profile.xib */; };
 		9A7089291E49F15200324AF0 /* Cell_Responces.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7089271E49F15200324AF0 /* Cell_Responces.m */; };
 		9A70892A1E49F15200324AF0 /* Cell_Responces.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7089281E49F15200324AF0 /* Cell_Responces.xib */; };
+		9A7F7F851E5C07E800D6FEF7 /* FollowTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F7F841E5C07E800D6FEF7 /* FollowTagsViewController.m */; };
+		9A7F7F8C1E5C0A1400D6FEF7 /* Cell_TagsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F7F8A1E5C0A1400D6FEF7 /* Cell_TagsList.m */; };
+		9A7F7F8D1E5C0A1400D6FEF7 /* Cell_TagsList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7F7F8B1E5C0A1400D6FEF7 /* Cell_TagsList.xib */; };
+		9A7F7F901E5C132800D6FEF7 /* TagsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F7F8F1E5C132800D6FEF7 /* TagsDetailsViewController.m */; };
+		9A7F7F941E5C31D800D6FEF7 /* thinkprogress-logo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9A7F7F931E5C31D800D6FEF7 /* thinkprogress-logo.jpeg */; };
+		9A7F7F971E5C321400D6FEF7 /* PublicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F7F961E5C321400D6FEF7 /* PublicationDetailsViewController.m */; };
+		9A7F7F991E5C364400D6FEF7 /* ic_mail_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7F7F981E5C364400D6FEF7 /* ic_mail_24dp.png */; };
+		9A7F7F9B1E5C364D00D6FEF7 /* ic_mail_24dp.png@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7F7F9A1E5C364D00D6FEF7 /* ic_mail_24dp.png@3x.png */; };
+		9A7F7F9D1E5C365400D6FEF7 /* ic_mail_24dp.png@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7F7F9C1E5C365400D6FEF7 /* ic_mail_24dp.png@2x.png */; };
 		9AA96FAC1E488D5000EAF323 /* Cell_Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96FAA1E488D5000EAF323 /* Cell_Activity.m */; };
 		9AA96FAD1E488D5000EAF323 /* Cell_Activity.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA96FAB1E488D5000EAF323 /* Cell_Activity.xib */; };
 		9AA96FAF1E488F5600EAF323 /* profile-image-display.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AA96FAE1E488F5600EAF323 /* profile-image-display.png */; };
@@ -985,9 +992,6 @@
 		9A70890C1E49C4FA00324AF0 /* tag_icon.png@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag_icon.png@2x.png"; sourceTree = "<group>"; };
 		9A70890E1E49C50100324AF0 /* tag_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag_icon.png; sourceTree = "<group>"; };
 		9A7089101E49C5D600324AF0 /* PUTIN_RUSO.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PUTIN_RUSO.jpg; sourceTree = "<group>"; };
-		9A7089131E49C81000324AF0 /* Cell_FollowTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell_FollowTags.h; sourceTree = "<group>"; };
-		9A7089141E49C81000324AF0 /* Cell_FollowTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell_FollowTags.m; sourceTree = "<group>"; };
-		9A7089151E49C81000324AF0 /* Cell_FollowTags.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell_FollowTags.xib; sourceTree = "<group>"; };
 		9A7089181E49C89700324AF0 /* iPhone-7-Concept.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iPhone-7-Concept.jpg"; sourceTree = "<group>"; };
 		9A70891D1E49E1AE00324AF0 /* ViewProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewProfileViewController.h; sourceTree = "<group>"; };
 		9A70891E1E49E1AE00324AF0 /* ViewProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewProfileViewController.m; sourceTree = "<group>"; };
@@ -997,6 +1001,19 @@
 		9A7089261E49F15200324AF0 /* Cell_Responces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell_Responces.h; sourceTree = "<group>"; };
 		9A7089271E49F15200324AF0 /* Cell_Responces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell_Responces.m; sourceTree = "<group>"; };
 		9A7089281E49F15200324AF0 /* Cell_Responces.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell_Responces.xib; sourceTree = "<group>"; };
+		9A7F7F831E5C07E800D6FEF7 /* FollowTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowTagsViewController.h; sourceTree = "<group>"; };
+		9A7F7F841E5C07E800D6FEF7 /* FollowTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowTagsViewController.m; sourceTree = "<group>"; };
+		9A7F7F891E5C0A1400D6FEF7 /* Cell_TagsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell_TagsList.h; sourceTree = "<group>"; };
+		9A7F7F8A1E5C0A1400D6FEF7 /* Cell_TagsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell_TagsList.m; sourceTree = "<group>"; };
+		9A7F7F8B1E5C0A1400D6FEF7 /* Cell_TagsList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell_TagsList.xib; sourceTree = "<group>"; };
+		9A7F7F8E1E5C132800D6FEF7 /* TagsDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsDetailsViewController.h; sourceTree = "<group>"; };
+		9A7F7F8F1E5C132800D6FEF7 /* TagsDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagsDetailsViewController.m; sourceTree = "<group>"; };
+		9A7F7F931E5C31D800D6FEF7 /* thinkprogress-logo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thinkprogress-logo.jpeg"; sourceTree = "<group>"; };
+		9A7F7F951E5C321400D6FEF7 /* PublicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicationDetailsViewController.h; sourceTree = "<group>"; };
+		9A7F7F961E5C321400D6FEF7 /* PublicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicationDetailsViewController.m; sourceTree = "<group>"; };
+		9A7F7F981E5C364400D6FEF7 /* ic_mail_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_mail_24dp.png; sourceTree = "<group>"; };
+		9A7F7F9A1E5C364D00D6FEF7 /* ic_mail_24dp.png@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_mail_24dp.png@3x.png"; sourceTree = "<group>"; };
+		9A7F7F9C1E5C365400D6FEF7 /* ic_mail_24dp.png@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_mail_24dp.png@2x.png"; sourceTree = "<group>"; };
 		9AA96FA91E488D5000EAF323 /* Cell_Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell_Activity.h; sourceTree = "<group>"; };
 		9AA96FAA1E488D5000EAF323 /* Cell_Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell_Activity.m; sourceTree = "<group>"; };
 		9AA96FAB1E488D5000EAF323 /* Cell_Activity.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell_Activity.xib; sourceTree = "<group>"; };
@@ -1354,6 +1371,7 @@
 		9A2852851E43148E0080AEDE /* 1x */ = {
 			isa = PBXGroup;
 			children = (
+				9A7F7F981E5C364400D6FEF7 /* ic_mail_24dp.png */,
 				9AB3292C1E56D43700CBAD8F /* Settings & Passwords.png */,
 				9A3B4C031E4B26AA00DDC483 /* tick-blank.png */,
 				9A3B4BFD1E4B240B00DDC483 /* tick-green.png */,
@@ -1462,6 +1480,7 @@
 		9A2852DC1E43148E0080AEDE /* 2x */ = {
 			isa = PBXGroup;
 			children = (
+				9A7F7F9C1E5C365400D6FEF7 /* ic_mail_24dp.png@2x.png */,
 				9AB3292A1E56D42F00CBAD8F /* Settings & Passwords@2x.png */,
 				9A3B4C011E4B26A400DDC483 /* tick-blank@2x.png */,
 				9A3B4BFB1E4B240300DDC483 /* tick-green@2x.png */,
@@ -1572,6 +1591,7 @@
 		9A2853361E43148E0080AEDE /* 3x */ = {
 			isa = PBXGroup;
 			children = (
+				9A7F7F9A1E5C364D00D6FEF7 /* ic_mail_24dp.png@3x.png */,
 				9AB329281E56D42800CBAD8F /* Settings & Passwords@3x.png */,
 				9A3B4BFF1E4B269C00DDC483 /* tick-blank@3x.png */,
 				9A3B4BF91E4B23FB00DDC483 /* tick-green@3x.png */,
@@ -1682,6 +1702,7 @@
 		9A2854981E4315630080AEDE /* extra */ = {
 			isa = PBXGroup;
 			children = (
+				9A7F7F931E5C31D800D6FEF7 /* thinkprogress-logo.jpeg */,
 				9AD268161E54242200F5A32D /* app-development-lifecycle.jpg */,
 				9AD268171E54242200F5A32D /* culure.jpeg */,
 				9AD268181E54242200F5A32D /* EditorsPic.jpeg */,
@@ -1826,6 +1847,12 @@
 				9A6CB9791E44AEBE001CD7C3 /* cell */,
 				9A6CB9761E44AE70001CD7C3 /* PublicationsViewController.h */,
 				9A6CB9771E44AE70001CD7C3 /* PublicationsViewController.m */,
+				9A7F7F951E5C321400D6FEF7 /* PublicationDetailsViewController.h */,
+				9A7F7F961E5C321400D6FEF7 /* PublicationDetailsViewController.m */,
+				9A7F7F831E5C07E800D6FEF7 /* FollowTagsViewController.h */,
+				9A7F7F841E5C07E800D6FEF7 /* FollowTagsViewController.m */,
+				9A7F7F8E1E5C132800D6FEF7 /* TagsDetailsViewController.h */,
+				9A7F7F8F1E5C132800D6FEF7 /* TagsDetailsViewController.m */,
 			);
 			path = Publications;
 			sourceTree = "<group>";
@@ -1836,6 +1863,9 @@
 				9A6CB97A1E44AED7001CD7C3 /* Cell_Publications.h */,
 				9A6CB97B1E44AED7001CD7C3 /* Cell_Publications.m */,
 				9A6CB97C1E44AED7001CD7C3 /* Cell_Publications.xib */,
+				9A7F7F891E5C0A1400D6FEF7 /* Cell_TagsList.h */,
+				9A7F7F8A1E5C0A1400D6FEF7 /* Cell_TagsList.m */,
+				9A7F7F8B1E5C0A1400D6FEF7 /* Cell_TagsList.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -1843,21 +1873,10 @@
 		9A6CB9891E44B890001CD7C3 /* personolize */ = {
 			isa = PBXGroup;
 			children = (
-				9A7089121E49C7E700324AF0 /* cell */,
 				9A6CB98A1E44B8A8001CD7C3 /* PersonalizeViewController.h */,
 				9A6CB98B1E44B8A8001CD7C3 /* PersonalizeViewController.m */,
 			);
 			path = personolize;
-			sourceTree = "<group>";
-		};
-		9A7089121E49C7E700324AF0 /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				9A7089131E49C81000324AF0 /* Cell_FollowTags.h */,
-				9A7089141E49C81000324AF0 /* Cell_FollowTags.m */,
-				9A7089151E49C81000324AF0 /* Cell_FollowTags.xib */,
-			);
-			path = cell;
 			sourceTree = "<group>";
 		};
 		9A7089201E49F0F800324AF0 /* cell */ = {
@@ -2503,9 +2522,11 @@
 				9A2854131E43148F0080AEDE /* ic_close_grey600_24dp@2x.png in Resources */,
 				9AC2FEEA1E4C7E71006C4F40 /* ZSSsubscript.png in Resources */,
 				9A2853DD1E43148F0080AEDE /* ic_sync_problem_grey600_48dp.png in Resources */,
+				9A7F7F9B1E5C364D00D6FEF7 /* ic_mail_24dp.png@3x.png in Resources */,
 				9A7089011E49BA3C00324AF0 /* zHVoWqKV.jpg in Resources */,
 				9A3B4BFE1E4B240B00DDC483 /* tick-green.png in Resources */,
 				9A2853DB1E43148F0080AEDE /* ic_share_black_24dp.png in Resources */,
+				9A7F7F941E5C31D800D6FEF7 /* thinkprogress-logo.jpeg in Resources */,
 				9A2854691E43148F0080AEDE /* ic_bookmark_outline_black_24dp@3x.png in Resources */,
 				9A2853C61E43148F0080AEDE /* ic_editor_quote_2_24dp.png in Resources */,
 				9A2854771E43148F0080AEDE /* ic_editor_title_0_24dp@3x.png in Resources */,
@@ -2643,6 +2664,7 @@
 				9AC2FEE71E4C7E71006C4F40 /* ZSSrightjustify@2x.png in Resources */,
 				9A3B4C001E4B269C00DDC483 /* tick-blank@3x.png in Resources */,
 				9AC2FEB51E4C7E70006C4F40 /* ZSScenterjustify@2x.png in Resources */,
+				9A7F7F8D1E5C0A1400D6FEF7 /* Cell_TagsList.xib in Resources */,
 				9A2854031E43148F0080AEDE /* ic_add_grey600_24dp@2x.png in Resources */,
 				9A2853CB1E43148F0080AEDE /* ic_email_24dp.png in Resources */,
 				9A2854171E43148F0080AEDE /* ic_editor_list_2_24dp@2x.png in Resources */,
@@ -2776,6 +2798,7 @@
 				9AC2FEE51E4C7E70006C4F40 /* ZSSredo@2x.png in Resources */,
 				9A28549A1E4315770080AEDE /* illustration_new.png in Resources */,
 				9A2854591E43148F0080AEDE /* following_small_square@3x.png in Resources */,
+				9A7F7F991E5C364400D6FEF7 /* ic_mail_24dp.png in Resources */,
 				9A2853D61E43148F0080AEDE /* ic_notification_logo_white_24dp.png in Resources */,
 				9A28547D1E43148F0080AEDE /* ic_facebook_24dp@3x.png in Resources */,
 				9A6CB95B1E449BFE001CD7C3 /* chaticon@3x.png in Resources */,
@@ -2785,6 +2808,7 @@
 				9A2853E21E43148F0080AEDE /* illustration.png in Resources */,
 				9A2853E01E43148F0080AEDE /* ic_write_bold_black_24dp.png in Resources */,
 				9AC2FEB91E4C7E70006C4F40 /* ZSSfonts@2x.png in Resources */,
+				9A7F7F9D1E5C365400D6FEF7 /* ic_mail_24dp.png@2x.png in Resources */,
 				9A2854971E43148F0080AEDE /* white_fab_pressed@3x.png in Resources */,
 				9AC2FEF21E4C7E71006C4F40 /* ZSSunderline.png in Resources */,
 				9A28548A1E43148F0080AEDE /* ic_schedule_grey600_24dp@3x.png in Resources */,
@@ -2831,7 +2855,6 @@
 				9AC2FEBD1E4C7E70006C4F40 /* ZSSh1@2x.png in Resources */,
 				9A2853FF1E43148F0080AEDE /* follow_small_square@2x.png in Resources */,
 				9A6CB96B1E449FEC001CD7C3 /* google-amp-fast-speed-travel-ss-1920.jpg in Resources */,
-				9A7089171E49C81000324AF0 /* Cell_FollowTags.xib in Resources */,
 				9A28541C1E43148F0080AEDE /* ic_editor_quote_2_24dp@2x.png in Resources */,
 				9AC2FEB31E4C7E70006C4F40 /* ZSSbold@2x.png in Resources */,
 				9A28543A1E43148F0080AEDE /* ic_write_italic_black_24dp@2x.png in Resources */,
@@ -2934,6 +2957,7 @@
 				9A3B4BEF1E4AFABC00DDC483 /* TWRLineChart.m in Sources */,
 				9AC2FE621E4C7CC6006C4F40 /* DemoModalViewController.m in Sources */,
 				9AF9C1C31E4309BC004819E5 /* NSString+TextDirectionality.m in Sources */,
+				9A7F7F851E5C07E800D6FEF7 /* FollowTagsViewController.m in Sources */,
 				9AC2FE541E4C7C67006C4F40 /* CYRTextView.m in Sources */,
 				9A3B4BEB1E4AFABC00DDC483 /* TWRChartView.m in Sources */,
 				9AB779DD1E436542006895DE /* MainViewController.m in Sources */,
@@ -2946,6 +2970,7 @@
 				9A462CE41E4DB7420040B491 /* AddTagsViewController.m in Sources */,
 				9AF9C1B31E43099F004819E5 /* GDXSync.m in Sources */,
 				9AC2FE4C1E4C7C67006C4F40 /* HRBrightnessCursor.m in Sources */,
+				9A7F7F901E5C132800D6FEF7 /* TagsDetailsViewController.m in Sources */,
 				9AC2FE531E4C7C67006C4F40 /* CYRTextStorage.m in Sources */,
 				9AD2682F1E54380400F5A32D /* Cell_TrendingDetails.m in Sources */,
 				9A3B4BEC1E4AFABC00DDC483 /* TWRCircularChart.m in Sources */,
@@ -2970,9 +2995,9 @@
 				9AA96FB31E48C10E00EAF323 /* SearchViewController.m in Sources */,
 				9A462CE71E4DBF120040B491 /* TagsListViewController.m in Sources */,
 				9A3B4BF01E4AFABC00DDC483 /* UIColor+HexString.m in Sources */,
+				9A7F7F971E5C321400D6FEF7 /* PublicationDetailsViewController.m in Sources */,
 				9A7088F61E49AC9C00324AF0 /* Cell_Tags.m in Sources */,
 				9A6CB9591E449617001CD7C3 /* HomeDetailsViewController.m in Sources */,
-				9A7089161E49C81000324AF0 /* Cell_FollowTags.m in Sources */,
 				9AF9C1A51E43096C004819E5 /* UzysGroupPickerView.m in Sources */,
 				9A3B4B9C1E4AE3FA00DDC483 /* StatsViewController.m in Sources */,
 				9AF9C1A71E43096C004819E5 /* UzysWrapperPickerController.m in Sources */,
@@ -2995,6 +3020,7 @@
 				9AD2683F1E54650000F5A32D /* UIImage-Extension.m in Sources */,
 				9AD268331E54572100F5A32D /* EditProfileViewController.m in Sources */,
 				9AA96FAC1E488D5000EAF323 /* Cell_Activity.m in Sources */,
+				9A7F7F8C1E5C0A1400D6FEF7 /* Cell_TagsList.m in Sources */,
 				9A3B4BE91E4AFABC00DDC483 /* TWRBarChart.m in Sources */,
 				9AB329231E56CEBA00CBAD8F /* FriendsProfileViewController.m in Sources */,
 				9AF9C1AF1E43098B004819E5 /* CustomTextField.m in Sources */,

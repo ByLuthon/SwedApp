@@ -155,6 +155,7 @@
 - (IBAction)Publications:(id)sender
 {
     PublicationsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"PublicationsViewController"];
+    move.isPublicationList = FALSE;
     [self.navigationController pushViewController:move animated:YES];
 }
 
@@ -286,7 +287,17 @@
     }
     else
     {
-        
+        if (indexPath.row == arrPublication.count)
+        {
+            PublicationsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"PublicationsViewController"];
+            move.isPublicationList = FALSE;
+            [self.navigationController pushViewController:move animated:YES];
+        }
+        else
+        {
+            PublicationDetailsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"PublicationDetailsViewController"];
+            [self.navigationController pushViewController:move animated:YES];
+        }
     }
 }
 

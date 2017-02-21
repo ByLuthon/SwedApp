@@ -1,47 +1,39 @@
 //
-//  BookmarksViewController.m
+//  TagsDetailsViewController.m
 //  Medium
 //
-//  Created by macmini on 06/02/17.
+//  Created by macmini on 21/02/17.
 //  Copyright © 2017 macmini. All rights reserved.
 //
 
-#import "BookmarksViewController.h"
+#import "TagsDetailsViewController.h"
 
-@interface BookmarksViewController ()
+@interface TagsDetailsViewController ()
 
 @end
 
-@implementation BookmarksViewController
-@synthesize isshowBack;
+@implementation TagsDetailsViewController
+@synthesize strTitle,getDict;
 
 - (void)viewDidLoad
 {
-    [self setInitParam];
     
+    lbl_navigationTitle.text = [NSString stringWithFormat:@"%@",strTitle];
+
+    [self setInitParam];
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
+-(void)setInitParam
 {
+    TableMethod = Tags_Top;
+}
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)setInitParam
-{
-    arrBokkmarks = [[NSMutableArray alloc] initWithObjects:@"",@"",@"",@"",@"",@"",@"",@"",@"",@"", nil];
-    
-    if (isshowBack)
-    {
-        btn_back.hidden = FALSE;
-    }
-    else
-    {
-        btn_back.hidden = TRUE;
-    }
-}
-
 
 /*
 #pragma mark - Navigation
@@ -52,21 +44,40 @@
     // Pass the selected object to the new view controller.
 }
 */
--(void)showAlert
-{
-    if ([arrBokkmarks count] > 0)
-    {
-        tbl.hidden = FALSE;
-    }
-    else
-    {
-        tbl.hidden = TRUE;
-    }
-}
 
 - (IBAction)Back:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)headerFollowing:(id)sender
+{
+    UIButton *btn = (UIButton *)sender;
+    
+    if (btn.selected == TRUE)
+    {
+        btn.selected = FALSE;
+    }
+    else
+    {
+        btn.selected = TRUE;
+    }
+}
+
+- (IBAction)segmentValueChanged:(id)sender
+{
+    if (segmentController.selectedSegmentIndex == 0)
+    {
+        //Top
+        TableMethod = Tags_Top;
+    }
+    else if (segmentController.selectedSegmentIndex == 1)
+    {
+        //Latest
+        TableMethod = Tags_Latest;
+    }
+    [tbl reloadData];
+
 }
 #pragma mark - Tableview Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -79,7 +90,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [arrBokkmarks count];
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -111,24 +122,27 @@
          }];
         
         
-        cell.btn_bookmarks.selected = TRUE;
-
+        [cell.btn_bookmarks setOnTouchUpInside:^(id sender, UIEvent *event)
+         {
+             if (cell.btn_bookmarks.selected == TRUE)
+             {
+                 cell.btn_bookmarks.selected = FALSE;
+             }
+             else
+             {
+                 cell.btn_bookmarks.selected = TRUE;
+             }
+         }];
+        
+        
         [cell.btn_img_profile setOnTouchUpInside:^(UIEvent *event, id sender)
          {
              FriendsProfileViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsProfileViewController"];
              [self.navigationController pushViewController:move animated:YES];
          }];
+        
 
-        [cell.btn_bookmarks setOnTouchUpInside:^(id sender, UIEvent *event)
-         {
-             NSLog(@"%ld",(long)indexPath.row);
-             
-             [arrBokkmarks removeObjectAtIndex:indexPath.row];
-             [tbl deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationRight];
-             [tbl reloadData];
-             
-             [self showAlert];
-         }];
+        
     }
     return cell;
 }

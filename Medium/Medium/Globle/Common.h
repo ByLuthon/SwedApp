@@ -15,6 +15,7 @@
 #import "TrendingViewController.h"
 #import "SearchViewController.h"
 #import "PublicationsViewController.h"
+#import "PublicationDetailsViewController.h"
 #import "PersonalizeViewController.h"
 #import "CustomTabbarViewController.h"
 #import "BookmarksViewController.h"
@@ -35,6 +36,8 @@
 #import "TagsListViewController.h"
 #import "Login_SignupViewController.h"
 #import "FollowingFollowersViewController.h"
+#import "FollowTagsViewController.h"
+#import "TagsDetailsViewController.h"
 
 
 
@@ -47,12 +50,12 @@
 #import "Cell_People.h"
 #import "Cell_Tags.h"
 #import "Cell_Publications.h"
-#import "Cell_FollowTags.h"
 #import "Cell_profile.h"
 #import "Cell_Responces.h"
 #import "Cell_statsResponces.h"
 #import "Cell_TrendingDetails.h"
 #import "Cell_FollowFollowing.h"
+#import "Cell_TagsList.h"
 
 
 
@@ -290,6 +293,10 @@ extern GDXSync *_gdxSync;
 #define SEARCH_Tags             6
 
 //--------------------------------------------------------------------------------------------------
+
+#define Tags_Top         1
+#define Tags_Latest      2
+
 //--------------------------------------------------------------------------------------------------
 
 #pragma mark -

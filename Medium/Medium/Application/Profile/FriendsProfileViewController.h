@@ -11,6 +11,7 @@
 
 @interface FriendsProfileViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 {
+    NSMutableArray *arrSegment;
     
     IBOutlet UIView *subview_header;
     __weak IBOutlet UIView *view_navgation;
