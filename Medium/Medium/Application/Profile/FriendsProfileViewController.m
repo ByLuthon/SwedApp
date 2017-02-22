@@ -7,6 +7,7 @@
 //
 
 #import "FriendsProfileViewController.h"
+#import "TableViewCell.h"
 
 @interface FriendsProfileViewController ()
 
@@ -44,135 +45,30 @@
         [tblArray addObject:tableView];
     }
     
+    
+    
     HHHorizontalPagingView *pagingView = [HHHorizontalPagingView pagingViewWithHeaderView:subview_header headerHeight:145.0 segmentButtons:buttonArray segmentHeight:40 contentViews:tblArray];
     pagingView.frame = CGRectMake(0, 60, WIDTH, HEIGHT-60);
     pagingView.segmentView.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0];
 
-
-
-    
-    
-    UIButton *Followingbutton = (UIButton *)[[pagingView.subviews objectAtIndex:1] viewWithTag:10];
-    [Followingbutton addTarget:self action:@selector(methodTouchDown:) forControlEvents:UIControlEventTouchDown];
-    [Followingbutton addTarget:self action:@selector(methodTouchUpInside:) forControlEvents: UIControlEventTouchUpInside];
-    [Followingbutton.layer setBorderWidth:1.0f];
-    [Followingbutton.layer setBorderColor:[UIColor redColor].CGColor];
-    Followingbutton.userInteractionEnabled = TRUE;
-
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:pagingView action:@selector(handleTapFrom:)];
-    [Followingbutton addGestureRecognizer:tapGestureRecognizer];
-
-    
-    
-    [Followingbutton setOnTouchUpInside:^(UIEvent *event, id sender)
-     {
-         FollowingFollowersViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FollowingFollowersViewController"];
-         move.isFollowing = TRUE;
-         [self.navigationController pushViewController:move animated:YES];
-     }];
-    
-    UIButton *button = (UIButton *)[[pagingView.subviews objectAtIndex:1] viewWithTag:20];
-
-
-    
     /*
-
-    UIButton *Followersbutton = (UIButton *)[[pagingView.subviews objectAtIndex:2] viewWithTag:20];
-    [Followersbutton setOnTouchUpInside:^(UIEvent *event, id sender)
+    [cellview.btn_click1 setOnTouchUpInside:^(UIEvent *event, id sender)
      {
-         FollowingFollowersViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FollowingFollowersViewController"];
-         move.isFollowing = FALSE;
-         [self.navigationController pushViewController:move animated:YES];
+         NSLog(@"Click1");
      }];
-    */
 
+    [cellview.btn_click2 setOnTouchUpInside:^(UIEvent *event, id sender)
+     {
+         NSLog(@"Click2");
+     }];
+     */
+
+
+    
     [self.view addSubview:pagingView];
     [self.view bringSubviewToFront:view_navgation];
 
-    /*
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [subview_header addSubview:btn];
-    [btn setFrame:button.frame];
-    [btn.layer setBorderWidth:1.0f];
-    [btn.layer setBorderColor:[UIColor greenColor].CGColor];
-    [btn addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
-    [pagingView bringSubviewToFront:btn];
-     */
 }
-- (void) handleTapFrom: (UITapGestureRecognizer *)recognizer
-{
-    //Code to handle the gesture
-}
-
--(void)click
-{
-    NSLog(@"%s",__FUNCTION__);
-}
-
--(void)methodTouchDown:(id)sender{
-    
-    NSLog(@"TouchDown");
-}
--(void)methodTouchUpInside:(id)sender{
-    
-    NSLog(@"TouchUpInside");
-}
-
--(IBAction)aMethod:(id)sender
-{
-    NSLog(@"Click:");
-}
-
-#pragma mark - UIScrollViewDelegate
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    NSInteger currentPage = scrollView.contentOffset.x/[[UIScreen mainScreen] bounds].size.width;
-    
-    
-    /*
-    for(UIButton *b in self.segmentButtons) {
-        if(b.tag - kPagingButtonTag == currentPage)
-        {
-            [b setSelected:YES];
-            
-            CGRect visibleRect = (CGRect){_segmentView.contentOffset, _segmentView.bounds.size};
-            
-            if (CGRectContainsRect(visibleRect, b.frame))
-            {
-                // it's visible
-                //NSLog(@"it's visible");
-            }
-            else
-            {
-                //NSLog(@":) Hidden");
-                
-                if (visibleRect.origin.x > b.frame.origin.x)
-                {
-                    [_segmentView setContentOffset:CGPointMake(b.frame.origin.x, _segmentView.contentOffset.y) animated:YES];
-                }
-                else if ((visibleRect.size.width + visibleRect.origin.x) < b.frame.origin.x)
-                {
-                    [_segmentView setContentOffset:CGPointMake((b.frame.origin.x + b.frame.size.width) - self.frame.size.width, _segmentView.contentOffset.y) animated:YES];
-                }
-                else
-                {
-                    [_segmentView setContentOffset:CGPointMake((b.frame.origin.x + b.frame.size.width) - self.frame.size.width, _segmentView.contentOffset.y) animated:YES];
-                }
-            }
-            
-            
-        }else {
-            [b setSelected:NO];
-        }
-    }
-    self.currentScrollView = self.contentViews[currentPage];
-    
-    if(self.pagingViewSwitchBlock) {
-        self.pagingViewSwitchBlock(currentPage);
-    }
-     */
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -183,38 +79,49 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
-
-- (IBAction)tap:(id)sender
-{
-    
+- (IBAction)Tap:(id)sender {
 }
 
-- (IBAction)clickHere:(id)sender
-{
-    
-}
+
+
+
 - (IBAction)setting:(id)sender
 {
-    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Block This user", nil];
+    [actionSheet showInView:self.view];
 }
 
 - (IBAction)follow:(id)sender
 {
-
+    UIButton *btn = (UIButton *)sender;
+    
+    if (btn.selected == FALSE)
+    {
+        btn.selected = TRUE;
+        btn.backgroundColor = [UIColor clearColor];
+    }
+    else
+    {
+        btn.selected = FALSE;
+        btn.backgroundColor = kColorLightGreen;
+    }
 }
 
 - (IBAction)share:(id)sender
 {
-    
+    [APP_DELEGATE share:@"Look at this awesome website for hiring iOS Developers!" Link:[NSURL URLWithString:@"http://www.rlogical.com/"]];
 }
 - (IBAction)Following:(id)sender
 {
-    
+    FollowingFollowersViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FollowingFollowersViewController"];
+    move.isFollowing = TRUE;
+    [self.navigationController pushViewController:move animated:YES];
 }
 - (IBAction)Followers:(id)sender
 {
-    
+    FollowingFollowersViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FollowingFollowersViewController"];
+    move.isFollowing = FALSE;
+    [self.navigationController pushViewController:move animated:YES];
 }
 
 
@@ -296,6 +203,34 @@
 {
     HomeDetailsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeDetailsViewController"];
     [self.navigationController pushViewController:move animated:YES];
+}
+
+#pragma mark - actionSheet Delegates
+- (void)willPresentActionSheet:(UIActionSheet *)actionSheet
+{
+    SEL selector = NSSelectorFromString(@"_alertController");
+    if ([actionSheet respondsToSelector:selector])
+    {
+        UIAlertController *alertController = [actionSheet valueForKey:@"_alertController"];
+        if ([alertController isKindOfClass:[UIAlertController class]])
+        {
+            //alertController.view.tintColor = [UIColor redColor];
+        }
+    }
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+        switch (buttonIndex)
+        {
+            case 0:
+            {
+
+            }
+                break;
+            default:
+                break;
+        }
 }
 
 @end

@@ -17,6 +17,9 @@
  */
 @property (nonatomic, assign) CGFloat segmentTopSpace;
 
+
+@property (readwrite) int checkClickTag;
+
 /**
  *  自定义segmentButton的size
  */
@@ -47,6 +50,11 @@
  */
 @property (nonatomic, copy) void (^scrollViewDidScrollBlock)(CGFloat offset);
 
+@property (nonatomic, assign) CGFloat            headerViewHeight;
+
+@property (nonatomic, weak)   UIView             *headerView;
+@property (nonatomic, weak)   UIScrollView       *currentScrollView;
+
 /**
  *  实例化横向分页控件
  *
@@ -70,6 +78,11 @@
  *  @param pageIndex 页号
  */
 - (void)scrollToIndex:(NSInteger)pageIndex;
+
+
+-(void)configureHeaderView:(float)height;
+-(void)configureSegmentView;
+-(void)configureContentView;
 
 /**
  *  左右滑动

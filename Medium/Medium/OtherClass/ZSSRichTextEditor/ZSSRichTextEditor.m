@@ -390,6 +390,7 @@ static CGFloat kDefaultScale = 0.5;
 
 - (void)createEditorViewWithFrame:(CGRect)frame {
     
+    //self.editorView = [[UIWebView alloc] initWithFrame:CGRectMake(frame.origin.x-10, frame.origin.y, frame.size.width+20, frame.size.height)];
     self.editorView = [[UIWebView alloc] initWithFrame:frame];
     self.editorView.delegate = self;
     self.editorView.hidesInputAccessoryView = YES;
@@ -2150,7 +2151,7 @@ static CGFloat kDefaultScale = 0.5;
     UIImage *selectedImage = info[UIImagePickerControllerEditedImage]?:info[UIImagePickerControllerOriginalImage];
     
     //Scale the image
-    CGSize targetSize = CGSizeMake(selectedImage.size.width * self.selectedImageScale, selectedImage.size.height * self.selectedImageScale);
+    CGSize targetSize = CGSizeMake((selectedImage.size.width * self.selectedImageScale)-20, selectedImage.size.height * self.selectedImageScale);
     UIGraphicsBeginImageContext(targetSize);
     [selectedImage drawInRect:CGRectMake(0,0,targetSize.width,targetSize.height)];
     UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();

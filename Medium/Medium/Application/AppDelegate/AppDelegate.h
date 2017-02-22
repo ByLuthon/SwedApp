@@ -21,6 +21,7 @@
 
 -(void)setBorderToView:(UIView *)view withBorderWidth:(float)width radious:(float)radious color:(UIColor *)bordercolor;
 - (void)animateWithShow:(BOOL)show withView:(UIView *)animatedView;
+-(void)share:(NSString *)textToShare Link:(NSURL *)url;
 
 @end
 

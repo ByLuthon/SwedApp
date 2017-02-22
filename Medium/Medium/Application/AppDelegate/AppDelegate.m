@@ -105,6 +105,30 @@
         }];
     }
 }
+#pragma mark - Share Controller
+-(void)share:(NSString *)textToShare Link:(NSURL *)url
+{
+    //NSString *textToShare = @"Look at this awesome website for hiring iOS Developers!";
+    //NSURL *myWebsite = [NSURL URLWithString:@"http://www.rlogical.com/"];
+    
+    NSArray *objectsToShare = @[textToShare, url];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+    
+    NSArray *excludeActivities = @[UIActivityTypeAirDrop,
+                                   UIActivityTypePrint,
+                                   UIActivityTypeAssignToContact,
+                                   UIActivityTypeSaveToCameraRoll,
+                                   UIActivityTypeAddToReadingList,
+                                   UIActivityTypePostToFlickr,
+                                   UIActivityTypePostToVimeo,
+                                   UIActivityTypeMail,
+                                   UIActivityTypeMessage];
+    
+    activityVC.excludedActivityTypes = excludeActivities;
+    
+    [self.window.rootViewController presentViewController:activityVC animated:YES completion:nil];
+}
 
 
 @end

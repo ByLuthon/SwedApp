@@ -205,4 +205,70 @@
     }
 
 }
+
+#pragma mark - Tableview Delegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return 70;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 40;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerVw = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)] ;
+    //headerVw.backgroundColor=[UIColor colorWithRed:236.0/255.0 green:236.0/255.0 blue:236.0/255.0 alpha:1.0];  // set color of header
+    headerVw.backgroundColor = self.view.backgroundColor;
+    
+    UILabel *lblusername = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, WIDTH, 30)];
+    lblusername.textColor = [UIColor darkGrayColor];
+    lblusername.font = [UIFont boldSystemFontOfSize:12];
+    lblusername.text = @"More stories written by Benjamin P. Hardy";
+    lblusername.textAlignment = NSTextAlignmentCenter;
+    [headerVw addSubview:lblusername];
+    return headerVw;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self profileCell:tableView indexPath:indexPath Message:nil];
+}
+
+-(Cell_profile *)profileCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath Message:(NSMutableDictionary *)dic
+{
+    NSString *CellIdentifier = [NSString stringWithFormat:@"cell %ld",(long)indexPath.row];
+    
+    Cell_profile *cell = (Cell_profile *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    cell = nil;
+    if (cell == nil)
+    {
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"Cell_profile" owner:nil options:nil];
+        cell = [topLevelObjects objectAtIndex:0];
+        cell.backgroundColor = [UIColor whiteColor];
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        {
+            
+        }
+        
+    }
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    
+}
+
 @end

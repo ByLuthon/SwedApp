@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Common.h"
 
-@interface FriendsProfileViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
+@interface FriendsProfileViewController : UIViewController <UITableViewDelegate,UITableViewDataSource, UIActionSheetDelegate>
 {
     NSMutableArray *arrSegment;
     
@@ -20,6 +20,7 @@
 
 - (IBAction)Back:(id)sender;
 
+- (IBAction)Tap:(id)sender;
 - (IBAction)Following:(id)sender;
 - (IBAction)Followers:(id)sender;
 - (IBAction)setting:(id)sender;

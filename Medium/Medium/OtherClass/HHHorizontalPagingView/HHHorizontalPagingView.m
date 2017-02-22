@@ -12,7 +12,7 @@
 
 @interface HHHorizontalPagingView () <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (nonatomic, weak)   UIView             *headerView;
+
 @property (nonatomic, strong) NSArray            *segmentButtons;
 @property (nonatomic, strong) NSArray            *contentViews;
 
@@ -20,10 +20,8 @@
 
 @property (nonatomic, strong) UICollectionView   *horizontalCollectionView;
 
-@property (nonatomic, weak)   UIScrollView       *currentScrollView;
 @property (nonatomic, strong) NSLayoutConstraint *headerOriginYConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *headerSizeHeightConstraint;
-@property (nonatomic, assign) CGFloat            headerViewHeight;
 @property (nonatomic, assign) CGFloat            segmentBarHeight;
 @property (nonatomic, assign) BOOL               isSwitching;
 
@@ -64,9 +62,13 @@ static NSInteger kPagingButtonTag                 = 1000;
     pagingView.horizontalCollectionView.pagingEnabled                  = YES;
     pagingView.horizontalCollectionView.showsHorizontalScrollIndicator = NO;
     pagingView.horizontalCollectionView.scrollsToTop                   = NO;
-    if([pagingView.horizontalCollectionView respondsToSelector:@selector(setPrefetchingEnabled:)]) {
+    
+
+    if([pagingView.horizontalCollectionView respondsToSelector:@selector(setPrefetchingEnabled:)])
+    {
         pagingView.horizontalCollectionView.prefetchingEnabled = NO;
     }
+    
     pagingView.headerView                     = headerView;
     pagingView.segmentButtons                 = segmentButtons;
     pagingView.contentViews                   = contentViews;
@@ -78,7 +80,7 @@ static NSInteger kPagingButtonTag                 = 1000;
     tempLayout.itemSize = pagingView.horizontalCollectionView.frame.size;
 
     [pagingView addSubview:pagingView.horizontalCollectionView];
-    [pagingView configureHeaderView];
+    [pagingView configureHeaderView:headerHeight];
     [pagingView configureSegmentView];
     [pagingView configureContentView];
     
@@ -91,12 +93,15 @@ static NSInteger kPagingButtonTag                 = 1000;
 }
 
 
-- (void)scrollToIndex:(NSInteger)pageIndex {
+- (void)scrollToIndex:(NSInteger)pageIndex
+{
     [self segmentButtonEvent:self.segmentButtons[pageIndex]];
 }
 
-- (void)scrollEnable:(BOOL)enable {
-    if(enable) {
+- (void)scrollEnable:(BOOL)enable
+{
+    if(enable)
+    {
         self.segmentView.userInteractionEnabled     = YES;
         self.horizontalCollectionView.scrollEnabled = YES;
     }else {
@@ -105,66 +110,12 @@ static NSInteger kPagingButtonTag                 = 1000;
     }
 }
 
-- (void)configureHeaderView
+- (void)configureHeaderView:(float)height
 {
+    self.headerViewHeight = height;
+    
     if(self.headerView)
     {
-        NSLog(@"%@",self.headerView.subviews);
-        FriendsProfileViewController *move;
-
-        for (UIView *view in self.headerView.subviews)
-        {
-            if ([view isKindOfClass:[UIButton class]])
-            {
-                NSLog(@"%ld",(long)view.tag);
-                
-                //[(UIButton *)view addTarget:move action:@selector(Following:) forControlEvents:UIControlEventTouchUpInside];
-
-                UIButton *headerButton = (UIButton *)view;
-                headerButton.tag = view.tag;
-                [headerButton addTarget:move action:@selector(Following:) forControlEvents:UIControlEventTouchUpInside];
-                [_headerView addSubview:headerButton];
-            }
-            else
-            {
-                for (UIView *view1 in view.subviews)
-                {
-                    if ([view1 isKindOfClass:[UIButton class]])
-                    {
-                        NSLog(@"%ld",(long)view1.tag);
-                        
-                        //[(UIButton *)view1 addTarget:move action:@selector(Following:) forControlEvents:UIControlEventTouchUpInside];
-                        
-                        UIButton *headerButton = (UIButton *)view1;
-                        headerButton.tag = view1.tag;
-                        [headerButton addTarget:move action:@selector(Following:) forControlEvents:UIControlEventTouchUpInside];
-                        [_headerView addSubview:headerButton];
-                    }
-                    else
-                    {
-                        for (UIView *view2 in view1.subviews)
-                        {
-                            if ([view2 isKindOfClass:[UIButton class]])
-                            {
-                                NSLog(@"%ld",(long)view2.tag);
-                                
-                                //[(UIButton *)view2 addTarget:move action:@selector(Following:) forControlEvents:UIControlEventTouchUpInside];
-
-                                UIButton *headerButton = (UIButton *)view2;
-                                headerButton.tag = view2.tag;
-                                [headerButton addTarget:move action:@selector(Following:) forControlEvents:UIControlEventTouchUpInside];
-                                [_headerView addSubview:headerButton];
-                            }
-                            else
-                            {
-                                
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
         self.headerView.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:self.headerView];
         
@@ -178,11 +129,11 @@ static NSInteger kPagingButtonTag                 = 1000;
     }
 }
 
+
 - (void)headerButtonEvent:(UIButton *)headerbtn
 {
-    NSLog(@"Clich here");
+    //NSLog(@"Header Click here %ld",(long)headerbtn.tag);
 }
-
 
 - (void)configureSegmentView
 {
@@ -425,8 +376,28 @@ static NSInteger kPagingButtonTag                 = 1000;
     return YES;
 }
 
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
     UIView *view = [super hitTest:point withEvent:event];
+    
+    if (_checkClickTag == 0)
+    {
+        _checkClickTag = 1;
+    }
+    else
+    {
+        _checkClickTag = 0;
+        return view;
+    }
+    NSLog(@"Tag :%d",_checkClickTag);
+    NSLog(@"View Tag :%ld",(long)view.tag);
+
+    if ([view isKindOfClass:[UIButton class]])
+    {
+        //[self headerButtonEvent:(UIButton *)view];
+        return view;
+    }
+    
     if ([view isDescendantOfView:self.headerView] || [view isDescendantOfView:self.segmentView]) {
         self.horizontalCollectionView.scrollEnabled = NO;
         
@@ -434,7 +405,8 @@ static NSInteger kPagingButtonTag                 = 1000;
         self.currentTouchButton = nil;
         
         [self.segmentButtons enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if(obj == view) {
+            if(obj == view)
+            {
                 self.currentTouchButton = obj;
             }
         }];
@@ -511,9 +483,11 @@ static NSInteger kPagingButtonTag                 = 1000;
         //failed说明是点击事件
         if(state == UIGestureRecognizerStateFailed)
         {
-            if(self.currentTouchButton) {
+            if(self.currentTouchButton)
+            {
                 [self segmentButtonEvent:self.currentTouchButton];
-            }else if(self.currentTouchView && self.clickEventViewsBlock) {
+            }
+            else if(self.currentTouchView && self.clickEventViewsBlock) {
                 self.clickEventViewsBlock(self.currentTouchView);
             }
             self.currentTouchView = nil;
@@ -588,7 +562,8 @@ static NSInteger kPagingButtonTag                 = 1000;
 {
     NSInteger currentPage = scrollView.contentOffset.x/[[UIScreen mainScreen] bounds].size.width;
     
-    for(UIButton *b in self.segmentButtons) {
+    for(UIButton *b in self.segmentButtons)
+    {
         if(b.tag - kPagingButtonTag == currentPage)
         {
             [b setSelected:YES];
@@ -602,6 +577,7 @@ static NSInteger kPagingButtonTag                 = 1000;
             }
             else
             {
+                
                 //NSLog(@":) Hidden");
                 
                 if (visibleRect.origin.x > b.frame.origin.x)

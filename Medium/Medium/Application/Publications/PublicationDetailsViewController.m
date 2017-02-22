@@ -29,20 +29,20 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 -(void)setPagingview
 {
     sectionArr = [[NSMutableArray alloc] initWithObjects:@"HOME",@"CLIMATE",@"POLITICS",@"RUSSIA",@"SUPREME COURT",@"FEATURE",@"IMMIGRATION",@"VIDEO", nil];
     
-    NSMutableArray *buttonArray = [NSMutableArray array];
-    NSMutableArray *tblArray = [NSMutableArray array];
+    buttonArray = [NSMutableArray array];
+    tblArray = [NSMutableArray array];
     
     for(int i = 0; i < sectionArr.count; i++)
     {
@@ -60,19 +60,55 @@
         [tblArray addObject:tableView];
     }
     
-    HHHorizontalPagingView *pagingView = [HHHorizontalPagingView pagingViewWithHeaderView:subview_header headerHeight:110.0 segmentButtons:buttonArray segmentHeight:40 contentViews:tblArray];
+    pagingView = [HHHorizontalPagingView pagingViewWithHeaderView:subview_header headerHeight:110.0 segmentButtons:buttonArray segmentHeight:40 contentViews:tblArray];
     pagingView.frame = CGRectMake(0, 60, WIDTH, HEIGHT-60);
     //    pagingView.segmentButtonSize = CGSizeMake(60., 30.);              //自定义segmentButton的大小
     pagingView.segmentView.backgroundColor = subview_header.backgroundColor;     //设置segmentView的背景色
 
+    subview_headerBottom.hidden = TRUE;
+    
     [self.view addSubview:pagingView];
-    [self.view bringSubviewToFront:view_navigation ];
+    [self.view bringSubviewToFront:view_navigation];
+
+}
+-(void)setHeaderframe:(float)customHeight
+{
+    /*
+    pagingView.headerViewHeight = customHeight;
+
+    pagingView.headerView.frame = CGRectMake(0, 0, WIDTH, customHeight);
+    pagingView.segmentView.frame = CGRectMake(pagingView.segmentView.frame.origin.x, customHeight, pagingView.segmentView.frame.size.width, pagingView.segmentView.frame.size.height);
+    
+    pagingView.currentScrollView.frame = CGRectMake(0, pagingView.segmentView.frame.origin.y + pagingView.segmentView.frame.size.height, WIDTH, HEIGHT - (pagingView.segmentView.frame.origin.y + pagingView.segmentView.frame.size.height));
+     */
 }
 
 - (IBAction)Back:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (IBAction)follow:(id)sender
+{
+    UIButton *btn = (UIButton *)sender;
+    
+    if (btn.selected == FALSE)
+    {
+        btn.selected = TRUE;
+        btn.backgroundColor = [UIColor whiteColor];
+        //subview_headerBottom.hidden = FALSE;
+        [self setHeaderframe:180.0];
+    }
+    else
+    {
+        btn.selected = FALSE;
+        btn.backgroundColor = ColorFromHEX(@"#5421AE");
+        //subview_headerBottom.hidden = TRUE;
+        [self setHeaderframe:110.0];
+        
+    }
+}
+
 #pragma mark - Tableview Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

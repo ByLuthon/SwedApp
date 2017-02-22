@@ -29,36 +29,35 @@
 
 -(void)setInitParam
 {
+    arrSegment = [[NSMutableArray alloc] initWithObjects:@"Profile",@"Recommends",@"Responses", nil];
     
-    subview.frame = CGRectMake(0, 0, WIDTH, scrl.frame.size.height+155);
+    NSMutableArray *buttonArray = [NSMutableArray array];
     
-    [scrl addSubview:subview];
-    scrl.contentSize = CGSizeMake(WIDTH , subview.frame.size.height);
+    for(int i = 0; i < arrSegment.count; i++)
+    {
+        UIButton *segmentButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [segmentButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [segmentButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+        segmentButton.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+        [segmentButton setTitle:[NSString stringWithFormat:@"%@",[arrSegment objectAtIndex:i]] forState:UIControlStateNormal];
+        [buttonArray addObject:segmentButton];
+        
+    }
+    HHHorizontalPagingView *pagingView = [HHHorizontalPagingView pagingViewWithHeaderView:_subview_header headerHeight:_subview_header.frame.size.height segmentButtons:buttonArray segmentHeight:40 contentViews:@[tbl_profile, tbl_recommends, tbl_responces]];
     
-    
-    ///////////////////////
-    tbl_profile.frame = CGRectMake(0, 0, WIDTH, sub_Scrl.frame.size.height);
-    tbl_Recommends.frame = CGRectMake(WIDTH*1, 0, WIDTH, sub_Scrl.frame.size.height);
-    tbl_Responces.frame = CGRectMake(WIDTH*2, 0, WIDTH, sub_Scrl.frame.size.height);
-    
-    [sub_Scrl addSubview:tbl_profile];
-    [sub_Scrl addSubview:tbl_Recommends];
-    [sub_Scrl addSubview:tbl_Responces];
-    
-    sub_Scrl.contentSize = CGSizeMake(WIDTH * 3 , 0);
-    sub_Scrl.pagingEnabled = TRUE;
-    
-    CGPoint scrollPoint = CGPointMake(0, 0);
-    [sub_Scrl setContentOffset:scrollPoint animated:YES];
-    [sub_Scrl setDelegate:self];//Set delegate
-    
-    //Set Line Under Button
-    [self setLineFrameUnderMenu:btn_profile];
-    
-    tbl_profile.scrollEnabled = FALSE;
-    tbl_Recommends.scrollEnabled = FALSE;
-    tbl_Responces.scrollEnabled = FALSE;
+    tbl_profile.frame = CGRectMake(0, 0, WIDTH, HEIGHT-_view_navigation.frame.size.height);
+    tbl_recommends.frame = CGRectMake(0, 0, WIDTH, HEIGHT-_view_navigation.frame.size.height);
+    tbl_responces.frame = CGRectMake(0, 0, WIDTH, HEIGHT-_view_navigation.frame.size.height);
 
+    [tbl_profile reloadData];
+    [tbl_recommends reloadData];
+    [tbl_responces reloadData];
+    
+    pagingView.frame = CGRectMake(0, 60, WIDTH, HEIGHT-60);
+    pagingView.segmentView.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0];
+    
+    [self.view addSubview:pagingView];
+    [self.view bringSubviewToFront:_view_navigation];
 }
 
 /*
@@ -76,155 +75,17 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - UnderLine Button
--(void)resetButtontitleColor
-{
-    [btn_profile setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [btn_Recommeds setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [btn_responces setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-}
--(void)setLineFrameUnderMenu:(UIButton *)btn
-{
-    [self resetButtontitleColor];
-    
-    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    
-}
-#pragma mark - ScrollView Delegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    //NSLog(@"Y:%f",scrollView.contentOffset.y);
-    
-    if (scrollView == scrl)
-    {
-        if (scrollView.contentOffset.y > 154)
-        {
-            tbl_profile.scrollEnabled = TRUE;
-            tbl_Recommends.scrollEnabled = TRUE;
-            tbl_Responces.scrollEnabled = TRUE;
-        }
-        else
-        {
-            tbl_profile.scrollEnabled = FALSE;
-            tbl_Recommends.scrollEnabled = FALSE;
-            tbl_Responces.scrollEnabled = FALSE;
-        }
-    }
-    if (scrollView == tbl_profile  || scrollView == tbl_Responces || scrollView == tbl_Recommends)
-    {
-        if (scrl.contentOffset.y > 154)
-        {
-            if (scrollView.contentOffset.y <= 0)
-            {
-                int temp = scrl.contentOffset.y + scrollView.contentOffset.y;
-                scrl.contentOffset = CGPointMake(scrollView.contentOffset.x, temp);
-
-                tbl_profile.scrollEnabled = FALSE;
-                tbl_Recommends.scrollEnabled = FALSE;
-                tbl_Responces.scrollEnabled = FALSE;
-                
-                scrl.scrollEnabled = TRUE;
-            }
-            else
-            {
-                tbl_profile.scrollEnabled = TRUE;
-                tbl_Recommends.scrollEnabled = TRUE;
-                tbl_Responces.scrollEnabled = TRUE;
-            }
-        }
-        else
-        {
-            tbl_profile.scrollEnabled = FALSE;
-            tbl_Recommends.scrollEnabled = FALSE;
-            tbl_Responces.scrollEnabled = FALSE;
-        }
-    }
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrllView
-{
-    if (scrllView == sub_Scrl)
-    {
-        CGFloat pageWidth = scrllView.frame.size.width;
-        int page = floor((scrllView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-        
-        CGPoint scrollPoint;
-        
-        
-        [self resetButtontitleColor];
-        UIButton *btn;
-        
-        
-        if (page == 0)
-        {
-            btn = btn_profile;
-            [btn_profile setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            
-            scrollPoint = CGPointMake(0, 0);
-            [sub_Scrl setContentOffset:scrollPoint animated:YES];
-        }
-        else if (page == 1)
-        {
-            btn = btn_Recommeds;
-            [btn_Recommeds setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            
-            scrollPoint = CGPointMake(WIDTH*1, 0);
-            [sub_Scrl setContentOffset:scrollPoint animated:YES];
-        }
-        else if (page == 2)
-        {
-            btn = btn_responces;
-            [btn_responces setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            
-            scrollPoint = CGPointMake(WIDTH*2, 0);
-            [sub_Scrl setContentOffset:scrollPoint animated:YES];
-        }
-        
-        
-        [self switchingtheSegments:page+1];
-    }
-}
-
-- (IBAction)SegmentTapped:(id)sender
-{
-    UIButton *btn = (UIButton *)sender;
-    int indx = 0;
-    indx = (int)btn.tag;
-    
-    selectedTab = indx;
-    switch (indx)
-    {
-        case 1:
-            [self setLineFrameUnderMenu:btn_profile];
-            break;
-            
-        case 2:
-            [self setLineFrameUnderMenu:btn_Recommeds];
-            break;
-            
-        case 3:
-            [self setLineFrameUnderMenu:btn_responces];
-            break;
-            
-            
-        default:
-            break;
-    }
-    
-    [self switchingtheSegments:indx];
-    
-}
 
 - (IBAction)Edit:(id)sender
 {
     EditProfileViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"EditProfileViewController"];
     [self presentViewController:move animated:YES completion:nil];
-    //[self.navigationController pushViewController:move animated:YES];
 }
 
 - (IBAction)share:(id)sender
 {
- }
+    [APP_DELEGATE share:@"Look at this awesome website for hiring iOS Developers!" Link:[NSURL URLWithString:@"http://www.rlogical.com/"]];
+}
 
 - (IBAction)Following:(id)sender
 {
@@ -240,42 +101,12 @@
     [self.navigationController pushViewController:move animated:YES];
 }
 
-
-#pragma mark - switchSegments
--(void)switchSegments:(UIButton *)btn
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    int indx = 0;
-    indx = (int)btn.tag;
-    [self switchingtheSegments:indx];
+    //NSInteger currentPage = scrollView.contentOffset.x/[[UIScreen mainScreen] bounds].size.width;
+    //selectedTab = (int)currentPage;
 }
--(void)switchingtheSegments:(int)idx
-{
-    //LoadingMenu = idx;
-    
-    CGPoint scrollPoint;
-    switch (idx)
-    {
-        case 1:
-            scrollPoint = CGPointMake(0, 0);
-            [sub_Scrl setContentOffset:scrollPoint animated:YES];
-            break;
-            
-        case 2:
-            scrollPoint = CGPointMake(WIDTH, 0);
-            [sub_Scrl setContentOffset:scrollPoint animated:YES];
-            break;
-            
-        case 3:
-            scrollPoint = CGPointMake(WIDTH*2, 0);
-            [sub_Scrl setContentOffset:scrollPoint animated:YES];
-            break;
-            
-            
-        default:
-            break;
-    }
-}
-
 #pragma mark - Tableview Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -314,7 +145,7 @@
         
         return headerVw;
     }
-    else if (tableView == tbl_Recommends)
+    else if (tableView == tbl_recommends)
     {
         UIView *headerVw = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)] ;
         //headerVw.backgroundColor=[UIColor colorWithRed:236.0/255.0 green:236.0/255.0 blue:236.0/255.0 alpha:1.0];  // set color of header
@@ -328,7 +159,7 @@
         
         return headerVw;
     }
-    else if (tableView == tbl_Responces)
+    else if (tableView == tbl_responces)
     {
         UIView *headerVw = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)] ;
         //headerVw.backgroundColor=[UIColor colorWithRed:236.0/255.0 green:236.0/255.0 blue:236.0/255.0 alpha:1.0];  // set color of header
@@ -354,11 +185,11 @@
     {
         return 70;
     }
-    else if (tableView == tbl_Recommends)
+    else if (tableView == tbl_recommends)
     {
         return 509;
     }
-    else if (tableView == tbl_Responces)
+    else if (tableView == tbl_responces)
     {
         return 378;
     }
@@ -367,12 +198,7 @@
         return 0;
     }
 }
-/*
- -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
- {
- return 85;
- }
- */
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -385,11 +211,11 @@
     {
         return [self profileCell:tableView indexPath:indexPath Message:nil];
     }
-    else if (tableView == tbl_Recommends)
+    else if (tableView == tbl_recommends)
     {
         return [self RecommendsCell:tableView indexPath:indexPath Message:nil];
     }
-    else if (tableView == tbl_Responces)
+    else if (tableView == tbl_responces)
     {
         return  [self ResponcesCell:tableView indexPath:indexPath Message:nil];
     }
@@ -433,10 +259,8 @@
         cell.backgroundColor = [UIColor clearColor];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
         {
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            
             
             [cell.btn_like setOnTouchUpInside:^(id sender, UIEvent *event)
              {
@@ -449,7 +273,6 @@
                      cell.btn_like.selected = TRUE;
                  }
              }];
-            
             
             [cell.btn_bookmarks setOnTouchUpInside:^(id sender, UIEvent *event)
              {
@@ -468,9 +291,7 @@
                  FriendsProfileViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsProfileViewController"];
                  [self.navigationController pushViewController:move animated:YES];
              }];
-
         }
-        
     }
     return cell;
 }
