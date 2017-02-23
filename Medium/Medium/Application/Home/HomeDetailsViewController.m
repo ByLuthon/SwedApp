@@ -13,6 +13,7 @@
 @end
 
 @implementation HomeDetailsViewController
+@synthesize isfromResponces;
 
 - (void)viewDidLoad
 {
@@ -47,10 +48,34 @@
     
     [self setTags];
     
+    if (isfromResponces)
+    {
+        btn_edit.hidden = FALSE;
+        btn_follow.hidden = TRUE;
+    }
+    else
+    {
+        btn_edit.hidden = TRUE;
+        btn_follow.hidden = FALSE;
+    }
     
+
     
     [scrl addSubview:view_Scrl];
     scrl.contentSize = CGSizeMake(WIDTH, view_Scrl.frame.size.height);
+
+    CGFloat borderWidth = 0.5;
+    
+    // This creates a testing view to test the theory, in your case this will be your UILabel
+    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 1)];
+    view.layer.borderColor = [UIColor grayColor].CGColor;
+    view.layer.borderWidth = borderWidth;
+    [_subview_bottom addSubview:view];
+
+    
+    _subview_bottom.frame = CGRectMake(0, HEIGHT - _subview_bottomTag.frame.size.height, WIDTH, _subview_bottomTag.frame.size.height);
+    _subview_bottom.hidden = FALSE;
+    [self.view bringSubviewToFront:_subview_bottom];
 
 }
 #pragma mark - TAGS
@@ -185,25 +210,52 @@
 
 - (IBAction)FollowUser:(id)sender
 {
-    UIButton *btn_follow = (UIButton *)sender;
+    UIButton *btn = (UIButton *)sender;
     
-    if (btn_follow.selected == FALSE)
+    if (btn.selected == FALSE)
     {
-        btn_follow.selected = TRUE;
+        btn.selected = TRUE;
         
-        btn_follow.backgroundColor = kColorLightGreen;
-        [btn_follow setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [btn_follow setTitle:@"Following" forState:UIControlStateNormal];
+        btn.backgroundColor = kColorLightGreen;
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn setTitle:@"Following" forState:UIControlStateNormal];
     }
     else
     {
-        btn_follow.selected = FALSE;
+        btn.selected = FALSE;
         
-        btn_follow.backgroundColor = [UIColor whiteColor];
-        [btn_follow setTitleColor:kColorLightGreen forState:UIControlStateNormal];
-        [btn_follow setTitle:@"Follow" forState:UIControlStateNormal];
+        btn.backgroundColor = [UIColor whiteColor];
+        [btn setTitleColor:kColorLightGreen forState:UIControlStateNormal];
+        [btn setTitle:@"Follow" forState:UIControlStateNormal];
     }
 
+}
+
+- (IBAction)writeResponces:(id)sender
+{
+    ZSSDemoViewController *move = [[ZSSDemoViewController alloc] init];
+    move.isFromResponce = TRUE;
+    [self presentViewController:move animated:YES completion:nil];
+}
+
+- (IBAction)Edit:(id)sender
+{
+    ZSSDemoViewController *move = [[ZSSDemoViewController alloc] init];
+    move.isFromResponce = FALSE;
+    [self presentViewController:move animated:YES completion:nil];
+}
+
+#pragma mark - scrollview Delegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (((scrollView.contentOffset.y + scrollView.frame.size.height) - _subview_bottomTag.frame.size.height) > _subview_bottomTag.frame.origin.y)
+    {
+        _subview_bottom.hidden = TRUE;
+    }
+    else
+    {
+        _subview_bottom.hidden = FALSE;
+    }
 }
 
 #pragma mark - Tableview Delegate
@@ -268,7 +320,9 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    
+    HomeDetailsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeDetailsViewController"];
+    move.isfromResponces = FALSE;
+    [self.navigationController pushViewController:move animated:YES];
 }
 
 @end

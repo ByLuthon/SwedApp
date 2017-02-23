@@ -324,8 +324,6 @@
 		9A3B4C231E4B4ADC00DDC483 /* DTParallaxTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3B4C201E4B4ADC00DDC483 /* DTParallaxTableView.m */; };
 		9A462CE41E4DB7420040B491 /* AddTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A462CE31E4DB7420040B491 /* AddTagsViewController.m */; };
 		9A462CE71E4DBF120040B491 /* TagsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A462CE61E4DBF120040B491 /* TagsListViewController.m */; };
-		9A664B0B1E5D842700E2D2F0 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A664B091E5D842700E2D2F0 /* TableViewCell.m */; };
-		9A664B0C1E5D842700E2D2F0 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A664B0A1E5D842700E2D2F0 /* TableViewCell.xib */; };
 		9A6CB9211E444BCA001CD7C3 /* appicon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6CB9201E444BCA001CD7C3 /* appicon@3x.png */; };
 		9A6CB9231E444BD0001CD7C3 /* appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6CB9221E444BD0001CD7C3 /* appicon@2x.png */; };
 		9A6CB9251E444BD7001CD7C3 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6CB9241E444BD7001CD7C3 /* appicon.png */; };
@@ -914,9 +912,6 @@
 		9A462CE31E4DB7420040B491 /* AddTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTagsViewController.m; sourceTree = "<group>"; };
 		9A462CE51E4DBF120040B491 /* TagsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsListViewController.h; sourceTree = "<group>"; };
 		9A462CE61E4DBF120040B491 /* TagsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagsListViewController.m; sourceTree = "<group>"; };
-		9A664B081E5D842700E2D2F0 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		9A664B091E5D842700E2D2F0 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
-		9A664B0A1E5D842700E2D2F0 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		9A6CB9201E444BCA001CD7C3 /* appicon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon@3x.png"; sourceTree = "<group>"; };
 		9A6CB9221E444BD0001CD7C3 /* appicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon@2x.png"; sourceTree = "<group>"; };
 		9A6CB9241E444BD7001CD7C3 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
@@ -1313,9 +1308,6 @@
 				9A6FBAE21E55AD9400AF5232 /* FollowingFollowersViewController.m */,
 				9AB329211E56CEBA00CBAD8F /* FriendsProfileViewController.h */,
 				9AB329221E56CEBA00CBAD8F /* FriendsProfileViewController.m */,
-				9A664B081E5D842700E2D2F0 /* TableViewCell.h */,
-				9A664B091E5D842700E2D2F0 /* TableViewCell.m */,
-				9A664B0A1E5D842700E2D2F0 /* TableViewCell.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -2678,7 +2670,6 @@
 				9A2854171E43148F0080AEDE /* ic_editor_list_2_24dp@2x.png in Resources */,
 				9A2854241E43148F0080AEDE /* ic_facebook_24dp@2x.png in Resources */,
 				9AC2FECF1E4C7E70006C4F40 /* ZSSindent@2x.png in Resources */,
-				9A664B0C1E5D842700E2D2F0 /* TableViewCell.xib in Resources */,
 				9A2853F21E43148F0080AEDE /* abc_ic_menu_selectall_mtrl_alpha@2x.png in Resources */,
 				9A6CB9841E44B642001CD7C3 /* fast-forward@3x.png in Resources */,
 				9A2853921E43148F0080AEDE /* abc_btn_radio_to_on_mtrl_000.png in Resources */,
@@ -2996,7 +2987,6 @@
 				9AF9C1D91E430A06004819E5 /* GMDCircleLoader.m in Sources */,
 				9A7089291E49F15200324AF0 /* Cell_Responces.m in Sources */,
 				9A6CB9781E44AE70001CD7C3 /* PublicationsViewController.m in Sources */,
-				9A664B0B1E5D842700E2D2F0 /* TableViewCell.m in Sources */,
 				9A7089241E49F11A00324AF0 /* Cell_profile.m in Sources */,
 				9A0A59731E4881D3001F594D /* BookmarksViewController.m in Sources */,
 				9AC2FE4E1E4C7C67006C4F40 /* HRColorCursor.m in Sources */,

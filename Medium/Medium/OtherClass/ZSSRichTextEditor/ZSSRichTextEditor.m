@@ -1208,7 +1208,8 @@ static CGFloat kDefaultScale = 0.5;
 
 #pragma mark - Editor Interaction
 
-- (void)focusTextEditor {
+- (void)focusTextEditor
+{
     self.editorView.keyboardDisplayRequiresUserAction = NO;
     NSString *js = [NSString stringWithFormat:@"zss_editor.focusEditor();"];
     [self.editorView stringByEvaluatingJavaScriptFromString:js];
@@ -1353,7 +1354,6 @@ static CGFloat kDefaultScale = 0.5;
 {
     NSString *trigger = @"zss_editor.setHorizontalRule();";
     [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
-    
 }
 
 - (void)setIndent {
@@ -1832,18 +1832,19 @@ static CGFloat kDefaultScale = 0.5;
     [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
 }
 
-- (void)insertImageBase64String:(NSString *)imageBase64String alt:(NSString *)alt {
+- (void)insertImageBase64String:(NSString *)imageBase64String alt:(NSString *)alt
+{
     NSString *trigger = [NSString stringWithFormat:@"zss_editor.insertImageBase64String(\"%@\", \"%@\");", imageBase64String, alt];
     [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
     
-    [self paragraph];
+    //[self paragraph];
 }
 
 - (void)updateImageBase64String:(NSString *)imageBase64String alt:(NSString *)alt {
     NSString *trigger = [NSString stringWithFormat:@"zss_editor.updateImageBase64String(\"%@\", \"%@\");", imageBase64String, alt];
     [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
     
-    [self paragraph];
+    //[self paragraph];
 
 }
 
@@ -2062,7 +2063,8 @@ static CGFloat kDefaultScale = 0.5;
 - (void)editorDidScrollWithPosition:(NSInteger)position {}
 
 //Blank implementation
-- (void)editorDidChangeWithText:(NSString *)text andHTML:(NSString *)html  {}
+- (void)editorDidChangeWithText:(NSString *)text andHTML:(NSString *)html  {
+}
 
 //Blank implementation
 - (void)hashtagRecognizedWithWord:(NSString *)word {}
@@ -2175,7 +2177,6 @@ static CGFloat kDefaultScale = 0.5;
     }
      */
     [self insertImageBase64String:imageBase64String alt:self.selectedImageAlt];
-
     
     self.imageBase64String = imageBase64String;
 
@@ -2222,7 +2223,7 @@ static CGFloat kDefaultScale = 0.5;
             
             // Editor View
             CGRect editorFrame = self.editorView.frame;
-            editorFrame.size.height = (self.view.frame.size.height - keyboardHeight-45) - sizeOfToolbar - extraHeight;
+            editorFrame.size.height = (self.view.frame.size.height - keyboardHeight - 50) - sizeOfToolbar - extraHeight;
             self.editorView.frame = editorFrame;
             self.editorViewFrame = self.editorView.frame;
             self.editorView.scrollView.contentInset = UIEdgeInsetsZero;
@@ -2230,12 +2231,12 @@ static CGFloat kDefaultScale = 0.5;
             
             // Source View
             CGRect sourceFrame = self.sourceView.frame;
-            sourceFrame.size.height = (self.view.frame.size.height - keyboardHeight-45) - sizeOfToolbar - extraHeight;
+            sourceFrame.size.height = (self.view.frame.size.height - keyboardHeight - 50) - sizeOfToolbar - extraHeight;
             self.sourceView.frame = sourceFrame;
             
             // Provide editor with keyboard height and editor view height
-            [self setFooterHeight:(keyboardHeight - 8)];
-            [self setContentHeight: self.editorViewFrame.size.height];
+            [self setFooterHeight:(keyboardHeight - 15)];
+            [self setContentHeight: self.editorViewFrame.size.height - 15];
             
         } completion:nil];
         

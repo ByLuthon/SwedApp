@@ -18,6 +18,7 @@
 @end
 
 @implementation ZSSDemoViewController
+@synthesize isFromResponce;
 
 
 - (void)viewDidLoad {
@@ -32,23 +33,36 @@
     self.alwaysShowToolbar = YES;
     self.receiveEditorDidChangeEvents = NO;
     
+    NSString *html = @"";
     
     // Export HTML
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Export" style:UIBarButtonItemStylePlain target:self action:@selector(exportHTML)];
     
     // HTML Content to set in the editor
-    NSString *html = @"<div class='test'></div><!-- This is an HTML comment -->"
-    "<p>This is a our company <a title=\"Zed Said\" href=\"http://www.rlogical.com/\">RLogical Techsoft</a></p>";
+    //html = @"<div class='test'></div><!-- This is an HTML comment -->" "<p>This is a our company <a title=\"Zed Said\" href=\"http://www.rlogical.com/\">RLogical Techsoft</a></p>";
+    
+    NSString *imageURL = [[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"ic_heart_gray_14dp" ofType:@"png"]] absoluteString];
+    //[html appendFormat:@"<img src=\"%@\" />", imageURL];
+
+    
+    if (isFromResponce)
+    {
+        html = [NSString stringWithFormat:@"<div class='test'><div style='width:%fpx; height:40px; padding:5px; border:0.5px solid gray; border-radius: 5px'><div style='float:left;width:70%%;'><b style='width:100%%;float;'><font size='2'>Lorem Ipsum is simply</font> </b><font size='2' style='width:100%%;float:left;'>Benjamin P Hardy</font></div><div style='float:right;width:30%%; height:100%%'><img src='%@' style='width:15px;height:15px;' align='top'><font size='2'>118</font> &nbsp; <img src='%@' style='width:15px;height:15px;'align='top'><font size='2'>50</font></div></div> <br>",self.view.frame.size.width - 40,imageURL,imageURL];
+    }
+
+    NSString *str = @"<!-- This is an HTML comment -->"
+    "<p>RLogical is a one-stop solution software development firm based in India and is duly-accredited by the Software Technology Parks of India (STPI). Our company’s years of experience in website design and development has made us the top choice among locally-and-internationally-owned businesses around the globe. see our website <a title=\"Zed Said\" href=\"http://www.rlogical.com/\">RLogical</a></p>";
+    
+    html = [NSString stringWithFormat:@"%@%@",html,str];
     
     // Set the base URL if you would like to use relative links, such as to images.
-    self.baseURL = [NSURL URLWithString:@"http://www.zedsaid.com"];
+    self.baseURL = [NSURL URLWithString:@"href=\"http://www.rlogical.com/"];
     self.shouldShowKeyboard = YES;
     // Set the HTML contents of the editor
     [self setPlaceholder:@""];
     
     [self setHTML:html];
     //[self setHTML:@""];
-    
 }
 
 

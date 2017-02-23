@@ -8,24 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "Common.h"
+#import "HHHorizontalPagingView.h"
 
 @interface StatsViewController : UIViewController
 {
     int selectedTab;
 
+    __weak IBOutlet UIView *view_navigation;
+    __weak IBOutlet UIView *subview_header;
     
-    __weak IBOutlet UIScrollView *mainscrl;
-    __weak IBOutlet UIScrollView *scrl;
-    IBOutlet UIView *subview;
+    NSMutableArray *arrSegment;
+
     
     __weak IBOutlet UIView *subview_graph;
-    __weak IBOutlet UIView *subview_Segment;
-    __weak IBOutlet UIButton *btn_Stories;
-    __weak IBOutlet UIButton *btn_Responces;
+
     IBOutlet UITableView *tbl_stories;
     IBOutlet UITableView *tbl_responces;
 }
 - (IBAction)Back:(id)sender;
-- (IBAction)segmentTapped:(id)sender;
 
 @end

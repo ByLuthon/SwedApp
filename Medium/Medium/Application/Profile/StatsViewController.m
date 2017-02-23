@@ -22,6 +22,8 @@
 {
     [self setInitparam];
     
+    [self setPagingController];
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -33,36 +35,6 @@
 
 -(void)setInitparam
 {
-    //
-    subview.frame = CGRectMake(0, 0, WIDTH, mainscrl.frame.size.height + subview_Segment.frame.origin.y);
-    
-    [mainscrl addSubview:subview];
-    mainscrl.contentSize = CGSizeMake(WIDTH , subview.frame.size.height);
-    
-    
-    ///////////////////////
-    tbl_stories.frame = CGRectMake(0, 0, WIDTH, scrl.frame.size.height);
-    tbl_responces.frame = CGRectMake(WIDTH*1, 0, WIDTH, scrl.frame.size.height);
-    
-    [scrl addSubview:tbl_stories];
-    [scrl addSubview:tbl_responces];
-    
-    scrl.contentSize = CGSizeMake(WIDTH * 2 , 0);
-    scrl.pagingEnabled = TRUE;
-    
-    CGPoint scrollPoint = CGPointMake(0, 0);
-    [scrl setContentOffset:scrollPoint animated:YES];
-    [scrl setDelegate:self];//Set delegate
-    
-    //Set Line Under Button
-    [self setLineFrameUnderMenu:btn_Stories];
-    
-    tbl_stories.scrollEnabled = FALSE;
-    tbl_responces.scrollEnabled = FALSE;
-    
-
-    
-    
     //Graph
     _chartView = [[TWRChartView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, subview_graph.frame.size.height)];
     _chartView.backgroundColor = [UIColor clearColor];
@@ -77,12 +49,44 @@
     [self loadBarChart];
 
 }
+-(void)setPagingController
+{
+    arrSegment = [[NSMutableArray alloc] initWithObjects:@"Stories",@"Responses", nil];
+    
+    NSMutableArray *buttonArray = [NSMutableArray array];
+    
+    for(int i = 0; i < arrSegment.count; i++)
+    {
+        UIButton *segmentButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [segmentButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [segmentButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+        segmentButton.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+        [segmentButton setTitle:[NSString stringWithFormat:@"%@",[arrSegment objectAtIndex:i]] forState:UIControlStateNormal];
+        [buttonArray addObject:segmentButton];
+    }
+
+    HHHorizontalPagingView *pagingView = [HHHorizontalPagingView pagingViewWithHeaderView:subview_header headerHeight:subview_header.frame.size.height segmentButtons:buttonArray segmentHeight:40 contentViews:@[tbl_stories, tbl_responces]];
+    //pagingView.segmentButtonSize = CGSizeMake(WIDTH/2, 40);              //自定义segmentButton的大小
+
+    tbl_stories.frame = CGRectMake(0, 0, WIDTH, HEIGHT-view_navigation.frame.size.height);
+    tbl_responces.frame = CGRectMake(0, 0, WIDTH, HEIGHT-view_navigation.frame.size.height);
+    
+    [tbl_stories reloadData];
+    [tbl_responces reloadData];
+    
+    pagingView.frame = CGRectMake(0, 60, WIDTH, HEIGHT-60);
+    pagingView.segmentView.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0];
+    
+    [self.view addSubview:pagingView];
+    [self.view bringSubviewToFront:view_navigation];
+
+}
 #pragma mark - Chart
 
 - (void)loadBarChart
 {
     // Build chart data
-    TWRDataSet *dataSet1 = [[TWRDataSet alloc] initWithDataPoints:@[@10, @15, @5, @15, @5,@"", @15, @5, @15, @5,@"", @15, @5, @15, @"1",@10, @15, @5, @15, @5,@10, @15, @5, @15, @5,@"", @15, @5, @15, @5]
+    TWRDataSet *dataSet1 = [[TWRDataSet alloc] initWithDataPoints:@[@2, @15, @2, @8, @1,@"", @11, @9, @18, @5,@"", @7, @17, @20, @"1",@10, @2, @5, @12, @5, @16, @15, @6, @9, @5,@"", @7, @2, @1, @8]
                                                         fillColor:[kColorLightGreen colorWithAlphaComponent:1.0]
                                                       strokeColor:kColorLightGreen];
     
@@ -112,157 +116,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - UnderLine Button
--(void)resetButtontitleColor
-{
-    [btn_Stories setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [btn_Responces setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    
-}
--(void)setLineFrameUnderMenu:(UIButton *)btn
-{
-    [self resetButtontitleColor];
-    
-    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    
-}
-#pragma mark - ScrollView Delegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    //NSLog(@"Y:%f",scrollView.contentOffset.y);
-    
-    if (scrollView == mainscrl)
-    {
-        if (scrollView.contentOffset.y > 154)
-        {
-            tbl_stories.scrollEnabled = TRUE;
-            tbl_responces.scrollEnabled = TRUE;
-        }
-        else
-        {
-            tbl_stories.scrollEnabled = FALSE;
-            tbl_responces.scrollEnabled = FALSE;
-        }
-    }
-    if (scrollView == tbl_stories  || scrollView == tbl_responces)
-    {
-        if (mainscrl.contentOffset.y > 154)
-        {
-            if (scrollView.contentOffset.y <= 0)
-            {
-                int temp = mainscrl.contentOffset.y + scrollView.contentOffset.y;
-                mainscrl.contentOffset = CGPointMake(scrollView.contentOffset.x, temp);
-                
-                tbl_stories.scrollEnabled = FALSE;
-                tbl_responces.scrollEnabled = FALSE;
-                
-                mainscrl.scrollEnabled = TRUE;
-            }
-            else
-            {
-                tbl_stories.scrollEnabled = TRUE;
-                tbl_responces.scrollEnabled = TRUE;
-            }
-        }
-        else
-        {
-            tbl_stories.scrollEnabled = TRUE;
-            tbl_responces.scrollEnabled = TRUE;
-        }
-    }
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrllView
-{
-    if (scrllView == scrl)
-    {
-        CGFloat pageWidth = scrllView.frame.size.width;
-        int page = floor((scrllView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-        
-        CGPoint scrollPoint;
-        
-        
-        [self resetButtontitleColor];
-        UIButton *btn;
-        
-        
-        if (page == 0)
-        {
-            btn = btn_Stories;
-            [btn_Stories setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            
-            scrollPoint = CGPointMake(0, 0);
-            [scrl setContentOffset:scrollPoint animated:YES];
-        }
-        else if (page == 1)
-        {
-            btn = btn_Responces;
-            [btn_Responces setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            
-            scrollPoint = CGPointMake(WIDTH*1, 0);
-            [scrl setContentOffset:scrollPoint animated:YES];
-        }
-        
-        [self switchingtheSegments:page+1];
-    }
-}
-
-- (IBAction)segmentTapped:(id)sender
-{
-    UIButton *btn = (UIButton *)sender;
-    int indx = 0;
-    indx = (int)btn.tag;
-    
-    selectedTab = indx;
-    switch (indx)
-    {
-        case 1:
-            [self setLineFrameUnderMenu:btn_Stories];
-            break;
-            
-        case 2:
-            [self setLineFrameUnderMenu:btn_Responces];
-            break;
-            
-            
-        default:
-            break;
-    }
-    
-    [self switchingtheSegments:indx];
-    
-}
-
-
-#pragma mark - switchSegments
--(void)switchSegments:(UIButton *)btn
-{
-    int indx = 0;
-    indx = (int)btn.tag;
-    [self switchingtheSegments:indx];
-}
--(void)switchingtheSegments:(int)idx
-{
-    //LoadingMenu = idx;
-    
-    CGPoint scrollPoint;
-    switch (idx)
-    {
-        case 1:
-            scrollPoint = CGPointMake(0, 0);
-            [scrl setContentOffset:scrollPoint animated:YES];
-            break;
-            
-        case 2:
-            scrollPoint = CGPointMake(WIDTH, 0);
-            [scrl setContentOffset:scrollPoint animated:YES];
-            break;
-            
-            
-        default:
-            break;
-    }
-}
 
 #pragma mark - Tableview Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -330,7 +183,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    
+    HomeDetailsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeDetailsViewController"];
+    move.isfromResponces = TRUE;
+    [self.navigationController pushViewController:move animated:YES];
 }
 
 @end

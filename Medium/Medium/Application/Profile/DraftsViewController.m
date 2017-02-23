@@ -173,6 +173,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     ZSSDemoViewController *move = [[ZSSDemoViewController alloc] init];
+    move.isFromResponce = FALSE;
     [self presentViewController:move animated:YES completion:nil];
 }
 

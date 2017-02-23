@@ -11,4 +11,6 @@
 
 @interface ZSSDemoViewController : ZSSRichTextEditor
 
+@property (readwrite) BOOL isFromResponce;
+
 @end

@@ -69,13 +69,15 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark - Tableview Delegate
+#pragma mark - Tableview Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return 509;
+    return 355;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -86,12 +88,12 @@
 {
     NSString *CellIdentifier = [NSString stringWithFormat:@"cell %ld",(long)indexPath.row];
     
-    Cell_Home *cell = (Cell_Home *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    Cell_TrendingDetails *cell = (Cell_TrendingDetails *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     cell = nil;
     if (cell == nil)
     {
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"Cell_Home" owner:nil options:nil];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"Cell_TrendingDetails" owner:nil options:nil];
         cell = [topLevelObjects objectAtIndex:0];
         cell.backgroundColor = [UIColor clearColor];
         
@@ -110,31 +112,30 @@
              }
          }];
         
-        
         cell.btn_bookmarks.selected = TRUE;
-
-        [cell.btn_img_profile setOnTouchUpInside:^(UIEvent *event, id sender)
-         {
-             FriendsProfileViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsProfileViewController"];
-             [self.navigationController pushViewController:move animated:YES];
-         }];
 
         [cell.btn_bookmarks setOnTouchUpInside:^(id sender, UIEvent *event)
          {
-             NSLog(@"%ld",(long)indexPath.row);
-             
              [arrBokkmarks removeObjectAtIndex:indexPath.row];
              [tbl deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationRight];
              [tbl reloadData];
              
              [self showAlert];
          }];
+        
+        [cell.btn_user setOnTouchUpInside:^(id sender, UIEvent *event)
+         {
+             FriendsProfileViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsProfileViewController"];
+             [self.navigationController pushViewController:move animated:YES];
+         }];
+        
     }
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     HomeDetailsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeDetailsViewController"];
+    move.isfromResponces = FALSE;
     [self.navigationController pushViewController:move animated:YES];
 }
 

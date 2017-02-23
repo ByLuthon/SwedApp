@@ -34,7 +34,6 @@
     
     [scrl addSubview:view_Scrl];
     scrl.contentSize = CGSizeMake(WIDTH, view_Scrl.frame.size.height);
-    
 }
 /*
 #pragma mark - Navigation
@@ -63,5 +62,12 @@
     {
         btn.selected = TRUE;
     }
+}
+
+- (IBAction)writeResponces:(id)sender
+{
+    ZSSDemoViewController *move = [[ZSSDemoViewController alloc] init];
+    move.isFromResponce = TRUE;
+    [self presentViewController:move animated:YES completion:nil];
 }
 @end

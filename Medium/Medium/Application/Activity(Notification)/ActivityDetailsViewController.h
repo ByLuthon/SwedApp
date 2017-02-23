@@ -19,5 +19,6 @@
 }
 - (IBAction)back:(id)sender;
 - (IBAction)bookmarks:(id)sender;
+- (IBAction)writeResponces:(id)sender;
 
 @end

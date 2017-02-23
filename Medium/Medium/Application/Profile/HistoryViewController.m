@@ -106,6 +106,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     HomeDetailsViewController *move = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeDetailsViewController"];
+    move.isfromResponces = FALSE;
     [self.navigationController pushViewController:move animated:YES];
 }
 
